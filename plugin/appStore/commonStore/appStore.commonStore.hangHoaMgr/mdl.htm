@@ -1,0 +1,18 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-hangHoaMgr" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="hangHoaMgrMdl-addBtn" href="javascript:" onclick="hangHoaMgrFn.add('#hangHoaMgrMdl-List');">Thêm</a> 
+    <a class="mdl-head-btn mdl-head-add" id="hangHoaMgrMdl-quickAddBtn" href="javascript:" onclick="hangHoaMgrFn.addQuick('#hangHoaMgrMdl-List');">Thêm nhanh</a> 
+    <a class="mdl-head-btn mdl-head-edit" id="hangHoaMgrMdl-editBtn" href="javascript:" onclick="hangHoaMgrFn.edit('#hangHoaMgrMdl-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="hangHoaMgrMdl-delBtn" href="javascript:" onclick="hangHoaMgrFn.del('#hangHoaMgrMdl-List');">Xóa</a>
+    <a class="mdl-head-btn mdl-head-del" id="hangHoaMgrMdl-nap" href="javascript:" onclick="hangHoaMgrFn.refresh('#hangHoaMgrMdl-List');">F5</a>
+    <!--<a class="mdl-head-btn mdl-head-del" id="hangHoaMgrMdl-in" href="javascript:" onclick="hangHoaMgrFn.createReport();">In</a>-->
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter mdl-head-HangHoaFilterDanhMuc" />
+    </span> 
+</div>
+<table id="hangHoaMgrMdl-List" class="mdl-list"></table>
+<div id="hangHoaMgrMdl-Pager"></div>

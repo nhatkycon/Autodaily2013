@@ -1,0 +1,43 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all"><a href="javascript:;"
+                                                                       class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-dichVuMgr" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="danhMucMdl-addBtn" href="javascript:" onclick="danhMucDichVuMgr.add('#danhMucDichVuMgr-List');">Thêm</a> 
+    <a class="mdl-head-btn mdl-head-edit" id="danhMucMdl-editBtn" href="javascript:" onclick="danhMucDichVuMgr.edit('#danhMucDichVuMgr-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="danhMucMdl-delBtn" href="javascript:" onclick="danhMucDichVuMgr.del('#danhMucDichVuMgr-List');">Xóa</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter mdl-head-filterByLoaiDichVu" />
+    </span>
+</div>
+<table id="danhMucDichVuMgr-List" class="mdl-list"></table>
+<div id="danhMucDichVuMgr-Pager"></div>
+
+
+<div class="sub-mdl danhMucDichVuMgr-subMdl">
+    <ul>
+        <li>
+            <a id="danhMucDichVuMgr-functionmdl-subMdlBtn" href="#danhMucDichVuMgr-subMdl-mdl1">Tiêu hao</a>
+        </li>
+        <li>
+            <a id="danhMucDichVuMgr-usermdl-subMdlBtn" href="#danhMucDichVuMgr-subMdl-mdl2">Album ảnh</a>
+        </li>
+    </ul>
+    <div id="danhMucDichVuMgr-subMdl-mdl1">
+        <div class="mdl-head">
+            <a class="mdl-head-btn mdl-head-add" id="A1" href="javascript:" onclick="danhMucDichVuMgr.addSub('#danhMucDichVuMgrChiTiet-List');">Thêm</a> 
+            <a class="mdl-head-btn mdl-head-edit" id="A2" href="javascript:" onclick="danhMucDichVuMgr.editSub('#danhMucDichVuMgrChiTiet-List');">Sửa</a>
+            <a class="mdl-head-btn mdl-head-del" id="A3" href="javascript:" onclick="danhMucDichVuMgr.delSub('#danhMucDichVuMgrChiTiet-List');">Xóa</a>    
+        </div>
+        <table id="danhMucDichVuMgrChiTiet-List" class="mdl-list"></table>
+    </div>
+    <div id="danhMucDichVuMgr-subMdl-mdl2">
+        <div class="mdl-head">
+            <a class="mdl-head-btn mdl-head-add" id="A4" href="javascript:" onclick="danhMucDichVuMgr.addAlbum();">Thêm</a> 
+            <a class="mdl-head-btn mdl-head-edit" id="A5" href="javascript:" onclick="danhMucDichVuMgr.editAlbum();">Sửa</a>
+            <a class="mdl-head-btn mdl-head-del" id="A6" href="javascript:" onclick="danhMucDichVuMgr.deleteAlbum();">Xóa</a>    
+        </div>
+        <table id="danhMucDichVuMgrAlbum-list" class="mdl-list"></table>
+    </div>
+</div>

@@ -1,0 +1,152 @@
+﻿<div id="thanhvienmdl-dlgNew">
+<table>
+    <tr>
+        <td class="adm-col-header" valign="top">ID:</td>
+        <td valign="top">
+        <input disabled="disabled" class="admtxt ID" />
+        </td>
+        <td class="adm-col-header" valign="top"></td>
+        <td valign="top">
+        </td>
+    </tr>
+    <tr>
+        <td class="adm-col-header" valign="top">Đơn vị:</td>
+        <td valign="top">
+        <input _value="" class="admtxt CQ_ID" tabindex="1"/><button class="admfilter-btn"></button>
+        </td>
+        <td class="adm-col-header" valign="top">Username:</td>
+        <td valign="top">
+        <input class="admtxt Username" tabindex="9"/>
+        </td>
+    </tr>
+    <tr>        
+        
+        <td class="adm-col-header" valign="top">Tên:</td>
+        <td valign="top">
+        <input class="admtxt Ten" tabindex="2"/>
+        </td>        
+        <td class="adm-col-header" valign="top">Mật khẩu:</td>
+        <td valign="top">
+        <input type="password" class="admtxt Password" tabindex="10"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="adm-col-header" valign="top">Email:</td>
+        <td valign="top">
+        <input class="admtxt Email" tabindex="3"/>
+        </td>
+        <td class="adm-col-header" valign="top">Xác nhận:</td>
+        <td valign="top">
+        <input type="password" class="admtxt PasswordConfirm" tabindex="11"/>
+        </td>
+    </tr>
+    <tr>        
+        <td class="adm-col-header" valign="top">Mobile:</td>
+        <td valign="top">
+        <input class="admtxt Mobile" tabindex="4"/>
+        </td>        
+        <td class="adm-col-header" valign="top"></td>
+        <td valign="top">
+        
+        </td>
+    </tr>
+    <tr>
+        <td class="adm-col-header" valign="top">Thư ký:</td>
+        <td valign="top">
+        <input type="checkbox" class="ThuKy" tabindex="5"/>
+        <div>
+            Là thư ký của: <br />
+            <input _value="" class="admtxt refUsername" tabindex="6"/><button class="admfilter-btn"></button>
+        </div>
+        </td>        
+        <td class="adm-col-header" valign="top">Ảnh:</td>
+        <td valign="top">
+        <div class="adm-upload-preview"><img class="adm-upload-preview-img" src="" /></div>
+        <a href="javascript:;" class="adm-upload-btn Anh" ref="" tabindex="11">Đổi ảnh</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="adm-col-header" valign="top">Chức vụ:</td>
+        <td valign="top">
+        <input class="admtxt Loai" LDM="CHUCVU" _value="" tabindex="7"/>
+        <button class="admfilter-btn"></button>
+        </td>
+        <td class="adm-col-header" valign="top"></td>
+        <td valign="top">
+        </td>
+    </tr>
+    <tr>
+        <td class="adm-col-header" valign="top">Khóa:</td>
+        <td valign="top">
+        <input type="checkbox" class="admckb Khoa" tabindex="8"/>
+        </td>
+        <td class="adm-col-header" valign="top"></td>
+        <td valign="top">
+        </td>
+    </tr>
+    <tr>
+        <td class="adm-col-header" valign="top">Người tạo:</td>
+        <td valign="top">
+        <input disabled="disabled" class="admtxt NguoiTao"/>
+        </td>
+        <td class="adm-col-header" valign="top"></td>
+        <td valign="top">
+        </td>
+    </tr>
+    <tr>
+        <td class="adm-col-header" valign="top"></td>
+        <td valign="top">
+        <span class="admInfo"></span><br />
+        <span class="admMsg"></span>
+        </td>
+        <td class="adm-col-header" valign="top"></td>
+        <td valign="top">
+        </td>
+    </tr>
+</table>
+</div>
+<div id="thanhvienmdl-dlgEmail">
+<table>
+    <tr>
+        <td class="adm-col-header" valign="top">Đến:</td>
+        <td valign="top">
+        <!--<input class="admtxt EmailTo" />-->
+        <div class="adm-textarea EmailTo">
+            <input class="adm-token-input EmailToTxt" />
+        </div>
+        </td>
+    </tr>    
+    <tr>
+        <td class="adm-col-header" valign="top">Tiêu đề:</td>
+        <td valign="top">
+        <input class="admtxt EmailTitle" />
+        </td>
+    </tr>    
+    <tr>
+        <td class="adm-col-header" valign="top">Nội dung:</td>
+        <td valign="top">
+        <textarea class="admtextarea EmailBody" /></textarea>
+        </td>
+    </tr>    
+    <tr>
+        <td class="adm-col-header" valign="top"></td>
+        <td valign="top">
+        <span class="admInfo"></span><br />
+        <span class="admMsg"></span>
+        </td>
+    </tr>
+</table>
+</div>
+<div id="thanhvienmdl-dlgResendEmail">
+<table>
+    <tr>
+        <td class="adm-col-header" valign="top">Đến:</td>
+        <td valign="top">
+        <div class="adm-textarea EmailTo">
+        <input class="adm-token-input EmailToTxt" />
+        </div>
+        <br />Nhập tên thành viên để cấp mật khẩu mới qua email.
+        </td>
+    </tr>        
+</table>
+</div>

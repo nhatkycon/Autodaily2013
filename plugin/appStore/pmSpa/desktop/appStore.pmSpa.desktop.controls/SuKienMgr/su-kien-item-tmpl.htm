@@ -1,0 +1,22 @@
+﻿<script id="suKienDesktop-item" type="text/x-jquery-tmpl">
+    <div id="${ID}" class="suKien-item">
+        <div class="item-pnl-right">            
+            <a class="item-xoaBtn" onclick="SuKienAllFn.xoa(this);" id="${ID}" href="javascript:;"></a>
+        </div>
+        <span class="item-ngay">
+            ${FormatDateTimeJson(NgayBatDau)}
+        </span>    
+        <a class="item-ten"  id="${ID}" onclick="SuKienAllFn.edit('${ID}');" href="javascript:;">
+            ${Ten}
+        </a>
+        <span class="item-mota">
+            ${MoTa}
+        </span>
+        <span class="item-nhanvien">
+            ${NhanVien_Ten}
+        </span>
+        <span class="item-khachHang">
+            ${KH_Ten}
+        </span>
+    </div>
+</script>

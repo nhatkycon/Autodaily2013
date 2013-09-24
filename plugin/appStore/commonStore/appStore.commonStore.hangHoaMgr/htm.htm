@@ -1,0 +1,249 @@
+﻿<div ID="hangHoaMgrMdl-dlgNew">
+    <table>
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap"><span style="color:red">(*)</span>Tên Sản phẩm</td>
+            <td valign="top" style="width:450px;">
+                <input class="admtxt-350 Ten" tabindex="100"/>
+            </td>
+            <td rowspan="4" valign="top">
+                <div class="adm-upload-preview-size-75 ">
+                    <a class="lightboxImg" rel="lightbox">
+                        <img class="adm-upload-preview-img-75 previewImg" src="" />
+                    </a>
+                </div>
+                <a href="javascript:;" class="adm-upload-btn Anh" ref=""  tabindex="-1">Chọn ảnh SP</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap">
+                <span style="color:red">(*)</span>Nhóm Sản phẩm
+            </td>
+            <td valign="top" colspan="2">
+                <input class="admtxt DM_ID" _value=""  tabindex="101"/>
+                <button class="admfilter-btn"  tabindex="-1"></button>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Mã:</td>
+            <td valign="top" colspan="2">
+                <input class="admtxt Ma" tabindex="102"/>
+            </td>
+        </tr>
+        <tr style="display:none;">
+            <td class="adm-col-header" valign="top">ID</td>
+            <td valign="top" colspan="2">
+                <input disabled="disabled" class="admtxt ID" />
+            </td>
+        </tr>        
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap">Từ Khóa</td>
+            <td valign="top" style="width:370px;">
+                <input class="admtxt-350 Keywords" maxlength="250"  tabindex="103"/>
+            </td>
+        </tr>        
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap" >Mô tả tóm tắt</td>
+            <td valign="top" colspan="2">
+                <textarea class="admtextarea MoTa" style="width:620px;height:30px;"  tabindex="104"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap" >Chi tiết Sản phẩm</td>
+            <td valign="top" colspan="2">
+                <textarea class="admtextarea NoiDung" style="width:620px;"  tabindex="105"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="3">
+                <table width="100%">
+                    <tr>
+                        <td class="adm-col-header" valign="middle" nowrap="nowrap">
+                            Số lượng hiển thị
+                            :</td>
+                        <td valign="top">
+                            <input class="admtxt-100 SoLuong" _value="0"  tabindex="106"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">
+                            Đơn vị:</td>
+                        <td valign="top">
+                            <input class="admtxt-80 DonVi_ID" _value=""  tabindex="109"/>
+                            <button class="admfilter-btn">
+                            </button>
+                        </td>
+                        <td class="adm-col-header" valign="top">
+                            Giá bán:</td>
+                        <td valign="top">
+                            <input class="admtxt-100 GNY"  tabindex="108"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adm-col-header" valign="top">
+                            Giá nhập:</td>
+                        <td valign="top">
+                            <input class="admtxt-100 GiaNhap"  tabindex="107"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">
+                            Tồn định mức:</td>
+                        <td valign="top">
+                            <input class="admtxt-100 TonDinhMuc"  tabindex="110"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">
+                            Hết hàng:</td>
+                        <td valign="top">
+                            <input class="HetHang" type="checkbox"  tabindex="111"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adm-col-header" valign="top">
+                            Hàng mới:</td>
+                        <td valign="top">
+                            <input class="Hot1" type="checkbox"  tabindex="111"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">
+                            Bán chạy:</td>
+                        <td valign="top">
+                            <input class="Hot2" type="checkbox"  tabindex="111"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">
+                            Sales:</td>
+                        <td valign="top">
+                            <input class="Hot3" type="checkbox"  tabindex="111"/>
+                        </td>
+                        
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <a class="mdl-head-btn mdl-head-add UploadImg" href="javascript:">Thêm ảnh SP</a>
+                <input type="hidden" class="P_RowIdSP"/>
+            </td>
+            <td valign="top" colspan="3">
+                <table >
+                    <tbody>
+                        <tr>
+                            <td class="listImg">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="3" valign="top">
+                <span class="admMsg"></span>
+                <br />
+            </td>
+        </tr>
+    </table>
+</div>
+<div ID="hangHoaMgrMdl-dlgNewQuick" style="display: none;">
+    <table>        
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap">
+                <span style="color:red">(*)</span>Nhóm Sản phẩm
+            </td>
+            <td valign="top" colspan="2">
+                <input class="admtxt DM_ID" _value=""  tabindex="201"/>
+                <button class="admfilter-btn"  tabindex="-1"></button>
+                <input style="display: none;" disabled="disabled" class="admtxt ID" />
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Mã:</td>
+            <td valign="top" colspan="2">
+                <input class="admtxt Ma" tabindex="202"/>
+            </td>            
+        </tr>                                    
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap"><span style="color:red">(*)</span>Tên Sản phẩm</td>
+            <td valign="top" style="width:450px;">
+                <input class="admtxt-350 Ten" tabindex="203"/>
+            </td>                        
+        </tr>
+        <tr>
+            <td valign="top" colspan="3">
+                <table width="100%">
+                    <tr>
+                        <td class="adm-col-header" valign="middle" nowrap="nowrap">
+                            Số lượng hiển thị
+                            :</td>
+                        <td valign="top">
+                            <input class="admtxt-100 SoLuong" _value="0"  tabindex="204"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">
+                            Đơn vị:</td>
+                        <td valign="top">
+                            <input class="admtxt-80 DonVi_ID" _value=""  tabindex="207"/>
+                            <button class="admfilter-btn">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adm-col-header" valign="top">
+                            Giá nhập:</td>
+                        <td valign="top">
+                            <input class="admtxt-100 GiaNhap"  tabindex="205"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">
+                            Tồn định mức:</td>
+                        <td valign="top">
+                            <input class="admtxt-100 TonDinhMuc"  tabindex="208"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adm-col-header" valign="top">
+                            Giá bán:</td>
+                        <td valign="top">
+                            <input class="admtxt-100 GNY"  tabindex="206"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">
+                            Hết hàng:</td>
+                        <td valign="top">
+                            <input class="HetHang" type="checkbox"  tabindex="209"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="3" valign="top">
+                <span class="admMsg"></span>
+                <br />
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="adm-dialogS" id="hangHoaMgrMdl-DlgReport" style="display: none;">
+<table>
+    <tr>
+        <td class="adm-col-header-90" valign="middle">Tên Báo cáo: </td>
+        <td valign="top" colspan="3">
+            <textarea class="admtxt-350 Ten" ></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="adm-col-header-90" valign="middle">Từ ngày: </td>
+        <td valign="top">
+        <input class="admtxt-90 tungay" /><button class="admfilter-btn admfilter-btnDate">
+            </button>
+        </td>
+        <td class="adm-col-header-180" valign="middle">Đến ngày: </td>
+        <td valign="top">
+            <input class="admtxt-90 denngay" /><button class="admfilter-btn admfilter-btnDate">
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top"></td>
+        <td valign="top">
+        </td>
+        <td valign="top"></td>
+        <td valign="top">
+        <span class="admInfo"></span><br />
+        <span class="admMsg"></span>
+        </td>
+    </tr>    
+</table>
+</div>

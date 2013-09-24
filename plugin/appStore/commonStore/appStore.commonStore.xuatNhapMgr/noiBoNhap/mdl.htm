@@ -1,0 +1,18 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-hangHoaMgr" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="noiBoNhapMdl-addBtn" href="javascript:" onclick="noiBoNhapFn.add('#noiBoNhapMdl-List',{});">Thêm</a> 
+    <a class="mdl-head-btn mdl-head-edit" id="noiBoNhapMdl-editBtn" href="javascript:" onclick="noiBoNhapFn.edit('#noiBoNhapMdl-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="noiBoNhapMdl-delBtn" href="javascript:" onclick="noiBoNhapFn.del('#noiBoNhapMdl-List');">Xóa</a>
+    <a class="mdl-head-btn mdl-head-del" id="noiBoNhapMdl-nap" href="javascript:" onclick="noiBoNhapFn.refresh('#noiBoNhapMdl-List');">F5</a>
+    <a class="mdl-head-btn mdl-head-del" id="noiBoNhapMdl-in" href="javascript:" onclick="noiBoNhapFn.createReportByGrid('#noiBoNhapMdl-List');">In</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter mdl-head-HangHoaFilterDanhMuc" />
+    </span> 
+    
+</div>
+<table id="noiBoNhapMdl-List" class="mdl-list"></table>
+<div id="noiBoNhapMdl-Pager"></div>

@@ -1,0 +1,158 @@
+﻿
+<head>
+    <style type="text/css">
+        .Ten
+        {
+            height: 22px;
+            width: 527px;
+        }
+    </style>
+</head>
+<div id="tinCongTacVienChuaDuyetMdl-dlgNew">
+<table>
+
+    <tr style="display:none;">
+        <td class="adm-col-header" valign="top">LangBased:</td>
+        <td valign="top">
+        <input type="checkbox" disabled="disabled" class="admtxt LangBased" />
+        </td>
+        <td class="adm-col-header" valign="top">&nbsp;</td>
+        <td valign="top">
+        &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="adm-col-header" valign="top" style="color:Blue;">Danh mục:</td>
+        <td valign="top">
+        <input _value="0" class="admtxt DMID" /><button class="admfilter-btn"></button>
+        &nbsp;&nbsp; Ngôn ngữ:<select class="slt Lang" name="D1"></select></td>
+        <td class="adm-col-header" valign="top">&nbsp;</td>
+        <td valign="top">
+        &nbsp;<span class="admMsg"></span></td>
+    </tr>
+    <tr>
+        <td class="adm-col-header" valign="top">Tiêu đề:</td>
+        <td valign="top" colspan="3">
+          <textarea class="admtxt Ten" style="width: 700px; height: 20px; overflow: hidden;" ></textarea></td>
+    </tr>
+    
+  <!--  <tr>
+        <td class="adm-col-header" valign="top">Ảnh minh họa:</td>
+        <td valign="top">
+        <div class="adm-uploadTintuc-vbpreview"><img class="adm-uploadTintuc-vbpreview-img" src="" /></div>
+        <a href="javascript:;" class="adm-uploadTintuc-btn Anh" ref="" style="cursor:pointer;">Chọn ảnh</a>
+        </td>
+    </tr>-->
+ 
+    <tr>
+        <td class="adm-col-header" valign="top">Tóm tắt:</td>
+
+     
+                   
+            <td valign="top">
+             <textarea class="admtxt MoTa"  style="width: 500px; height: 40px;" ></textarea>
+                   </td>
+            <td class="adm-col-header" valign="top">
+                Ảnh minh họa:
+            </td>
+            <td valign="top">
+                <div class="adm-uploadTintuc-vbpreview">
+                    <img class="adm-uploadTintuc-vbpreview-img" src="" /></div>
+                <a href="javascript:;" class="adm-uploadTintuc-btn Anh" ref="" style="cursor:pointer;">Chọn ảnh</a>
+            </td>
+    
+    </tr>
+    <tr style="display:none;">
+    <td class="adm-col-header" valign="top">Description:</td>
+
+
+        <td valign="top">
+            &nbsp;<textarea class="admtextarea Description" cols="20" name="S2" style="width: 500px; height: 30px;"></textarea></td>
+         <td class="adm-col-header" valign="top">KeyWords:</td>
+        <td valign="top">
+        <textarea class="admtextarea KeyWords" style="height:34px; width:240px"></textarea>
+        </td>
+
+    </tr>
+    
+    <tr>
+        <td class="adm-col-header" valign="top">Nội dung:</td>
+        <td valign="top" colspan="3">
+        &nbsp;<textarea class="adm-textarea-bh NoiDung" cols="20" name="S3" rows="1"></textarea></td>
+    </tr>
+    
+    <tr style="display:none;">
+        <td class="adm-col-header" valign="top">&nbsp;</td>
+        <td valign="top" colspan="3">
+        <textarea class="admtextarea Alias" cols="20" name="S3" rows="1" ></textarea><input class="admtxt ThuTu" /><input disabled="disabled" class="admtxt ID" /><input disabled="disabled" class="admtxt LangBased_ID" /></td>
+    </tr>
+    <tr style="display:none">
+        <td class="adm-col-header" valign="top">Kích hoạt:</td>
+        <td valign="top">
+        <input type="checkbox" class="admckb Publish" />
+        </td>
+        <td class="adm-col-header" valign="top">Tin nóng</td>
+        <td valign="top">
+            <input type="checkbox" class="admckb Hot" />&nbsp;</td>
+    </tr>
+ 
+     <!--<tr style="display:none">
+        <td class="adm-col-header" valign="top">Ngày cập nhật</td>
+        <td valign="top">
+            <input type="checkbox" class="admckb NgayCapNhat" />&nbsp;</td>
+    </tr>-->
+   
+   <tr>
+         <td colspan="4">
+         <table style="width:100%">
+         <tr>
+         <td class="adm-col-header" valign="top">
+                Ngày cập nhật
+            </td>
+            <td valign="top">
+                <input class="admtxt NgayCapNhat" style="width:80px;" />
+                <button class="admfilter-btn admfilter-btnDate">
+                </button>
+                 <input disabled="disabled" type="hidden" class="admtxt NguoiTao" /></td>
+                      <td class="adm-col-header" valign="top">
+                Ngày hết hạn
+            </td>
+            <td valign="top">
+                <input class="admtxt NgayHetHan" style="width:80px;"/>
+                <button class="admfilter-btn admfilter-btnDate">
+                </button>
+                </td>
+                  <td class="adm-col-header" valign="top">Nguồn tin</td>
+               <td valign="top">
+                <input class="admtxt Nguon"  style="width:150px"/>
+              
+               
+                </td>
+                 <td class="adm-col-header" valign="top">
+                <a href="javascript:;" class="adm-uploadTintucfile-btn File" ref="" style="display:none;">File đính kèm</a>
+            </td>
+            <td valign="top">
+                <div class="adm-uploadTintuc-fileLists">
+                </div>
+            </td>
+         </tr>
+         </table>
+         </td>
+            
+        </tr>
+<!--    <tr style="visibility:hidden">
+        <td class="adm-col-header" valign="top">Người tạo:</td>
+        <td valign="top">
+     
+        </td>
+    </tr>-->
+    <!--<tr>
+           
+        </tr>-->
+   <!-- <tr>
+        <td valign="top"></td>
+        <td valign="top">
+      
+        </td>
+    </tr>-->
+</table>
+</div>

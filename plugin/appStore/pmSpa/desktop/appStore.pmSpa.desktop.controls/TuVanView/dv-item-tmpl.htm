@@ -1,0 +1,24 @@
+﻿<script id="tv-dv-item-edit" type="text/x-jquery-tmpl">
+    <div id="${ID}" class="tv-dv-item item-gradient-gray">
+        <div class="tv-dv-item-add">
+            <a class="tv-dv-item-addBtn" onclick="tuVanFn.addLamDichVuProxy('${ID}');" href="javascript:;"></a>
+        </div> 
+        <div class="tv-dv-item-body"  onclick="tuVanFn.viewDichVuProxy('${ID}');">
+            <div class="tv-dv-item-ten">${_DichVu.Ten}
+            </div>
+            <div class="tv-dv-item-mota">${GhiChu}
+            </div>
+            <span class="tv-dv-item-gia">${formatMoney(Gia)}
+            </span>
+            Số lần:
+            <span class="tv-dv-item-soLan">${SoLan}
+            </span>
+            Ngày:
+            <span class="tv-dv-item-ngay">${FormatDateJson(NgayLap)}
+            </span>
+            Bảo hành:
+            <span class="tv-dv-item-baoHanh">${BaoHanh_Ten}
+            </span>
+        </div>
+    </div>  
+</script>

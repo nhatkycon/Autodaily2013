@@ -1,0 +1,38 @@
+﻿body
+{
+    font-family: Verdana;
+    font-size: 10px;
+    margin: 0px;
+    padding: 10px;
+}
+h1 {
+    padding: 5px 0px;
+}
+.adm-col-header {
+    width: 120px;
+    text-align: right;
+    color: #666;
+}
+.adm-div-header, .adm-form-headline {
+    color: #666;
+}
+.admtxt
+{
+    width: 200px;
+    padding: 2px;
+}
+.TinhTrangSucKhoe, .TinhTrangLanDa {
+    
+}
+tablet {
+    
+}
+tr {
+    
+}
+tbody {
+    
+}
+td {
+    padding: 5px;
+}

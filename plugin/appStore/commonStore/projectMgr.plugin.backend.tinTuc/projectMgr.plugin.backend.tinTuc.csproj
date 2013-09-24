@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{127B56E1-FCA2-4385-A330-60AD922002D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>projectMgr.plugin.backend.tinTuc</RootNamespace>
+    <AssemblyName>projectMgr.plugin.backend.tinTuc</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\web\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CongTacVien\ChuaDuyet\Class1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CongTacVien\DaDuyet\Class1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CongTacVien\DangChoDuyet\Class1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DuyetTin\Class1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLy\DaDuyet\Class1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanLy\PhuTrach\Class1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vietbai\Class1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="htm.htm" />
+    <EmbeddedResource Include="JScript1.js" />
+    <EmbeddedResource Include="vietbai\htm.htm" />
+    <EmbeddedResource Include="vietbai\JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\core\docsoft.entities\docsoft.entities.csproj">
+      <Project>{081057F3-0D4E-4173-8D9F-2EA8CD9CD0C3}</Project>
+      <Name>docsoft.entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\docsoft\docsoft.csproj">
+      <Project>{57E9EC8D-655E-4BCC-9AFF-A505FAA878CA}</Project>
+      <Name>docsoft</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\linh\linh.csproj">
+      <Project>{AA37610E-2E32-44A7-918B-FA11F8DB8028}</Project>
+      <Name>linh</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\seo.entities\seo.entities.csproj">
+      <Project>{92d6406c-f289-4a7a-be0b-e143f294d279}</Project>
+      <Name>seo.entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DuyetTin\htm.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DuyetTin\JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mdl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DuyetTin\mdl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CongTacVien\TatCa\" />
+    <Folder Include="QuanLy\ChuaDuyet\" />
+    <Folder Include="QuanLy\TatCa\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\ChuaDuyet\mdl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\ChuaDuyet\htm.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\ChuaDuyet\JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\DaDuyet\mdl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\DaDuyet\htm.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\DaDuyet\JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\DaDuyet\email-post-new.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="QuanLy\PhuTrach\mdl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="QuanLy\PhuTrach\htm.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="QuanLy\PhuTrach\JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DuyetTin\email-duyet.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\DangChoDuyet\mdl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\DangChoDuyet\email-post-new.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\DangChoDuyet\htm.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CongTacVien\DangChoDuyet\JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="QuanLy\DaDuyet\htm.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="QuanLy\DaDuyet\JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="QuanLy\DaDuyet\mdl.htm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

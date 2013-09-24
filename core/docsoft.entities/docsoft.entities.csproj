@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{081057F3-0D4E-4173-8D9F-2EA8CD9CD0C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>docsoft.entities</RootNamespace>
+    <AssemblyName>docsoft.entities</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Articles.cs" />
+    <Compile Include="capgui.cs" />
+    <Compile Include="Album.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="BCY.cs" />
+    <Compile Include="SpaHoiDap.cs" />
+    <Compile Include="SystemMessage.cs" />
+    <Compile Include="HenGio.cs" />
+    <Compile Include="Resources.cs" />
+    <Compile Include="XuatNhapReport.cs" />
+    <Compile Include="ThuChiReport.cs" />
+    <Compile Include="KhoHang.cs" />
+    <Compile Include="ThuChi.cs" />
+    <Compile Include="XuatNhapChiTiet.cs" />
+    <Compile Include="XuatNhap.cs" />
+    <Compile Include="DatHang.cs" />
+    <Compile Include="DatHangChiTiet.cs" />
+    <Compile Include="GioHang.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HangHoa.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="PagesMgr.cs" />
+    <Compile Include="DanhmucDonvi.cs" />
+    <Compile Include="Doanhnghiep.cs" />
+    <Compile Include="giaothuong.cs" />
+    <Compile Include="KTNN.cs" />
+    <Compile Include="Draff.cs" />
+    <Compile Include="LoaiDanhmucDonvi.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="PluginZone.cs" />
+    <Compile Include="sanpham.cs" />
+    <Compile Include="Tinnhan.cs" />
+    <Compile Include="LienHe.cs" />
+    <Compile Include="Thuvienanh.cs" />
+    <Compile Include="Lienket.cs" />
+    <Compile Include="Thuvien.cs" />
+    <Compile Include="DanhMuc1.cs" />
+    <Compile Include="Detaiduan.cs" />
+    <Compile Include="LinhVuc.cs" />
+    <Compile Include="quangcao.cs" />
+    <Compile Include="TaiLieu.cs" />
+    <Compile Include="TaiLieuThuTuc.cs" />
+    <Compile Include="TaiLieuVanBan.cs" />
+    <Compile Include="MauTaiLieuVanBan.cs" />
+    <Compile Include="MauTaiLieu.cs" />
+    <Compile Include="Relation.cs" />
+    <Compile Include="ThuTuc.cs" />
+    <Compile Include="Tin.cs" />
+    <Compile Include="ToTrinhTraLai.cs" />
+    <Compile Include="Files.cs" />
+    <Compile Include="NodeButton.cs" />
+    <Compile Include="NodeLog.cs" />
+    <Compile Include="CoQuan.cs" />
+    <Compile Include="CoQuanFunction.cs" />
+    <Compile Include="DanhMuc.cs" />
+    <Compile Include="Function.cs" />
+    <Compile Include="LoaiDanhMuc.cs" />
+    <Compile Include="LoaiLog.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Member.cs" />
+    <Compile Include="MemberRole.cs" />
+    <Compile Include="NodeChiTiet.cs" />
+    <Compile Include="Nodes.cs" />
+    <Compile Include="NodeSetting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="RoleFunction.cs" />
+    <Compile Include="Userfunction.cs" />
+    <Compile Include="VanBan.cs" />
+    <Compile Include="VanbanBh.cs" />
+    <Compile Include="VanBanDi.cs" />
+    <Compile Include="ToTrinh.cs" />
+    <Compile Include="VanBanNode.cs" />
+    <Compile Include="WorkFlows.cs" />
+    <Compile Include="Zone.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\linh\linh.csproj">
+      <Project>{AA37610E-2E32-44A7-918B-FA11F8DB8028}</Project>
+      <Name>linh</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

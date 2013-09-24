@@ -1,0 +1,21 @@
+﻿<script id="kh-tv-item" type="text/x-jquery-tmpl">
+<div id="${ID}" class="tv-small-item item-gradient-gray">          
+    <a href="${domain}/Tu-van/${ID}.html" class="tv-small-item-view">
+        <span class="icon"></span>            
+    </a>
+    <div class="tv-small-item-body"  onclick="dangKyFn.ViewTuVanProxy('${ID}')">            
+        <div class="tv-small-item-so">
+            ${So}
+        </div> 
+        <span class="tv-small-item-ngay">
+            ${FormatDateJson(NgayTao)}
+        </span>        
+        <span class="tv-small-item-nvien">
+            ${NhanVien_Ten}
+        </span>
+        <span class="tv-small-item-mota">
+            ${TinhTrangSucKhoe} ${TinhTrangLanDa} 
+        </span>
+    </div>
+</div>  
+</script>

@@ -1,0 +1,34 @@
+﻿<script>
+    var dichVuFsSlide;
+    var dichVuDsSlidesInitial = false;
+</script>
+<div class="tablet-content-tabs-header">   
+    <a href="{0}/Album-Danh-sach/" class="tablet-content-tabs-header-item-back">
+        <span class="tablet-content-tabs-header-item-txt">Album</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>
+    <a class="tablet-content-tabs-header-item active" onclick="AlbumMgrFn.EditInView('{3}')" href="javascript:;">
+        <span class="tablet-content-tabs-header-item-txt">Chỉnh sửa</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>
+</div>
+<div class="tablet-content-tabs-box tablet-content-tabs-box-alone">
+    <div class="tablet-content-tabs-box-container">
+        <div class="tablet-content-container-alone" >
+            {1}
+        </div>
+    </div>
+</div>
+<div class="dv-fs-box">
+    <a href="javascript:;" class="dv-fs-closeBtn"></a>
+    <div class="dv-fs-body" id="dv-fs-body">
+        <ul>
+            {2}
+        </ul>
+    </div>   
+    <div class="mobile-fullscreen-pagination">
+        <a class="mobile-fullscreen-pagination-btn mobile-fullscreen-pagination-btn-prev" onclick="dichVuFsSlide.prev();" href="javascript:;">
+        </a><a class="mobile-fullscreen-pagination-btn mobile-fullscreen-pagination-btn-next" onclick="dichVuFsSlide.next();" href="javascript:;">
+        </a>
+    </div> 
+</div>

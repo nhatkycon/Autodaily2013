@@ -1,0 +1,16 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" placeholder="Tìm kiếm" class="mdl-head-txt mdl-head-search mdl-head-search-hangHoaMgr" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="congNoDauKyMdl-addBtn" href="javascript:" onclick="congNoDauKyFn.add('#congNoDauKyMdl-List');">Thêm</a> 
+    <a class="mdl-head-btn mdl-head-edit" id="congNoDauKyMdl-editBtn" href="javascript:" onclick="congNoDauKyFn.edit('#congNoDauKyMdl-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="congNoDauKyMdl-delBtn" href="javascript:" onclick="congNoDauKyFn.del('#congNoDauKyMdl-List');">Xóa</a>
+    <a class="mdl-head-btn mdl-head-del" id="congNoDauKyMdl-nap" href="javascript:" onclick="congNoDauKyFn.refresh('#congNoDauKyMdl-List');">F5</a>
+    <a class="mdl-head-btn mdl-head-del" id="congNoDauKyMdl-in" href="javascript:" onclick="congNoDauKyFn.createReportByGrid('#congNoDauKyMdl-List');">In</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+        <input type="text" _value="" placeholder="Gõ tên loại danh mục để lọc" class="mdl-head-filter mdl-head-CongNoDauKy-KhachHang" />
+    </span> 
+</div>
+<table id="congNoDauKyMdl-List" class="mdl-list"></table>
+<div id="congNoDauKyMdl-Pager"></div>

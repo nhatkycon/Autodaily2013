@@ -1,0 +1,18 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-hangHoaMgr" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="quanLyNhapDauKyMdl-addBtn" href="javascript:" onclick="quanLyNhapDauKyFn.add('#quanLyNhapDauKyMdl-List');">Thêm</a> 
+    <a class="mdl-head-btn mdl-head-edit" id="quanLyNhapDauKyMdl-editBtn" href="javascript:" onclick="quanLyNhapDauKyFn.edit('#quanLyNhapDauKyMdl-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="quanLyNhapDauKyMdl-delBtn" href="javascript:" onclick="quanLyNhapDauKyFn.del('#quanLyNhapDauKyMdl-List');">Xóa</a>
+    <a class="mdl-head-btn mdl-head-del" id="quanLyNhapDauKyMdl-nap" href="javascript:" onclick="quanLyNhapDauKyFn.refresh('#quanLyNhapDauKyMdl-List');">F5</a>
+    <a class="mdl-head-btn mdl-head-del" id="quanLyNhapDauKyMdl-loc" href="javascript:" onclick="quanLyNhapDauKyFn.loc();">Lọc</a>    
+    <a class="mdl-head-btn mdl-head-del" id="quanLyNhapDauKyMdl-in" href="javascript:" onclick="quanLyNhapDauKyFn.createReportByGrid('#quanLyNhapDauKyMdl-List');">In</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter mdl-head-HangHoaFilterDanhMuc" />
+    </span> 
+</div>
+<table id="quanLyNhapDauKyMdl-List" class="mdl-list"></table>
+<div id="quanLyNhapDauKyMdl-Pager"></div>

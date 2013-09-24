@@ -1,0 +1,50 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-tin" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="nhomMgrMdl-addBtn" href="javascript:nhomMgrFn.add();">Thêm</a>
+    <a class="mdl-head-btn mdl-head-edit" id="nhomMgrMdl-editBtn" href="javascript:nhomMgrFn.edit();">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="nhomMgrMdl-delBtn" href="javascript:nhomMgrFn.del();">Xóa</a>
+</div>
+<table id="nhomMgrMdl-List" class="mdl-list"></table>
+<div id="nhomMgrMdl-Pagerql"></div>
+<div class="sub-mdl nhomMgrMdl-subMdl-list">
+    <ul>
+        <li>
+            <a id="nhomMgrMdl-functionmdl-subMdlBtn" href="#nhomMgrMdl-subMdl-mdl1">Thành viên</a>
+        </li>
+        <li>
+            <a id="nhomMgrMdl-usermdl-subMdlBtn" href="#nhomMgrMdl-subMdl-mdl2">Album ảnh</a>
+        </li>
+        <li>
+            <a id="nhomMgrMdl-blogMgrMdl-subMdlBtn" href="#blogMgrMdl-subMdl-mdl2">Blog</a>
+        </li>
+    </ul>
+    <div id="nhomMgrMdl-subMdl-mdl1">
+        <div class="mdl-head">
+            <a class="mdl-head-btn mdl-head-add" id="nhomMgrMdl-subMdl-ThanhVien-add" href="javascript:" onclick="nhomMgrFn.addThanhVien('#nhomMgrMdlChiTiet-ThanhVien-List');">Thêm</a> 
+            <a class="mdl-head-btn mdl-head-edit" id="nhomMgrMdl-subMdl-ThanhVien-edit" href="javascript:" onclick="nhomMgrFn.editThanhVien('#nhomMgrMdlChiTiet-ThanhVien-List');">Sửa</a>
+            <a class="mdl-head-btn mdl-head-del" id="nhomMgrMdl-subMdl-ThanhVien-del" href="javascript:" onclick="nhomMgrFn.deleteThanhVien('#nhomMgrMdlChiTiet-ThanhVien-List');">Xóa</a>    
+        </div>
+        <table id="nhomMgrMdlChiTiet-ThanhVien-List" class="mdl-list"></table>
+        <div id="nhomMgrMdlChiTiet-ThanhVien-Pager"></div>
+    </div>
+    <div id="nhomMgrMdl-subMdl-mdl2">
+        <div class="mdl-head">
+            <a class="mdl-head-btn mdl-head-add" id="nhomMgrMdl-subMdl-Album-add" href="javascript:" onclick="nhomMgrFn.addAlbum();">Thêm</a> 
+            <a class="mdl-head-btn mdl-head-edit" id="nhomMgrMdl-subMdl-Album-edit" href="javascript:" onclick="nhomMgrFn.editAlbum();">Sửa</a>
+            <a class="mdl-head-btn mdl-head-del" id="nhomMgrMdl-subMdl-Album-del" href="javascript:" onclick="nhomMgrFn.deleteAlbum();">Xóa</a>    
+        </div>
+        <table id="nhomMgrMdlAlbum-Album-list" class="mdl-list"></table>
+    </div>
+    <div id="blogMgrMdl-subMdl-mdl2">
+        <div class="mdl-head">
+            <a class="mdl-head-btn mdl-head-add" id="blogMgrMdl-subMdl-Album-add" href="javascript:" onclick="nhomMgrFn.addBlog();">Thêm</a> 
+            <a class="mdl-head-btn mdl-head-edit" id="blogMgrMdl-subMdl-Album-edit" href="javascript:" onclick="nhomMgrFn.editBlog();">Sửa</a>
+            <a class="mdl-head-btn mdl-head-del" id="blogMgrMdl-subMdl-Album-del" href="javascript:" onclick="nhomMgrFn.deleteBlog();">Xóa</a>    
+        </div>
+        <table id="blogMgrMdlAlbum-SubMdl-list" class="mdl-list"></table>
+        <div id="blogMgrMdlAlbum-SubMdl-list-Pager"></div>
+    </div>
+</div>    

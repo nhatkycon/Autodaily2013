@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69B603D1-BD72-4417-846B-B0F382E8F136}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>appStore.pmSpa.thongKeNhanVienMgr</RootNamespace>
+    <AssemblyName>appStore.pmSpa.thongKeNhanVienMgr</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="lamDichVu\Class1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="lamDichVu\htm.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="lamDichVu\in-row.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="lamDichVu\in.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="lamDichVu\JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="lamDichVu\mdl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\core\docsoft.entities\docsoft.entities.csproj">
+      <Project>{081057f3-0d4e-4173-8d9f-2ea8cd9cd0c3}</Project>
+      <Name>docsoft.entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\docsoft\docsoft.csproj">
+      <Project>{57e9ec8d-655e-4bcc-9aff-a505faa878ca}</Project>
+      <Name>docsoft</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\linh\linh.csproj">
+      <Project>{aa37610e-2e32-44a7-918b-fa11f8db8028}</Project>
+      <Name>linh</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\pmSpa.entities\pmSpa.entities.csproj">
+      <Project>{3c2eaad6-2be0-4e83-8fd3-400e2d913549}</Project>
+      <Name>pmSpa.entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="lamDichVu\in-row-footer.htm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

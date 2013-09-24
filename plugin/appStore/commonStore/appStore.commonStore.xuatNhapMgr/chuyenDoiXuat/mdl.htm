@@ -1,0 +1,18 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-hangHoaMgr" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="chuyenDoiXuatMdl-addBtn" href="javascript:" onclick="chuyenDoiXuatFn.add('#chuyenDoiXuatMdl-List',{});">Thêm</a> 
+    <a class="mdl-head-btn mdl-head-edit" id="chuyenDoiXuatMdl-editBtn" href="javascript:" onclick="chuyenDoiXuatFn.edit('#chuyenDoiXuatMdl-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="chuyenDoiXuatMdl-delBtn" href="javascript:" onclick="chuyenDoiXuatFn.del('#chuyenDoiXuatMdl-List');">Xóa</a>
+    <a class="mdl-head-btn mdl-head-del" id="chuyenDoiXuatMdl-nap" href="javascript:" onclick="chuyenDoiXuatFn.refresh('#chuyenDoiXuatMdl-List');">F5</a>
+    <a class="mdl-head-btn mdl-head-del" id="chuyenDoiXuatMdl-in" href="javascript:" onclick="chuyenDoiXuatFn.createReportByGrid('#chuyenDoiXuatMdl-List');">In</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter mdl-head-HangHoaFilterDanhMuc" />
+    </span> 
+    
+</div>
+<table id="chuyenDoiXuatMdl-List" class="mdl-list"></table>
+<div id="chuyenDoiXuatMdl-Pager"></div>

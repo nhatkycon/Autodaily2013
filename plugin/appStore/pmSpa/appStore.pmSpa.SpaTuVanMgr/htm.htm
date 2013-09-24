@@ -1,0 +1,75 @@
+﻿<div id="SpaTuVanMgrMdl-dlgNew">
+     <table width="100%">
+        <tr>
+            <td valign="top" style="width: 300px;">
+                <div class="adm-form-subheadline">
+                    Ngày: 
+                </div>
+                <input class="admtxt Ngay" tabindex="9929" /><button tabindex="-1" class="admfilter-btn admfilter-btnDate"></button>                
+                <div class="adm-form-subheadline">
+                    Số: 
+                </div>
+                <input  tabindex="9930" class="admtxt admtxt-line So"/>
+                <input class="ID" style="display: none;"/> 
+                <div class="adm-form-subheadline">
+                    Khách hàng: 
+                </div>
+                <input  tabindex="9930" class="admtxt admtxt-line KH_ID"/><button class="admfilter-btn" tabindex="-1"></button><button class="mdl-head-btn btnThemNhanhKH" tabindex="9930">+</button>
+                <div class="adm-form-subheadline">Tư vấn viên:</div>
+                <input  tabindex="9931" class="admtxt admtxt-line TuVanVien"/><button class="admfilter-btn"></button>
+                <div  class="adm-form-subheadline">
+                    A/Tình trạng sức khỏe
+                </div>
+                <textarea   tabindex="9932" class="adm-textarea adm-textarea-300 adm-textarea-dot TinhTrangSucKhoe"  ></textarea>
+                <div class="adm-form-subheadline">
+                    B/Tình trạng làn da:
+                </div>
+                <textarea  tabindex="9933" class="adm-textarea adm-textarea-300 adm-textarea-dot TinhTrangLanDa"  ></textarea> 
+                <div class="adm-form-subheadline">
+                    C/Nhu cầu mong muốn của khách hàng:   
+                </div>
+                <textarea tabindex="9934" class="adm-textarea adm-textarea-300 adm-textarea-dot YKienKhachHang"  ></textarea>          
+                <div class="adm-form-subheadline">
+                    Dịch vụ khác:
+                </div>
+                <textarea  tabindex="9935" class="adm-textarea adm-textarea-300 adm-textarea-dot DichVuDieuTriKhac"></textarea>  
+            </td>
+            <td valign="top" style="padding-left: 20px;">
+                <b class="adm-form-headline">
+                    D/Lịch trình điều trị dự kiến
+                </b>
+                <br/>
+                Với tình trạng thực tế về sức khỏe, làn da và cơ thể bạn, thứ tự các vấn đề cần giải quyết được xếp như sau:
+                <br/>
+                <input placeholder="Tình trạng" tabindex="9936" class="admtxt admtxt-dot DV_Chon"/><button class="admfilter-btn"></button>
+                <div class="adm-contentPnl-dot adm-contentPnl-list DV_DanhSach"></div>  
+            </td>
+        </tr>
+    </table>
+</div>
+<script id="tt-item" type="text/x-jquery-tmpl">
+    <div id="${id}" class="tt-item ${id}">
+        <div class="tt-item-header">
+            <div class="tt-item-pnl-right">            
+                <a class="tt-item-xoaBtn" id="A1" href="javascript:;">x</a>            
+            </div>
+            <a class="tt-item-ten" target="_blank" href="/Tinh-trang/${id}.html">
+                ${label}
+            </a>
+        </div>    
+        <div class="tt-item-dvList"></div>
+    </div>
+</script>
+<script id="tt-item-view" type="text/x-jquery-tmpl">
+    <div id="Div1" class="tt-item ${ID}">
+        <div class="tt-item-header">
+            <div class="tt-item-pnl-right">            
+                <a class="tt-item-xoaBtn" id="A2" href="javascript:;">x</a>            
+            </div>
+            <a class="tt-item-ten" target="_blank" href="/Tinh-trang/${ID}.html">
+                ${_DanhMuc.Ten}
+            </a>
+        </div>    
+        <div class="tt-item-dvList"></div>
+    </div>
+</script>

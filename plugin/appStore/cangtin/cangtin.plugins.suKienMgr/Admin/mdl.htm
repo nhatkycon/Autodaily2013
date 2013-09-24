@@ -1,0 +1,38 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-tin" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="suKienMgrMdl-addBtn" href="javascript:suKienMgrFn.add();">Thêm</a>
+    <a class="mdl-head-btn mdl-head-edit" id="suKienMgrMdl-editBtn" href="javascript:suKienMgrFn.edit();">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="suKienMgrMdl-delBtn" href="javascript:suKienMgrFn.del();">Xóa</a>    
+</div>
+<table id="suKienMgrMdl-List" class="mdl-list"></table>
+<div id="suKienMgrMdl-Pagerql"></div>
+<div class="sub-mdl suKienMgrMdl-subMdl-list">
+    <ul>
+        <li>
+            <a id="suKienMgrMdl-functionmdl-subMdlBtn" href="#suKienMgrMdl-subMdl-mdl1">Thành viên</a>
+        </li>
+        <li>
+            <a id="suKienMgrMdl-usermdl-subMdlBtn" href="#suKienMgrMdl-subMdl-mdl2">Album ảnh</a>
+        </li>
+    </ul>
+    <div id="suKienMgrMdl-subMdl-mdl1">
+        <div class="mdl-head">
+            <a class="mdl-head-btn mdl-head-add" id="suKienMgrMdl-subMdl-ThanhVien-add" href="javascript:" onclick="suKienMgrFn.addThanhVien('#suKienMgrMdlChiTiet-ThanhVien-List');">Thêm</a> 
+            <a class="mdl-head-btn mdl-head-edit" id="suKienMgrMdl-subMdl-ThanhVien-edit" href="javascript:" onclick="suKienMgrFn.editThanhVien('#suKienMgrMdlChiTiet-ThanhVien-List');">Sửa</a>
+            <a class="mdl-head-btn mdl-head-del" id="suKienMgrMdl-subMdl-ThanhVien-del" href="javascript:" onclick="suKienMgrFn.deleteThanhVien('#suKienMgrMdlChiTiet-ThanhVien-List');">Xóa</a>    
+        </div>
+        <table id="suKienMgrMdlChiTiet-ThanhVien-List" class="mdl-list"></table>
+        <div id="suKienMgrMdlChiTiet-ThanhVien-Pager"></div>
+    </div>
+    <div id="suKienMgrMdl-subMdl-mdl2">
+        <div class="mdl-head">
+            <a class="mdl-head-btn mdl-head-add" id="suKienMgrMdl-subMdl-Album-add" href="javascript:" onclick="suKienMgrFn.addAlbum();">Thêm</a> 
+            <a class="mdl-head-btn mdl-head-edit" id="suKienMgrMdl-subMdl-Album-edit" href="javascript:" onclick="suKienMgrFn.editAlbum();">Sửa</a>
+            <a class="mdl-head-btn mdl-head-del" id="suKienMgrMdl-subMdl-Album-del" href="javascript:" onclick="suKienMgrFn.deleteAlbum();">Xóa</a>    
+        </div>
+        <table id="suKienMgrMdlAlbum-Album-list" class="mdl-list"></table>
+    </div>
+</div> 

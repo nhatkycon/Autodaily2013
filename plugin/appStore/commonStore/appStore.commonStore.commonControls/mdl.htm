@@ -1,0 +1,34 @@
+﻿<div id="container">
+    <div id="slides">
+	    <div class="slides_container">		
+		    <%=txt %>
+	    </div>
+    </div>
+</div>
+<script src='<%=WebResource("appStore.commonStore.hangHoaMgr.htm.htm")%>' type="text/javascript"></script>
+<script>
+    $(function () {
+        $('#slides').slides({
+            preload: true,
+            preloadImage: '<%=ResolveUrl("~/lib/css/web/images-with-captions/img/loading.gif")%>',
+            play: 15000,
+            pause: 15000,
+            hoverPause: true,
+            animationStart: function (current) {
+                $('.caption').animate({
+                    bottom: -35
+                }, 100);
+            },
+            animationComplete: function (current) {
+                $('.caption').animate({
+                    bottom: 0
+                }, 200);
+            },
+            slidesLoaded: function () {
+                $('.caption').animate({
+                    bottom: 0
+                }, 200);
+            }
+        });
+    });
+</script>

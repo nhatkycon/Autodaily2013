@@ -1,0 +1,145 @@
+﻿<script>
+    var dichVuFsSlide;
+    var dichVuDsSlidesInitial = false;
+</script>
+<div class="tablet-content-tabs-header">
+    <a href="{0}/Khach-hang/{1}.html" class="tablet-content-tabs-header-item-back">
+        <span class="tablet-content-tabs-header-item-txt">Khách hàng</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>   
+    <a class="tablet-content-tabs-header-item" href="#div0">
+        <span class="tablet-content-tabs-header-item-txt">Thông tin</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>
+    <a class="tablet-content-tabs-header-item active" href="#div1">
+        <span class="tablet-content-tabs-header-item-txt">Dịch vụ</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>
+    <a class="tablet-content-tabs-header-item" href="#div2">
+        <span class="tablet-content-tabs-header-item-txt">Mua kèm</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>
+</div>
+<div class="tablet-content-tabs-box">
+    <div class="tablet-content-tabs-box-container">
+        <div class="tablet-content-container dv-view" >
+            <div class="tablet-content-tabs-box-item w450" data-key="div0">
+                <div class="tablet-content-tabs-box-item-box">
+                    <div class="tablet-content-tabs-box-item-box-header">
+                        <div class="tablet-content-tabs-box-item-box-header-lbl">Thông tin  </div>                        
+                    </div>
+                    <div class="tablet-content-tabs-box-item-box-body">
+                        <table class="dv-item-infos" width="100%">
+                            <tr>
+                                <th>
+                                    <b>Tư vấn viên</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-gia">{2}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Ngày</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value">{3}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Sức khỏe</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value">{4}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Làn da</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value">{5}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Yêu cầu khách hàng</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value">{6}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Ý kiến khách hàng</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value">{7}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                 <th>
+                                    <b>Tình trạng</b>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    {11}
+                                </th>
+                            </tr>
+                        </table>
+                    </div>   
+                </div>
+            </div>
+            <div class="tablet-content-tabs-box-item w600" data-key="div1">
+                <div class="tablet-content-tabs-box-item-box">
+                    <div class="tablet-content-tabs-box-item-box-header">
+                        <div class="tablet-content-tabs-box-item-box-header-lbl">Dịch vụ</div>                        
+                    </div>
+                    <div class="tablet-content-tabs-box-item-box-body kh-DichVu-list">
+                        {8}                           
+                    </div> 
+                </div>
+            </div>
+            <div class="tablet-content-tabs-box-item w600" data-key="div2">
+                <div class="tablet-content-tabs-box-item-box">
+                    <div class="tablet-content-tabs-box-item-box-header">
+                        <div class="tablet-content-tabs-box-item-box-header-lbl">Mua kèm</div>                        
+                    </div>
+                    <div class="tablet-content-tabs-box-item-box-body kh-tuVan-list">
+                        {9}
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tablet-footer">
+    <div class="tablet-footer-header">
+        <div class="tablet-footer-header-right">
+        </div>
+        <div class="tablet-footer-header-left">
+            <a class="tablet-footer-header-item" id="aBookInspectionLink" href="javascript:;" onclick="tuVanFn.AddDichVuProxy('{10}');">
+                <span class="tablet-footer-header-icon tablet-footer-header-icon-book"></span>
+                <span class="tablet-footer-header-item-text">Thêm dịch vụ</span>
+            </a>
+            <a class="tablet-footer-header-item" id="aSaleReportLink" href="javascript:;" onclick="tuVanFn.AddMuaKem('{10}')">
+                <span class="tablet-footer-header-icon tablet-footer-header-icon-report"></span>
+                <span class="tablet-footer-header-item-text">Thêm hàng mua kèm</span>
+            </a>
+        </div>           
+    </div>
+</div>
+<div class="dv-fs-box">
+    <a href="javascript:;" class="dv-fs-closeBtn"></a>
+    <div class="dv-fs-body" id="dv-fs-body">
+        <ul>
+        </ul>
+    </div>   
+    <div class="mobile-fullscreen-pagination">
+        <a class="mobile-fullscreen-pagination-btn mobile-fullscreen-pagination-btn-prev" onclick="dichVuFsSlide.prev();" href="javascript:;">
+        </a><a class="mobile-fullscreen-pagination-btn mobile-fullscreen-pagination-btn-next" onclick="dichVuFsSlide.next();" href="javascript:;">
+        </a>
+    </div> 
+</div>

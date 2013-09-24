@@ -1,0 +1,243 @@
+﻿<div ID="quanLyNhapMdl-dlgNew">
+    <table>
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap">
+                Ngày tạo:
+            </td>
+            <td valign="top">
+                <input class="admtxt NgayHoaDon" tabindex="60001" /><button class="admfilter-btn admfilter-btnDate"></button>                
+                <input style="display:none;" class="admtxt ID" />
+            </td>
+            <td class="adm-col-header" valign="top">Mã:</td>
+            <td valign="top">
+                <input class="admtxt Ma" tabindex="60002"/>
+            </td>
+            <td class="adm-col-header" valign="top">Kho:</td>
+            <td valign="top">
+                <input class="admtxt KHO_ID" tabindex="60003"/>
+                <button class="admfilter-btn"  tabindex="-1"></button>
+                
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Mã hàng:</td>
+            <td valign="top">
+                <input class="admtxt HangHoa" tabindex="60004"/>
+                <button class="admfilter-btn"  tabindex="-1"></button>
+                <button class="mdl-head-btn btnThemNhanhHH" tabindex="60004">+</button>                
+            </td>
+            <td class="adm-col-header" valign="top">Nhà cung cấp:</td>
+            <td valign="top" colspan="3">
+                <input class="admtxt KH_ID" _value=""  tabindex="60005"/>
+                <button class="admfilter-btn"  tabindex="-1"></button>
+                <button class="mdl-head-btn btnThemNhanhKH" tabindex="60006">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="6">
+                <ul class="DanhSachHangHoaList DanhSachXuatNhapChiTiet">
+                    <li class="ds-item ds-header">
+                        <ul>
+                            <li class="item-Ten Ten">Tên</li>
+                            <li class="item-DV_Ten DV_Ten">Đơn vị</li>
+                            <li class="item-DonGia DonGia">Đơn giá</li>
+                            <li class="item-SoLuong SoLuong">SL</li>
+                            <li class="item-Tong Tong">Thành tiền</li>
+                            <li class="item-VAT VAT">VAT</li>
+                            <li class="item-VATTien VATTien">Tiền VAT</li>
+                            <li class="item-CKTyLe CKTyLe">% CK</li>
+                            <li class="item-CKTien CKTien">Tiền CK</li>
+                            <li class="item-GhiChu GhiChu">Ghi chú</li>
+                            <li class="item-Xoa"></li>
+                        </ul>                        
+                    </li>
+                    <li class="ds-item ds-footer">
+                        <ul>
+                            <li class="item-Ten Ten"></li>
+                            <li class="item-DV_Ten DV_Ten"></li>
+                            <li class="item-DonGia DonGia"></li>
+                            <li class="item-SoLuong SoLuong SoLuongAll">
+                                <input type="text" disabled="disabled" />
+                            </li>
+                            <li class="item-Tong Tong TongAll">
+                                <input type="text" disabled="disabled" />
+                            </li>
+                            <li class="item-VAT VAT">
+                                
+                            </li>
+                            <li class="item-VATTien VATAll">
+                                <input type="text" disabled="disabled" />
+                            </li>
+                            <li class="item-CKTyLe CKTyLe"></li>
+                            <li class="item-CKTien CKTien CKTienAll">
+                                <input type="text"  disabled="disabled"/>
+                            </li>
+                            <li class="item-GhiChu GhiChu"></li>
+                            <li class="item-Xoa"></li>
+                        </ul>                        
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap">
+                Nhân viên:
+            </td>
+            <td valign="top">
+                <input class="admtxt NhanVien" _value=""  tabindex="60005"/>
+                <button class="admfilter-btn"  tabindex="-1"></button>
+            </td>
+            <td class="adm-col-header" valign="top">Cộng tiền:</td>
+            <td valign="top">
+                <input class="admtxt CongTienHang" value="0" tabindex="60006"/>
+            </td>
+            <td class="adm-col-header" valign="top">Diễn giải:</td>
+            <td valign="top">
+                <input class="admtxt GhiChu" tabindex="60006"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap">
+                VAT:
+            </td>
+            <td valign="top">
+                <input class="admtxt TongVAT" value="0"  tabindex="60005"/>
+            </td>
+            <td class="adm-col-header" valign="top">CK:</td>
+            <td valign="top">
+                <input class="admtxt ChietKhau" value="0" tabindex="60006"/>
+            </td>
+            <td class="adm-col-header" valign="top">Loại quỹ:</td>
+            <td valign="top">
+                <select class="admtxt admtxt-small LoaiQuy"  tabindex="710004">
+                    <option value="0">Tiền mặt</option>
+                    <option value="1">Tài khoản</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Phải trả:</td>
+            <td valign="top">
+                <input class="admtxt PhaiTra" value="0" tabindex="60006"/>
+            </td>
+            <td class="adm-col-header" valign="top" nowrap="nowrap">
+                Thanh toán:
+            </td>
+            <td valign="top">
+                <input class="admtxt ThanhToan" value="0"  tabindex="60005"/>
+            </td>
+            <td class="adm-col-header" valign="top">Còn nợ:</td>
+            <td valign="top">
+                <input class="admtxt ConNo" value="0" disabled="disabled" tabindex="60006"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+            <span class="admMsg"></span>
+            </td>
+        </tr>
+    </table>
+</div>
+<script id="xnct-hh-item" type="text/x-jquery-tmpl">
+    <li class="ds-item ds-item-value ds-item-${HH_ID}" hh_id="${HH_ID}" id="${ID}">
+        <ul>
+            <li class="item-Ten Ten">
+                <span type="text">${HH_Ten}</span>
+            </li>
+            <li class="item-DV_Ten DV_Ten">
+                <input type="text" tabindex="-1" _value="${DV_ID}" value="${DV_Ten}"/><button class="admfilter-btn"  tabindex="-1"></button>
+            </li>
+            <li class="item-DonGia DonGia">
+                <input type="text" tabindex="-1" value="${DonGia}"/>
+            </li>
+            <li class="item-SoLuong SoLuong">
+                <input type="text" tabindex="-1" value="${SoLuong}"/>
+            </li>
+            <li class="item-Tong Tong">
+                <input type="text" tabindex="-1" value="${Tong}"/>
+            </li>
+            <li class="item-VAT VAT">
+                <input type="text" tabindex="-1" value="${VAT}"/>
+            </li>
+            <li class="item-VATTien VATTien">
+                <input type="text" tabindex="-1" value="0"/>
+            </li>
+            <li class="item-CKTyLe CKTyLe">
+                <input type="text" tabindex="-1" value="${CKTyLe}"/>
+            </li>
+            <li class="item-CKTien CKTien">
+                <input type="text" tabindex="-1" value="${CKTien}"/>
+            </li>
+            <li class="item-GhiChu GhiChu">
+                <input type="text" tabindex="-1" value="${GhiChu}"/>
+            </li>
+            <li class="item-Xoa">
+                <a href="javascript:;">xóa</a>
+            </li>
+        </ul>
+    </li>
+</script>
+<div ID="quanLyNhapMdl-dlgFilter" style="display:none;">
+    <table width="100%">        
+        <tr>
+            <td class="adm-col-header" valign="top" nowrap="nowrap">
+                Nhóm Sản phẩm:
+            </td>
+            <td valign="top">
+                <input class="admtxt-90 DM_ID" _value=""  tabindex="201"/>
+                <button class="admfilter-btn"  tabindex="-1"></button>
+            </td>
+            <td class="adm-col-header" valign="top" nowrap="nowrap">
+                Khách hàng:
+            </td>
+            <td valign="top">
+                <input class="admtxt-90 KH_ID" _value=""  tabindex="201"/>
+                <button class="admfilter-btn"  tabindex="-1"></button>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Từ ngày: </td>
+            <td valign="top">
+            <input class="admtxt-90 TuNgay" /><button class="admfilter-btn admfilter-btnDate">
+                </button>
+            </td>
+            <td class="adm-col-header" valign="top">Đến ngày: </td>
+            <td valign="top">
+                <input class="admtxt-90 DenNgay" /><button class="admfilter-btn admfilter-btnDate">
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="adm-dialogS" id="quanLyNhapMdl-DlgReport" style="display:none;">
+    <table>
+        <tr>
+            <td class="adm-col-header-90" valign="middle">Tên Báo cáo: </td>
+            <td valign="top" colspan="3">
+                <textarea class="admtxt-350 Ten" ></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header-90" valign="middle">Từ ngày: </td>
+            <td valign="top">
+            <input class="admtxt-90 tungay" /><button class="admfilter-btn admfilter-btnDate">
+                </button>
+            </td>
+            <td class="adm-col-header-180" valign="middle">Đến ngày: </td>
+            <td valign="top">
+                <input class="admtxt-90 denngay" /><button class="admfilter-btn admfilter-btnDate">
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top"></td>
+            <td valign="top">
+            </td>
+            <td valign="top"></td>
+            <td valign="top">
+            <span class="admInfo"></span><br />
+            <span class="admMsg"></span>
+            </td>
+        </tr>    
+    </table>
+</div>

@@ -1,0 +1,66 @@
+﻿<div ID="AlbumMgrFnMdl-dlgNew">
+    <table>
+        <tr>
+            <td class="adm-col-header" valign="top"><span style="color:red">(*)</span>Tên:</td>
+            <td valign="top">
+                <input class="admtxt admtxt-350 Ten" tabindex="8001"/>
+                <input class="admtxt admtxt-350 ID" style="display: none;" tabindex="8001"/>
+            </td>
+            <td class="adm-col-header" valign="top" rowspan="2">
+                <span style="color:red">(*)</span>Ảnh bìa:</td>
+            <td valign="top" rowspan="2">
+                <div class="adm-upload-preview-size-75 ">
+                    <a class="lightboxImg" rel="lightbox">
+                        <img class="adm-upload-preview-img-75 previewImg" src="" />
+                    </a>
+                </div>
+                <a href="javascript:;" class="adm-upload-btn Anh" ref=""  tabindex="-1">Chọn ảnh bìa</a>
+            </td>        
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Mã:</td>
+            <td valign="top">
+                <input class="admtxt Ma" tabindex="8002"/>
+            </td>        
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">
+                Mô tả
+            </td>
+            <td valign="top">
+                <textarea class="adm-textarea adm-textarea-300 MoTa"  tabindex="8003"></textarea>
+            </td>
+            <td class="adm-col-header" valign="top">Thứ tự:</td>
+            <td valign="top">
+                <input class="admtxt ThuTu" value="0" tabindex="8004"/>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <a class="mdl-head-btn mdl-head-add UploadImg" href="javascript:">Thêm ảnh</a>
+                <input type="hidden" class="P_RowIdSP"/>
+            </td>
+            <td valign="top" colspan="3">
+                <table >
+                    <tbody>
+                        <tr>
+                            <td class="listImg">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <span class="admMsg"></span>
+            </td>
+        </tr>        
+    </table>
+</div>
+<script id="anh-item" type="text/x-jquery-tmpl">
+<div class="slide">
+    <a href="javascript:;" target="_blank">
+        <img class="tin-item-img" width="990" height="340" src="${ domain }/lib/up/sanpham/${common.imgSize(Path,"240x180")}">
+    </a>
+    <div class="caption">    
+    </div>
+</div>
+</script>

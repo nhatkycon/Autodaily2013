@@ -1,0 +1,609 @@
+<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="Generates a very simple business object." %>
+<%@ Property Name="SingleFileMode" Type="System.Boolean" Category="Options" Default="True" Description="Generate content for a complete cs file instead of just a class." %>
+<%@ Property Name="ClassNamespace" Type="System.String" Category="Options" Default="BusinessObjects" Description="Namespace your class is in. Only used if SingleFileMode is true!" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Map Name="CSharpAlias" Src="System-CSharpAlias" Description="System to C# Type Map" %>
+<%@ Map Name="SqlCSharp" Src="Sql-CSharp" Description="System to C# Type Map" %>
+<%@ Map Name="DbDataReader" Src="DbType-DataReaderMethod" Description="DbType to DataReader Method Map" %>
+<%@ Map Name="SqlNativeSqlDb" Src="SqlNativeType-SqlDbType" Description="SqlNativeType to SqlDbType Map" %>
+<%@ Map Name="DbTypeCSharp" Src="DbType-CSharp" Description="DbType to CSharp Map" %>
+
+<%@ CodeTemplate Language="C#" TargetLanguage="C#" Debug="False" Description="Create a list of properties from database table." %>
+
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+
+
+<%@ CodeTemplate Language="C#" TargetLanguage="Text" Debug="True" Description="Outputs all extended properties from a database." %>
+<%@ Property Name="SourceDatabase" Type="SchemaExplorer.DatabaseSchema" Category="Context" Description="Database to get the extended properties from." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+
+
+
+<%for (int i = 0; i < SourceDatabase.Tables.Count; i++)
+	{
+	string a = (string) SourceDatabase.Tables[i].Name;
+	%>
+    
+	--<%=SourceDatabase.Tables[i].FullName.Substring(4)%>_Store
+    
+    GO
+    IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_<%=a%>_Select_SelectAll_linhnx]') AND type in (N'P', N'PC'))
+    DROP PROCEDURE [dbo].[sp_<%=a%>_Select_SelectAll_linhnx]
+	GO	
+		create proc dbo.sp_<%=a%>_Select_SelectAll_linhnx
+		as
+		SELECT *
+		FROM  <%=SourceDatabase.Tables[i].FullName.Substring(4)%>		
+		order by <%=getPrimaryKey(i)%> desc
+	
+    GO
+    IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_<%=a%>_Select_SelectById_linhnx]') AND type in (N'P', N'PC'))
+    DROP PROCEDURE [dbo].[sp_<%=a%>_Select_SelectById_linhnx]
+	GO	
+		create proc dbo.sp_<%=a%>_Select_SelectById_linhnx
+        (
+        @<%=getPrimaryKey(i)%> <% = getPrimaryKeyDataType(i)%>
+        )
+		as
+		SELECT *
+		FROM  <%=SourceDatabase.Tables[i].FullName.Substring(4)%>		
+		where (<%=getPrimaryKey(i)%>=@<%=getPrimaryKey(i)%>)
+    
+	GO
+    IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_<%=a%>_Insert_InsertNormal_linhnx]') AND type in (N'P', N'PC'))
+    DROP PROCEDURE [dbo].[sp_<%=a%>_Insert_InsertNormal_linhnx]
+    GO
+	create proc dbo.sp_<%=a%>_Insert_InsertNormal_linhnx
+		(
+			<%=InsertParamater(i)%>
+		)
+		as
+		insert into  <%=SourceDatabase.Tables[i].FullName%>		
+		 (<%=InserColumn(i)%> )
+		values
+		(<%=InserValue(i)%> )
+		select  *
+		FROM  <%=SourceDatabase.Tables[i].FullName.Substring(4)%>
+		where (<%=getPrimaryKey(i)%>=@<%=getPrimaryKey(i)%>)
+
+	
+	GO
+    IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_<%=a%>_Update_UpdateNormal_linhnx]') AND type in (N'P', N'PC'))
+    DROP PROCEDURE [dbo].[sp_<%=a%>_Update_UpdateNormal_linhnx]
+    GO
+	create proc dbo.sp_<%=a%>_Update_UpdateNormal_linhnx
+		(
+			<%=UpdateParamater(i)%>
+		)
+		as
+		UPDATE <%=SourceDatabase.Tables[i].FullName.Substring(4)%> SET <%=update(i)%>
+		SELECT *
+		from <%=SourceDatabase.Tables[i].FullName.Substring(4)%> <%=get_SP1_inner(i)%>
+		where (<%=getPrimaryKey(i)%>=@<%=getPrimaryKey(i)%>)
+	
+	
+	
+	GO
+	IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_<%=a%>_Delete_DeleteById_linhnx]') AND type in (N'P', N'PC'))
+    DROP PROCEDURE [dbo].[sp_<%=a%>_Delete_DeleteById_linhnx]
+    GO
+	create proc dbo.sp_<%=a%>_Delete_DeleteById_linhnx
+	(
+	@<%=getPrimaryKey(i)%> <% = getPrimaryKeyDataType(i)%>
+	)
+	as
+	delete <%=SourceDatabase.Tables[i].FullName.Substring(4)%>
+	where (<%=Delete(i)%>=@<%=Delete(i)%>)
+	GO
+	IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_<%=a%>_Pager_Normal_linhnx]') AND type in (N'P', N'PC'))
+    DROP PROCEDURE [dbo].[sp_<%=a%>_Pager_Normal_linhnx]
+    GO
+	create proc dbo.sp_<%=a%>_Pager_Normal_linhnx
+	(@PageSize int,@PageIndex int,@Sort nvarchar(500))
+	as
+	declare @l nvarchar(max);
+	set @l='
+	declare @Total bigint;
+	set @Total=(select count(*) from <%=SourceDatabase.Tables[i].FullName.Substring(4)%>);
+	select * from
+	(
+		SELECT  ROW_NUMBER() OVER (ORDER BY ' + ISNULL(@Sort,'<%=getPrimaryKey(i)%> DESC') + ') AS STT,*,@Total as Total
+		FROM   <%=SourceDatabase.Tables[i].FullName.Substring(4)%>
+	)
+	as temp where (STT between (((' + convert(nvarchar(20),(@PageIndex  - 1)) + ') * ' + convert(nvarchar(20),(@PageSize)) + ')+1) and ' + convert(nvarchar(20),@PageIndex*@PageSize) + ')';	
+	--(((@PageIndex  - 1)*@PageSize) + 1) and @PageIndex*@PageSize
+	
+	exec(@l)
+	--<%=SourceDatabase.Tables[i].FullName.Substring(4)%>_StoreEnd    
+	<%}%>
+<script runat="template">
+public string getPrimaryKey(int i)
+{
+return this.SourceDatabase.Tables[i].Columns[0].Name;
+}
+public string getPrimaryKeyType(int i)
+{
+    ColumnSchema column = this.SourceDatabase.Tables[i].Columns[0];
+    return CSharpAlias[column.SystemType.Name].ToString();
+    
+}
+public string getPrimaryKeyDataType(int i)
+{
+    ColumnSchema column = this.SourceDatabase.Tables[i].Columns[0];
+    return column.NativeType;
+    
+}
+public string getNgayTaoKey(int i)
+{
+    string l = "";
+    foreach(ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+    {
+        if (column.Name.Contains("NgayTao"))
+        {
+            l = column.Name;
+        }
+    }
+    return l;
+}
+public string getNgayRowId(int i)
+{
+    string l = "";
+    foreach(ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+    {
+        if (column.Name.Contains("RowId"))
+        {
+            l = column.Name;
+        }
+    }
+    return l;
+}
+public string getTotalColumn(int i)
+{
+    return this.SourceDatabase.Tables[i].Columns.Count.ToString();
+}
+public string wherepage1(int i)
+{
+	string l="";
+	string j="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		
+		if(CSharpAlias[column.Name].Contains("_STORE_ID"))	
+		{
+			l=CSharpAlias[column.Name];
+		}
+		if(CSharpAlias[column.Name].Contains("_SUBSTORE_ID"))	
+		{
+			j=CSharpAlias[column.Name];
+		}
+	}
+	if(l.Length>0&&j.Length>0)
+	{
+		l="@"+l+" uniqueidentifier, \n\t\t\t "+"@"+j+" uniqueidentifier, \n ";
+	}
+	else
+	{
+		l="";	
+	}
+	return l;
+}
+public bool validateTable(string a)
+{
+    bool ok = true;
+    string[] obj = new string[] {"tblbanbe","tblcaidat","tblphanQuyen","tblcapnhat", "tblrates","tbluserchitiet","tblkhuvuc","tbltruongloai","tblnghenghiep","tbllinhvuc","tblmemberlogintemp","tblmemberchannel"};
+    foreach(string item in obj)
+    {
+        if (a.ToLower() == item)
+        {
+            ok=false;
+        }
+    }
+    return ok;
+}
+public string wherestoreID1(int i)
+{
+	string l="";
+	string j="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		
+		if(CSharpAlias[column.Name].Contains("_STORE_ID"))	
+		{
+			l=CSharpAlias[column.Name];
+		}
+		if(CSharpAlias[column.Name].Contains("_SUBSTORE_ID"))	
+		{
+			j=CSharpAlias[column.Name];
+		}
+	}
+	if(l.Length>0&&j.Length>0)
+	{
+		l="( \n\t\t\t "+"@"+l+" uniqueidentifier, \n\t\t\t "+"@"+j+" uniqueidentifier \n )";
+	}
+	else
+	{
+		l="";	
+	}
+	return l;
+}
+public string wherepage(int i)
+{
+	string l="";
+	string j="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		
+		if(CSharpAlias[column.Name].Contains("_STORE_ID"))	
+		{
+			l=CSharpAlias[column.Name]+"=@"+CSharpAlias[column.Name];
+		}
+		if(CSharpAlias[column.Name].Contains("_SUBSTORE_ID"))	
+		{
+			j=CSharpAlias[column.Name]+"=@"+CSharpAlias[column.Name];
+		}
+	}
+	if(l.Length>0&&j.Length>0)
+	{
+		l=" where ( "+l+" and "+j + " )";
+	}
+	else
+	{
+		l="";	
+	}
+	return l;
+}
+public string wherepage10(int i)
+{
+	string l="";
+	string j="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		
+		if(CSharpAlias[column.Name].Contains("_STORE_ID"))	
+		{
+			l=CSharpAlias[column.Name]+"=@"+CSharpAlias[column.Name];
+		}
+		if(CSharpAlias[column.Name].Contains("_SUBSTORE_ID"))	
+		{
+			j=CSharpAlias[column.Name]+"=@"+CSharpAlias[column.Name];
+		}
+	}
+	if(l.Length>0&&j.Length>0)
+	{
+		l=" and "+l+" and "+j ;
+	}
+	else
+	{
+		l="";	
+	}
+	return l;
+}
+public string wherestoreID(int i)
+{
+	string l="";
+	string j="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		
+		if(CSharpAlias[column.Name].Contains("_STORE_ID"))	
+		{
+			l=CSharpAlias[column.Name]+"=@"+CSharpAlias[column.Name];
+		}
+		if(CSharpAlias[column.Name].Contains("_SUBSTORE_ID"))	
+		{
+			j=CSharpAlias[column.Name]+"=@"+CSharpAlias[column.Name];
+		}
+	}
+	if(l.Length>0&&j.Length>0)
+	{
+		l="where ( "+l+" and "+j+" )";
+	}
+	else
+	{
+		l="";	
+	}
+	return l;
+}
+public string get_SP1_inner(int i)
+{
+	int j = 0; 
+	string l="";
+	string b="";
+	string c="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{		
+		if (column.IsForeignKeyMember==true) 
+		{ 
+			l+="\n inner join "+SourceDatabase.Tables[i].ForeignKeys[j].PrimaryKeyTable.Name+ " on " ;
+				c=column.Table.ForeignKeys[j].ForeignKeyMemberColumns+" = ";
+				c=c.Replace("dbo.","");
+				c=c.Replace("\"","");
+				b=this.SourceDatabase.Tables[i].ForeignKeys[j].PrimaryKeyMemberColumns.ToString();
+				b=b.Replace("dbo.","");
+			 	b=b.Replace("\"","");
+			
+			l+="\n"+c+b;
+			
+			j ++;
+		}	
+	} 
+	
+	return l;
+}
+
+public string GetClassName1(string _table)
+{
+	if(_table.Length<19)
+	{
+		return _table;
+	}
+	else
+	{
+		return _table.Substring(19);
+	}
+}
+public string GetClassName4(string _table)
+{
+	if(_table.Length<4)
+	{
+		return _table;
+	}
+	else
+	{
+		return _table.Substring(4);
+	}
+}
+public string Delete(int i)
+{
+	string l="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		l=CSharpAlias[column.Name];		
+		break;
+	}
+	return l;
+	
+}
+public string ngaytao(int i)
+{	string l="";
+	string h="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+			h=CSharpAlias[column.Name];				 	
+			if(h.ToLower().Contains("ngaytao"))
+			{
+				l=h;	
+				break;
+			}
+		
+				
+	}
+	return l;
+}
+public int tong(int i)
+{
+	int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		j++;	
+	}
+	return j;
+}
+public string update(int i)
+{
+	string l="";int j=0;
+	string h="";	
+	string g="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		h=CSharpAlias[column.Name]+"= ISNULL(@"+CSharpAlias[column.Name]+","+CSharpAlias[column.Name]+")";
+		break;
+	}
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		g=CSharpAlias[column.Name]+"= @"+CSharpAlias[column.Name];
+		break;
+	}
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		l+=CSharpAlias[column.Name]+" = ISNULL(@"+CSharpAlias[column.Name]+","+CSharpAlias[column.Name]+")";
+		
+		if(j<tong(i)-1)
+		{			
+				l+=",";		
+		}
+		
+		j++;
+	}	
+	
+	l = l.Substring((h.Length+2),l.Length-(h.Length+2)) +" where " +g;
+	
+	return l;
+}
+public string and(int i)
+{
+	string l="";int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		l+=" (@"+CSharpAlias[column.Name] +" is null or ("+CSharpAlias[column.Name]+" = @"+CSharpAlias[column.Name]+"))";
+		if(j<tong(i)-1)
+		{
+			l+="\n\t\tAND  ";
+		}	
+		j++;
+	}
+	
+	return l;
+}
+public string dauphay2(int i)
+{
+	string l="";int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		l+="  @"+CSharpAlias[column.Name];
+		if(j<tong(i)-1)
+		{
+			l+=",";
+		}	
+		j++;
+	}
+	
+	return l;
+}
+public string InserColumn(int i)
+{
+	string l="";int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		//if (column.IsPrimaryKeyMember == false) 
+		//{
+			l+="  "+CSharpAlias[column.Name];
+			if(j<tong(i)-1)
+			{
+				l+=",";
+			}	
+			j++;
+		//}		
+	}
+	
+	return l;
+}
+public string InserValue(int i)
+{
+	string l="";int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		//if (column.IsPrimaryKeyMember == false) 
+		//{
+		l+="  @"+CSharpAlias[column.Name];
+		if(j<tong(i)-1)
+		{
+			l+=",";
+		}	
+		j++;
+		//}
+	}
+	
+	return l;
+}
+public string dauphay_select(int i,string a)
+{
+	
+	string l="";int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		//if (column.IsForeignKeyMember==true) 
+		//{ 
+			l=dauphay_123(i,a);
+		//}
+		//else
+		//{
+		//	l=dauphay1(i);	
+		//}
+		
+	}
+	
+	return l;
+}
+public string dauphay_123(int i,string a)
+{
+	
+	string l="";int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{		
+			l+="  "+SourceDatabase.Tables[i].Name+"."+CSharpAlias[column.Name];
+			if(j<tong(i)-1)
+			{
+				l+=",";
+			}	
+			j++;
+		
+	}
+	
+	return l;
+}
+public string InsertParamater(int i)
+{
+	string l="";
+	int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{ 
+        //if (column.IsPrimaryKeyMember == false) 
+        //{
+            string a=CSharpAlias[column.NativeType].ToString();
+			if(a.Equals("varbinary"))
+			{
+				a="varbinary(max)"	;
+			}
+			l+="\n\t\t\t@"+CSharpAlias[column.Name]+" "+ a + conver_s(CSharpAlias[column.NativeType],CSharpAlias[column.Size.ToString()]) + " = null";
+			if(j<tong(i)-1)
+			{
+				l+=",";
+			}	
+            j++;
+        //}	
+	}
+	return l;
+}
+public string UpdateParamater(int i)
+{
+	string l="";
+	int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{ 
+        string a=CSharpAlias[column.NativeType].ToString();
+		if(a.Equals("varbinary"))
+		{
+			a="varbinary(max)"	;
+		}
+		
+		
+		l+="\n\t\t\t@"+CSharpAlias[column.Name]+" "+ a + conver_s(CSharpAlias[column.NativeType],CSharpAlias[column.Size.ToString()]) + " = null";
+		if(j<tong(i)-1)
+		{
+			l+=",";
+		}	
+        j++;	
+	}
+	return l;
+}
+public string GetClassName(string _table)
+{
+	if(_table.Length<16)
+	{
+		return _table;
+	}
+	else
+	{
+		return _table.Substring(15);
+	}
+}
+
+
+public string conver_s(string _input,string _in)
+{
+	
+		if(_input.Equals("nvarchar"))
+		{
+			if(_in.Equals("-1"))
+			{
+				return "(MAX)";
+			}
+			else
+			{
+			return "("+_in+")";
+			}
+		}		
+		else
+		{			
+			return "";
+		}
+}
+
+
+</script>

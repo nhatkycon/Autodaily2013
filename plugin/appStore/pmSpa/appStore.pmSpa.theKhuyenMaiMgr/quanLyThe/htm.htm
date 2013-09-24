@@ -1,0 +1,108 @@
+﻿<div id="quanLyTheMdl-dlgNew" style="width: 100px;">
+    <table width="100%">        
+        <tr>
+            <td class="adm-col-header" valign="top">Đơn vị tổ chức:</td>
+            <td valign="top">
+                <input class="admtxt DVTC_ID" tabindex="98001" /><button class="admfilter-btn"   tabindex="-1"></button>
+                <input style="display: none;" disabled="disabled" class="admtxt ID" tabindex="-1" />
+            </td>
+            <td class="adm-col-header" valign="top">Chương trình:</td>
+            <td valign="top">
+                <input class="admtxt KM_ID" tabindex="98002" /><button class="admfilter-btn"   tabindex="-1"></button>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Khách hàng:</td>
+            <td valign="top">
+                <input class="admtxt KH_ID" tabindex="98005"/><button class="admfilter-btn"   tabindex="-1"></button><button class="mdl-head-btn btnThemNhanhKH" tabindex="60006">+</button>
+            </td>
+            <td class="adm-col-header" valign="top">Dịch vụ:</td>
+            <td valign="top">
+                <input class="admtxt DV_ID" tabindex="98003" /><button class="admfilter-btn"   tabindex="-1"></button>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Mã:</td>
+            <td valign="top">
+                <input class="admtxt Ma" tabindex="98006" />
+            </td>
+            <td class="adm-col-header" valign="top">Tình trạng:</td>
+            <td valign="top">
+                Đã thanh toán: &nbsp;<input class="TinhTrang" tabindex="98004" type="checkbox" /> &nbsp; Đã sử dụng<input class="DaDung" tabindex="98004" type="checkbox" />
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Hạn sử dụng:</td>
+            <td valign="top">
+                <input class="admtxt HanSuDung" tabindex="98007" /><button tabindex="-1" class="admfilter-btn admfilter-btnDate"></button>
+            </td>
+            <td class="adm-col-header" valign="top">Hạn thanh toán:</td>
+            <td valign="top">
+                <input  tabindex="9501" _value="" tabindex="98008" class="admtxt HanDoiThe"/><button tabindex="-1" class="admfilter-btn admfilter-btnDate"></button>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Ngày phát hành:</td>
+            <td valign="top">
+                <input class="admtxt NgayPhatHanh" tabindex="98009" /><button tabindex="-1" class="admfilter-btn admfilter-btnDate"></button>
+            </td>
+            <td class="adm-col-header" valign="top">Ngày khách dùng:</td>
+            <td valign="top">
+                <input class="admtxt NgayNhan" tabindex="98010" /><button tabindex="-1" class="admfilter-btn admfilter-btnDate"></button>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Giá trên thẻ:</td>
+            <td valign="top">
+                <input class="admtxt GiaNY" tabindex="98011" />
+            </td>
+            <td class="adm-col-header" valign="top">Thực giá:</td>
+            <td valign="top">
+                <input class="admtxt Gia" tabindex="98012"/>
+            </td>   
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Nhân viên nhận:</td>
+            <td valign="top">
+                <input _value="" class="admtxt NguoiNhan" tabindex="98013" /><button class="admfilter-btn" tabindex="-1"></button>                        
+            </td>                     
+            <td class="adm-col-header" valign="top"></td>
+            <td valign="top">
+                <span class="admInfo"></span><br />
+                <span class="admMsg"></span>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="quanLyTheMdl-dlgEmail" style="display:none;">
+<table>
+    <tr>
+        <td class="adm-col-header" valign="top">Đến:</td>
+        <td valign="top">
+        <!--<input class="admtxt EmailTo" />-->
+        <div class="adm-textarea EmailTo">
+            <input class="adm-token-input EmailToTxt" />
+        </div>
+        </td>
+    </tr>    
+    <tr>
+        <td class="adm-col-header" valign="top">Tiêu đề:</td>
+        <td valign="top">
+        <input class="admtxt EmailTitle" style="width: 700px; height: 20px; overflow: hidden;"/>
+        </td>
+    </tr>    
+    <tr>
+        <td class="adm-col-header" valign="top">Nội dung:</td>
+        <td valign="top">
+        <textarea class="admtextarea EmailBody" ></textarea>
+        </td>
+    </tr>    
+    <tr>
+        <td class="adm-col-header" valign="top"></td>
+        <td valign="top">
+        <span class="admInfo"></span><br />
+        <span class="admMsg"></span>
+        </td>
+    </tr>
+</table>
+</div>

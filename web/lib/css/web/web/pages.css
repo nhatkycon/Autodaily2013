@@ -1,0 +1,207 @@
+﻿
+.top-l-item
+{
+    margin-left:10px;
+    display:inline-block;
+    padding:4px 6px;
+    height:16px;
+    border: 0px;
+    text-decoration:none;
+    color:#666;
+    background-image:none;
+    vertical-align:middle;
+} 
+a:hover.top-l-item
+{
+    border:solid 1px #ccc;
+    padding:3px 5px;
+    background-image:url(i/top-l-item.jpg);
+    background-repeat:repeat-x;
+    text-shadow: 0px 1px 2px #FFF;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 6px #ccc;    
+}
+.top-l-item-active
+{
+    border:solid 1px #999;
+    padding:3px 5px;
+    background-image:url(i/top-l-item.jpg);
+    background-repeat:repeat-x;
+    text-shadow: 0px 1px 2px #FFF;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 6px #999;    
+}
+.top-r
+{
+    float:right;
+    width:400px;
+    text-align:right;
+    margin-right:5px;
+}
+.top-r-item, .top-r-msg, .top-r-thongBao
+{
+    margin-left:3px;
+    margin-top:20px;
+    display:inline-block;
+    padding:4px;
+    height:16px;
+    border: 0px;
+    text-decoration:none;
+    color:#666;
+    background-image:none;
+    vertical-align:middle;
+}
+a:hover.top-r-item, a:hover.top-r-msg, a:hover.top-r-thongBao
+{    
+    border:solid 1px #999;
+    padding:3px;
+    background-image:url(i/top-l-item.jpg);
+    background-repeat:repeat-x;
+    text-shadow: 0px 1px 2px #FFF;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 6px #bbb;  
+}
+.top-r-space
+{
+    display:inline-block;
+    padding:4px;
+    text-decoration:none;
+    color:#666;
+    background-image:none;
+    vertical-align:middle;
+    height:16px;
+    margin-top:20px;
+} 
+.top-r-login
+{
+}
+.top-r-register, .top-r-profile
+{    
+    border:solid 1px #ccc;
+    padding:4px 8px;
+    font-weight:bold;
+    background-image:url(i/top-l-item.jpg);
+    background-repeat:repeat-x;
+    text-shadow: 0px 1px 2px #FFF;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 6px #EFEFEF;  
+}
+a:hover.top-r-register, a:hover.top-r-profile
+{    
+    border:solid 1px #999;
+    padding:4px 8px;
+    font-weight:bold;
+    background-image:url(i/top-l-item.jpg);
+    background-repeat:repeat-x;
+    text-shadow: 0px 1px 2px #FFF;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 6px #bbb;  
+}
+.search-pnl
+{
+    display:inline-block;
+    background-color:#EFEFEF;
+    margin-top:20px;
+    border:solid 1px #999;
+    padding:4px;
+    width:60px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    -moz-box-shadow: 0 0 0px #FFF;    
+}
+.search-pnl-active
+{
+    background-color:#FFFFFF;
+    -moz-box-shadow: 0 0 6px #999;
+}
+.search-btn
+{
+    display:inline-block;
+    width:13px;
+    height:13px;
+    background-image:url(i/search.png);
+}
+.search-txt
+{
+    border:0px;
+    font-family:Verdana;
+    font-size:8pt;
+    width:40px;
+    background-color: transparent;
+    text-shadow: 0px 1px 2px #FFF;
+}
+.search-txt-active
+{
+    width:100px;
+}
+.top-r-avatar
+{
+    margin-top:10px;
+    display:inline-block;
+    vertical-align:middle;
+    padding:3px;
+} 
+a:hover.top-r-avatar
+{
+    border:solid 1px #999;
+    padding:2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0px 1px 2px #bbb;    
+} 
+.avatar-160-box
+{
+    width:160px;
+    height:160px;
+}
+.avatar-160
+{
+    width:160px;
+}
+.avatar-50-box
+{
+    width:50px;
+    height:50px;
+}
+.avatar-50
+{
+}
+.avatar-100-box
+{
+    width:100px;
+    height:100px;
+}
+.avatar-100
+{
+    width:100px;
+    height:100px;
+}
+.foot
+{
+    height:80px;
+}
+.foot-box
+{
+    margin: 0 auto;
+    width:600px;
+    height:80px;
+    text-align:center;
+    color:#666;
+    padding-top:10px;
+}
+.home-body
+{
+    background-color:#FFF;
+}

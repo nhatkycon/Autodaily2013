@@ -1,0 +1,29 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-xuatNhapChiTiet" />
+    </span>
+    <a class="mdl-head-btn mdl-head-del" id="xuatNhapChiTietMdl-nap" href="javascript:" onclick="xuatNhapChiTietFn.refresh('#xuatNhapChiTietMdl-List');">F5</a>
+    <a class="mdl-head-btn mdl-head-del" id="xuatNhapChiTietMdl-in" href="javascript:" onclick="xuatNhapChiTietFn.createReportByGrid('#xuatNhapChiTietMdl-List');">In</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+        <input type="text" _value="" placeholder="Từ ngày" class="mdl-head-filter mdl-head-xuatNhapChiTiet-TuNgay" />
+    </span> 
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+        <input type="text" _value=""placeholder="Đến ngày" placeholder="Đến ngày" class="mdl-head-filter mdl-head-xuatNhapChiTiet-DenNgay" />
+    </span> 
+
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" placeholder="Kho" class="mdl-head-filter mdl-head-xuatNhapChiTiet-KHO_ID" />
+    </span> 
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" placeholder="Danh mục hàng" class="mdl-head-filter mdl-head-xuatNhapChiTiet-DM_ID" />
+    </span> 
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" placeholder="Khách hàng, nhà cung cấp" _value="" class="mdl-head-filter mdl-head-xuatNhapChiTiet-KH_ID" />
+    </span> 
+</div>
+<table id="xuatNhapChiTietMdl-List" class="mdl-list"></table>
+<div id="xuatNhapChiTietMdl-Pager"></div>

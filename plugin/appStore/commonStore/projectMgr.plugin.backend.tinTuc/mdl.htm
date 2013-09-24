@@ -1,0 +1,62 @@
+﻿<div class="mdl-head">
+<span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+    <a href="javascript:;" class="mdl-head-clearSearch"></a>
+    <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-tin" />
+</span>
+<a class="mdl-head-btn mdl-head-add" id="tinmdl-addBtn" href="javascript:tinfn.add();">Viết bài</a>
+<a class="mdl-head-btn mdl-head-edit" id="tinmdl-editBtn" href="javascript:tinfn.edit();">Sửa bài viết</a>
+<a class="mdl-head-btn mdl-head-del" id="tinmdl-delBtn" href="javascript:tinfn.del();">Xóa bài viết</a>
+<a class="mdl-head-btn mdl-headTask-Loc" href="javascript:;">
+    <span class="mdl-headTask-Loc-Title">
+        <span class="ui-icon ui-icon-triangle-1-s"></span>        
+        Duyệt tin <span class="mdl-headTask-Loc-Title-Display"></span>
+    </span>
+    <span class="mdl-headTask-Loc-Box">
+        <span class="mdl-headTask-Loc-Box-Pnl ui-widget-content ui-corner-bottom">
+            <span class="mdl-headTask-Loc-Box-Content ui-corner-all">
+                <span onclick="javascript:tinfn.duyet('true');">Duyệt bài viết</span>
+                <span onclick="javascript:tinfn.duyet('false');">Bỏ duyệt bài viết</span>
+            </span>
+        </span>
+    </span>
+</a>
+<a class="mdl-head-btn mdl-headTask-Loc" href="javascript:;">
+    <span class="mdl-headTask-Loc-Title">
+        <span class="ui-icon ui-icon-triangle-1-s"></span>        
+        Tin hot <span class="mdl-headTask-Loc-Title-Display"></span>
+    </span>
+    <span class="mdl-headTask-Loc-Box">
+        <span class="mdl-headTask-Loc-Box-Pnl ui-widget-content ui-corner-bottom">
+            <span class="mdl-headTask-Loc-Box-Content ui-corner-all">
+                <span onclick="javascript:tinfn.tinhot('true');">Chuyển tin hot</span>
+                <span onclick="javascript:tinfn.tinhot('false');">Chuyển tin thường</span>
+            </span>
+        </span>
+    </span>
+</a>
+<span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+    <a href="javascript:;" class="mdl-head-clearSearch"></a>
+    <input type="text" _value="" class="mdl-head-filter mdl-head-filterTinBydanhmuc"/>
+</span>
+</div>
+<table id="tinmdl-List" class="mdl-list"></table>
+<div id="tinmdl-Pagerql"></div>
+
+<div class="sub-mdl">
+<ul>
+    <li><a id="tinMdl-subTinMdl-TinBtn" href="#tinMdl-subTinMdl-Box">Tin</a></li>
+</ul>
+<div>    
+    <div class="mdl-submdl-panel" id="tinMdl-subTinMdl-Box">
+        <div class="mdl-head">
+                <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+                    <a href="javascript:;" class="mdl-head-clearSearch"></a>
+                    <input type="text" _value="" class="mdl-head-filter mdl-head-subTinsearchtinMdl"/>
+                </span>
+            <a class="mdl-head-btn mdl-head-del" id="tinMdl-subTinMdl-addBtn" _id="" href="javascript:;">Thêm</a>
+            <a class="mdl-head-btn mdl-head-add" id="tinMdl-subTinMdl-delBtn" href="javascript:" onclick="tinfn.delSubTin();">Xóa</a>
+        </div>
+        <table id="tinMdl-subTinMdl-List" class="mdl-list"></table>
+    </div>
+</div>
+</div>

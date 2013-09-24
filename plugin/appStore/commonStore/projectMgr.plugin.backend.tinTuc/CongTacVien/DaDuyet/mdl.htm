@@ -1,0 +1,36 @@
+﻿<div class="mdl-head">
+<span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+    <a href="javascript:;" class="mdl-head-clearSearch"></a>
+    <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-tin" />
+</span>
+
+    <a class="mdl-head-btn mdl-head-add" id="tinCongTacVienDuyetMdl-addBtn" href="javascript:tinCongTacVienDuyetfn.add();">Viết bài</a>
+    <a class="mdl-head-btn mdl-head-edit" id="tinCongTacVienDuyetMdl-editBtn" href="javascript:tinCongTacVienDuyetfn.edit();">Sửa bài viết</a>
+    <a class="mdl-head-btn mdl-head-del" id="tinCongTacVienDuyetMdl-delBtn" href="javascript:tinCongTacVienDuyetfn.del();">Xóa bài viết</a>
+    <a class="mdl-head-btn mdl-head-del" id="A1" href="javascript:tinCongTacVienDuyetfn.yeuCauDuyet('true');">Yêu cầu duyệt</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter mdl-head-filterTinBydanhmuc"/>
+    </span>
+</div>
+<table id="tinCongTacVienDuyetMdl-List" class="mdl-list"></table>
+<div id="tinCongTacVienDuyetMdl-Pagerql"></div>
+
+<div class="sub-mdl">
+<ul>
+    <li><a id="tinCongTacVienDuyetMdl-subTinMdl-TinBtn" href="#tinCongTacVienDuyetMdl-subTinMdl-Box">Tin</a></li>
+</ul>
+<div>    
+    <div class="mdl-submdl-panel" id="tinCongTacVienDuyetMdl-subTinMdl-Box">
+        <div class="mdl-head">
+                <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+                    <a href="javascript:;" class="mdl-head-clearSearch"></a>
+                    <input type="text" _value="" class="mdl-head-filter mdl-head-searchTinCongTacVienDuyetMdl"/>
+                </span>
+            <a class="mdl-head-btn mdl-head-del" id="tinCongTacVienDuyetMdl-subTinMdl-addBtn" _id="" href="javascript:;">Thêm</a>
+            <a class="mdl-head-btn mdl-head-add" id="tinCongTacVienDuyetMdl-subTinMdl-delBtn" href="javascript:" onclick="tinCongTacVienDuyetfn.delSubTin();">Xóa</a>
+        </div>
+        <table id="tinCongTacVienDuyetMdl-subTinMdl-List" class="mdl-list"></table>
+    </div>
+</div>
+</div>

@@ -1,0 +1,392 @@
+<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="Generates a very simple business object." %>
+<%@ Property Name="SingleFileMode" Type="System.Boolean" Category="Options" Default="True" Description="Generate content for a complete cs file instead of just a class." %>
+<%@ Property Name="ClassNamespace" Type="System.String" Category="Options" Default="BusinessObjects" Description="Namespace your class is in. Only used if SingleFileMode is true!" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Map Name="CSharpAlias" Src="System-CSharpAlias" Description="System to C# Type Map" %>
+<%@ Map Name="SqlCSharp" Src="Sql-CSharp" Description="System to C# Type Map" %>
+<%@ Map Name="DbDataReader" Src="DbType-DataReaderMethod" Description="DbType to DataReader Method Map" %>
+<%@ Map Name="SqlNativeSqlDb" Src="SqlNativeType-SqlDbType" Description="SqlNativeType to SqlDbType Map" %>
+<%@ Map Name="DbTypeCSharp" Src="DbType-CSharp" Description="DbType to CSharp Map" %>
+
+<%@ CodeTemplate Language="C#" TargetLanguage="C#" Debug="False" Description="Create a list of properties from database table." %>
+
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+
+
+<%@ CodeTemplate Language="C#" TargetLanguage="Text" Debug="True" Description="Outputs all extended properties from a database." %>
+<%@ Property Name="SourceDatabase" Type="SchemaExplorer.DatabaseSchema" Category="Context" Description="Database to get the extended properties from." %>
+<%@ Property Name="NameSpace" Type="String" Default="Giga." Optional="False" Category="Context" Description="Nh?p NameSpace" OnChanged="" Editor="" EditorBase="" Serializer="" %>
+<%@ Property Name="tablePrefix" Type="String" Default="tbl" Optional="False" Category="Context" Description="Nh?p NameSpace" OnChanged="" Editor="" EditorBase="" Serializer="" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using linh.controls;
+using linh.core.dal;
+using System.Data;
+using System.Data.SqlClient;
+namespace <% = NameSpace %>
+{
+<%for (int i = 0; i < SourceDatabase.Tables.Count; i++)
+	{
+	string a = (string) SourceDatabase.Tables[i].Name;
+	%>
+	// Request params
+	<%=RequestParmas(i)%>
+	//Get Elements
+	<%=JavascriptElements(i)%>
+	// Get variables
+	<%=Javascript_Variable(i)%>
+	// Build post form
+	<%=Javascript_PostForm(i)%>
+	// Clear Javascript Element
+	<%=Javascript_ClearElements(i)%>
+	#region <%= GetClassName(a) %>
+        #region BO
+		public class <%= GetClassName(a) %>: BaseEntity
+		{			
+			#region Properties
+			<% foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) {  %>
+			public  <%= conver_base(CSharpAlias[column.SystemType.Name]) %> <%= StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) %>{get;set;}
+			<% } %> 
+			#endregion
+			#region Contructor
+			public <%= GetClassName(a) %>()
+			{ }
+			#endregion
+			#region Customs properties
+			<%=get_cus_pro(i)%>
+			#endregion		
+			public override BaseEntity getFromReader(IDataReader rd)
+			{
+				return <% = GetClassName(a)%>Dal.getFromReader(rd);
+			}
+		}
+        #endregion
+		#region Collection			
+			public class <%= GetClassName(a) %>Collection : BaseEntityCollection<<%= GetClassName(a) %>>
+			{}			
+		#endregion
+        #region Dal
+            public class <% = GetClassName(a)%>Dal
+            {   
+                #region Methods
+                
+                public static void DeleteById(<% =getPrimaryKeyType(i) %> <% =getPrimaryKey(i)%>)
+                {
+                    var obj = new SqlParameter[1];
+                    obj[0] = new SqlParameter("<% =getPrimaryKey(i)%>", <% =getPrimaryKey(i)%>);
+                    SqlHelper.ExecuteNonQuery(DAL.con(), CommandType.StoredProcedure, "sp_<%=a%>_Delete_DeleteById_linhnx", obj);
+                }                
+                
+                public static <% =GetClassName(a)%> Insert(<% =GetClassName(a)%> item)
+                {
+                    var Item = new <% =GetClassName(a)%>();
+                    var obj = new SqlParameter[<%=Convert.ToInt32(getTotalColumn(i))%>];
+                    <%=InsertParamater(i)%>
+                    using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_<%=a%>_Insert_InsertNormal_linhnx", obj))
+                    {
+                        while (rd.Read())
+                        {
+                            Item = getFromReader(rd);
+                        }
+                    }
+                    return Item;
+                }
+                
+                public static <% =GetClassName(a)%> Update(<% =GetClassName(a)%> item)
+                {
+                    var Item = new <% =GetClassName(a)%>();
+                    var obj = new SqlParameter[<% =getTotalColumn(i)%>];
+                    <% =UpdateParamater(i)%>
+                    using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_<%=a%>_Update_UpdateNormal_linhnx", obj))
+                    {
+                        while (rd.Read())
+                        {
+                            Item = getFromReader(rd);
+                        }
+                    }
+                    return Item;
+                }
+                
+                public static <% =GetClassName(a)%> SelectById(<% =getPrimaryKeyType(i) %> <% =getPrimaryKey(i)%>)
+                {
+                    var Item = new <% =GetClassName(a)%>();
+                    var obj = new SqlParameter[1];
+                    obj[0] = new SqlParameter("<% =getPrimaryKey(i)%>", <% =getPrimaryKey(i)%>);
+                    using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_<%=a%>_Select_SelectById_linhnx", obj))
+                    {
+                        while (rd.Read())
+                        {
+                            Item = getFromReader(rd);
+                        }
+                    }
+                    return Item;
+                }
+                
+                public static <% =GetClassName(a)%>Collection SelectAll()
+                {
+                    var List = new <% =GetClassName(a)%>Collection();
+                    using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_<%=a%>_Select_SelectAll_linhnx"))
+                    {
+                        while (rd.Read())
+                        {
+                            List.Add(getFromReader(rd));
+                        }
+                    }
+                    return List;
+                }
+				public static Pager<<% =GetClassName(a)%>> pagerNormal(string url,bool rewrite,string sort,string q,int size)
+				{
+					var obj = new SqlParameter[2];
+            		obj[0] = new SqlParameter("Sort", sort);
+					if (!string.IsNullOrEmpty(q))
+            		{
+                		obj[1] = new SqlParameter("q", q);
+            		}
+            		else
+            		{
+                		obj[1] = new SqlParameter("q",DBNull.Value);
+            		}
+					
+					var pg = new Pager<<% =GetClassName(a)%>>("sp_<%=a%>_Pager_Normal_linhnx", "page", size, 10, rewrite, url,obj);
+					return pg;
+				}
+                #endregion         
+				
+                #region Utilities                
+                public static <% = GetClassName(a)%> getFromReader(IDataReader rd)
+                {
+                    var Item = new <% = GetClassName(a)%>();
+                    <%=fucksua(i)%>                    return Item;                    
+                }
+                 #endregion
+				
+				#region Extend
+				#endregion
+            }
+        #endregion
+		       
+        #endregion
+	<%}%>
+}
+
+<script runat="template">
+public string getPrimaryKey(int i)
+{
+return this.SourceDatabase.Tables[i].Columns[0].Name;
+}
+public string getTotalColumn(int i)
+{
+    return this.SourceDatabase.Tables[i].Columns.Count.ToString();
+}
+public string getPrimaryKeyType(int i)
+{
+    ColumnSchema column = this.SourceDatabase.Tables[i].Columns[0];
+    return CSharpAlias[column.SystemType.Name].ToString();
+    
+}
+public string get_cus_pro(int i)
+{
+	int j = 0; 
+	string l="";
+	
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{		
+		if (column.IsForeignKeyMember == true) 
+		{
+			string a=this.SourceDatabase.Tables[i].ForeignKeys[j].PrimaryKeyTable.ToString();
+			l+="\n\t\t\tpublic "+GetForeignTable(a)+" _"+GetForeignTable(a)+"{get;set;}";
+			j +=1;
+		}	
+	} 
+	return l;
+}
+public string GetClassName(string _table)
+{
+	_table = _table.Replace(this.tablePrefix,"");
+        return _table;
+}
+public string GetForeignTable(string _table)
+{
+	_table = _table.Replace("dbo." + this.tablePrefix,"");
+        return _table;
+}
+public string conver_base(string _input)
+{
+	
+		// Khu bo Null
+		return _input;
+		if(_input.Equals("String"))
+		{			
+			return "String";
+		}
+		if(_input.Equals("Byte[]"))
+		{
+			return "Byte[]";
+		}		
+		else
+		{
+				
+			return _input+"?";
+		}
+}
+public string fucksua(int i)
+{
+	string l="";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{
+		
+		string a= CSharpAlias[column.SystemType.Name].ToString();
+		string Property= StringUtil.HtmlDecode(column.Name).ToString().Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1);
+		string c="_"+GetClassName(SourceDatabase.Tables[i].Name).ToString();
+		string ColumnnName=StringUtil.HtmlDecode(column.Name).ToString();
+		l+=string.Format("\t\t\t\t\tif(rd.FieldExists(\"{0}\"))",ColumnnName);
+		l+="{\n";
+		l+="\t\t\t\t\t"+ "Item." + Property + " = " + "(" + a + ")(rd[\"" + ColumnnName + "\"])" +";\n";
+		l+="\t\t\t\t\t}\n";
+	}
+	return l;
+}
+public string InsertParamater(int i)
+{
+	string l="";
+	int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{ 
+        //if (column.IsPrimaryKeyMember == false) 
+        //{
+            //l+="\t\t\t\tobj["+j+"] = new SqlParameter(\""+StringUtil.HtmlDecode(column.Name)+"\", "+ "item."+StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) +");\n";
+            //j++;
+        //}	
+		if(isDate(conver_base(CSharpAlias[column.SystemType.Name])))
+		{
+			l+= "\t\t\t\t\tif(" + "item."+StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + " > DateTime.MinValue)\n";
+			l+="\t\t\t\t\t{\n";				
+			l+="\t\t\t\tobj["+j+"] = new SqlParameter(\""+StringUtil.HtmlDecode(column.Name)+"\", "+ "item."+StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) +");\n";
+			l+="\t\t\t\t\t}\n";
+			l+="\t\t\t\t\telse{\n";   
+			l+="\t\t\t\t\t\tobj["+j+"] = new SqlParameter(\""+StringUtil.HtmlDecode(column.Name)+"\", "+"DBNull.Value" +");\n";
+			l+="\t\t\t\t\t}\n";
+		}
+		else
+		{
+			l+="\t\t\t\t\t\tobj["+j+"] = new SqlParameter(\""+StringUtil.HtmlDecode(column.Name)+"\", "+ "item."+StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) +");\n";
+		}			
+        j++;
+	}
+	return l;
+}
+public string UpdateParamater(int i)
+{
+	string l="";
+	int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{ 
+	    //l+="\t\t\t\tobj["+j+"] = new SqlParameter(\""+StringUtil.HtmlDecode(column.Name)+"\", " + "item."+StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1)+");\n";
+		//j++;
+		if(isDate(conver_base(CSharpAlias[column.SystemType.Name])))
+		{
+			l+= "\t\t\t\t\tif(" + "item."+StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + " > DateTime.MinValue)\n";
+			l+="\t\t\t\t\t{\n";				
+			l+="\t\t\t\tobj["+j+"] = new SqlParameter(\""+StringUtil.HtmlDecode(column.Name)+"\", "+ "item."+StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) +");\n";
+			l+="\t\t\t\t\t}\n";
+			l+="\t\t\t\t\telse{\n";   
+			l+="\t\t\t\t\t\tobj["+j+"] = new SqlParameter(\""+StringUtil.HtmlDecode(column.Name)+"\", "+"DBNull.Value" +");\n";
+			l+="\t\t\t\t\t}\n";
+		}
+		else
+		{
+		    l+="\t\t\t\tobj["+j+"] = new SqlParameter(\""+StringUtil.HtmlDecode(column.Name)+"\", " + "item."+StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1)+");\n";
+		}
+		j++;
+	}
+	return l;
+}
+public bool isDate(string ten)
+{
+	if(ten.ToLower()=="datetime")
+	{
+		return true;
+	}
+	return false;
+}
+public int tong(int i)
+{
+	int j=0;
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns)
+	{
+		j++;	
+	}
+	return j;
+}
+public string RequestParmas(int i)
+{
+	string l="";
+	int j=0;
+	l+="\n";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{ 
+		l+="\t\t\t\tvar " + StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + " = Request[\"" + StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + "\"];\n";
+	}
+	return l;
+}
+public string JavascriptElements(int i)
+{
+	string l="";
+	int j=0;
+	l+="\n";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{ 
+		l+="\t\t\t\tvar " + StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + " = $('." + StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + "', newDlg);\n";
+	}
+	return l;
+}
+public string Javascript_Variable(int i)
+{
+	string l="";
+	int j=0;
+	l+="\n";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{ 
+		l+="\t\t\t\tvar _" + StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + " = " + StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + ".val();\n";
+	}
+	return l;
+}
+
+public string Javascript_ClearElements(int i)
+{
+	string l="";
+	int j=0;
+	l+="\n";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{ 
+		l+="\t\t\t\t" + StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + ".val('');\n";
+	}
+	return l;
+}
+public string Javascript_PostForm(int i)
+{
+	string l="";
+	int j=0;
+	l+="\n";
+	foreach (ColumnSchema column in this.SourceDatabase.Tables[i].Columns) 
+	{ 
+		l+="\t\t\t\t" + StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + " : _" + StringUtil.HtmlDecode(column.Name).Substring( StringUtil.HtmlDecode(column.Name).IndexOf("_") + 1) + "";
+		if(j<tong(i)-1)
+		{
+			l+=",";
+		}
+		l+="\n";
+        j++;
+	}
+	return l;
+}
+
+</script>

@@ -1,0 +1,20 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a ref="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-DanhSachKhachHangMdl" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="DanhSachKhachHangMdl-addBtn" href="javascript:" onclick="DanhSachKhachHangFn.add('#DanhSachKhachHangMdl-List');">Thêm</a>
+    <a class="mdl-head-btn mdl-head-edit" id="DanhSachKhachHangMdl-editBtn" href="javascript:" onclick="DanhSachKhachHangFn.edit('#DanhSachKhachHangMdl-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="DanhSachKhachHangMdl-delBtn" href="javascript:" onclick="DanhSachKhachHangFn.del('#DanhSachKhachHangMdl-List');" >Xóa</a>
+    <a class="mdl-head-btn mdl-head-sendmail" id="DanhSachKhachHangMdl-emailBtn" href="javascript:;" onclick="DanhSachKhachHangFn.sendmail();">Email</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter filterKhachHangByNguonGoc" />
+    </span>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter filterKhachHangByKhuVuc" />
+    </span>
+</div>
+<table id="DanhSachKhachHangMdl-List" class="mdl-list"></table>
+<div id="DanhSachKhachHangMdl-Pager"></div>

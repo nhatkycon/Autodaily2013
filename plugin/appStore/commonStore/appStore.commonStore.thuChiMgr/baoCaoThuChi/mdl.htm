@@ -1,0 +1,16 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" placeholder="Tìm kiếm" class="mdl-head-txt mdl-head-search mdl-head-search-hangHoaMgr" />
+    </span>
+    <a class="mdl-head-btn mdl-head-del" id="baoCaoThuChiMdl-nap" href="javascript:" onclick="baoCaoThuChiFn.refresh('#baoCaoThuChiMdl-List');">F5</a>
+    <a class="mdl-head-btn mdl-head-del" id="baoCaoThuChiMdl-in" href="javascript:" onclick="baoCaoThuChiFn.createReportByGrid('#baoCaoThuChiMdl-List');">In</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+        <input type="text" _value="" placeholder="Từ ngày" class="mdl-head-filter mdl-head-baoCaoThuChiMdl-TuNgay" />
+    </span> 
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+        <input type="text" _value="" placeholder="Đến ngày" class="mdl-head-filter mdl-head-baoCaoThuChiMdl-DenNgay" />
+    </span> 
+</div>
+<table id="baoCaoThuChiMdl-List" class="mdl-list"></table>
+<div id="baoCaoThuChiMdl-Pager"></div>

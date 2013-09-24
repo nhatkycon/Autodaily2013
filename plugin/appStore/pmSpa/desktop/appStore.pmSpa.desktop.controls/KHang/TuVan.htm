@@ -1,0 +1,270 @@
+﻿<div id="DeskTopTuVanMdl-newDlg" style="display:none;">
+    <table width="100%">
+        <tr>
+            <td valign="top" style="width: 300px;">
+                <div class="adm-form-subheadline">
+                    Số: 
+                </div>
+                <input  tabindex="9930" class="admtxt admtxt-line So"/>
+                <div class="adm-form-subheadline">Tư vấn viên:</div>
+                <input  tabindex="9931" class="admtxt admtxt-line TuVanVien"/><button class="admfilter-btn"></button>
+                <div  class="adm-form-subheadline">
+                    A/Tình trạng sức khỏe
+                </div>
+                <textarea   tabindex="9932" class="adm-textarea adm-textarea-300 adm-textarea-dot TinhTrangSucKhoe"  ></textarea>
+                <div class="adm-form-subheadline">
+                    B/Tình trạng làn da:
+                </div>
+                <textarea  tabindex="9933" class="adm-textarea adm-textarea-300 adm-textarea-dot TinhTrangLanDa"  ></textarea> 
+                <div class="adm-form-subheadline">
+                    C/Nhu cầu mong muốn của khách hàng:   
+                </div>
+                <textarea tabindex="9934" class="adm-textarea adm-textarea-300 adm-textarea-dot YKienKhachHang"  ></textarea>          
+                <div class="adm-form-subheadline">
+                    Dịch vụ khác:
+                </div>
+                <textarea  tabindex="9935" class="adm-textarea adm-textarea-300 adm-textarea-dot DichVuDieuTriKhac"></textarea>  
+            </td>
+            <td valign="top" style="padding-left: 20px;">
+                <b class="adm-form-headline">
+                    D/Lịch trình điều trị dự kiến
+                </b>
+                <br/>
+                Với tình trạng thực tế về sức khỏe, làn da và cơ thể bạn, thứ tự các vấn đề cần giải quyết được xếp như sau:
+                <br/>
+                <input placeholder="Tình trạng" tabindex="9936" class="admtxt admtxt-dot DV_Chon"/><button class="admfilter-btn"></button>
+                <div class="adm-contentPnl-dot adm-contentPnl-list DV_DanhSach"></div>  
+            </td>
+        </tr>
+    </table>
+        
+
+</div>
+<div id="DeskTopKhachHangMdl-newDlg" style="display:none;">
+    <table width="100%">
+        <tr>
+            <td style="width: 200px;" valign="top">
+                <div class="adm-upload-preview-size-200">
+                    <a class="lightboxImg" rel="lightbox">
+                        <img class="adm-upload-preview-img-200 previewImg" src="" />
+                    </a>
+                </div><br/>
+                <a href="javascript:;" class="mdl-head-btn adm-upload-btn Anh" ref=""  tabindex="-1">Chọn ảnh</a>
+                <input class="ID" style="display: none;"/>
+            </td>
+            <td valign="top">
+                <table width="100%">
+                    <tr>
+                        <td class="adm-col-header" valign="top">
+                            Mã KH:
+                        </td>
+                        <td valign="top">
+                            <input  tabindex="9901" class="admtxt admtxt-dot KH_Ma"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">Họ và tên KH:</td>
+                        <td valign="top">
+                            <input  tabindex="9902" class="admtxt admtxt-dot KH_Ten"/>
+                        </td>
+                    </tr>
+                    <tr>  
+                        <td class="adm-col-header" valign="top">Giới tính:</td>
+                        <td valign="top">
+                            <input  tabindex="9903" value="True" name="KH_GioiTinh" class="KH_GioiTinh" checked="checked" cValue="True" type="radio"/> nam / <input cValue="False"  value="False" tabindex="9903" name="KH_GioiTinh" class="KH_GioiTinh" type="radio"/> nữ 
+                        </td>                                                  
+                        <td class="adm-col-header" valign="top">Khu vực:</td>
+                        <td valign="top">
+                            <input  tabindex="9914" class="admtxt admtxt-dot KH_KhuVuc_ID"/><button class="admfilter-btn"></button>
+                        </td>
+                    </tr>
+                    <tr>  
+                        <td class="adm-col-header" valign="top">Ngày Sinh:</td>
+                        <td valign="top">
+                            <input  tabindex="9905" class="admtxt admtxt-dot KH_NgaySinh"/><button class="admfilter-btn admfilter-btnDate"></button>
+                        </td>
+                        <td class="adm-col-header" valign="top">Điện thoại:</td>
+                        <td valign="top">
+                            <input  tabindex="9906" class="admtxt admtxt-dot KH_Phone"/>
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td class="adm-col-header" valign="top">Di động:</td>
+                        <td valign="top">
+                            <input  tabindex="9907" class="admtxt admtxt-dot KH_Mobile"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">Nick yahoo:</td>
+                        <td valign="top">
+                            <input  tabindex="9908" class="admtxt admtxt-dot KH_Ym"/>
+                        </td>
+                    </tr>
+                    <tr>        
+                        <td class="adm-col-header" valign="top">CMND:</td>
+                        <td valign="top">
+                            <input  tabindex="9909" class="admtxt admtxt-dot KH_CMND"/>
+                        </td>
+                        <td class="adm-col-header" valign="top">Email:</td>
+                        <td valign="top">
+                            <input  tabindex="9910" class="admtxt admtxt-dot KH_Email"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adm-col-header" valign="top">Biết đến qua:</td>
+                        <td valign="top">
+                            <input  tabindex="9911" class="admtxt admtxt-dot KH_NguonGoc_ID"/><button class="admfilter-btn"></button>
+                        </td>
+                        <td class="adm-col-header" valign="top">Người giới thiệu:</td>
+                        <td valign="top">
+                            <input  tabindex="9912" class="admtxt admtxt-dot KH_NguoiGioiThieu"/><button class="admfilter-btn"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adm-col-header" valign="top">Nghề nghiệp:</td>
+                        <td valign="top">
+                            <input _value="" class="admtxt LinhVuc_ID" tabindex="9913" />
+                            <button class="admfilter-btn" tabindex="-1"></button>
+                        </td>
+                        <td class="adm-col-header" valign="top">Tư vấn viên:</td>
+                        <td valign="top">
+                            <input _value="" class="admtxt TuVanVien" tabindex="9914" />
+                <button class="admfilter-btn" tabindex="-1"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adm-col-header" valign="top">Địa chỉ:</td>
+                        <td valign="top" colspan="3">
+                            <input  tabindex="9915" class="admtxt-large admtxt-dot KH_DiaChi"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<script id="dv-item" type="text/x-jquery-tmpl">
+<div id="${ID}" dv_id="${DV_ID}" class="dv-itemInTinhTrang">
+    <div class="dv-item-pnl-right">            
+            <span class="dv-item-lbl">
+            Số lần: 
+            </span>
+            <span class="dv-item-soLan">
+            ${SoLuong}
+            </span>
+            <span class="dv-item-lbl">
+            Thời gian: 
+            </span>
+            <span class="dv-item-thoiGian">
+            ${ThoiGian} min
+            </span>
+            <span class="dv-item-gia">
+            ${Gia}
+            </span>
+            <a class="dv-item-xoaBtn" dvid="${DV_ID}" href="javascript:;">x</a>            
+    </div>
+    <a class="dv-item-ten" href="http://natural.com/Desk-Dich-Vu/673bbcf2-0d43-41b4-92e9-35be94ca04b9.html">
+    ${DV_Ten}
+    </a>
+</div>
+</script>
+<script id="tt-item" type="text/x-jquery-tmpl">
+    <div id="${id}" class="tt-item ${id}">
+        <div class="tt-item-header">
+            <div class="tt-item-pnl-right">            
+                <a class="tt-item-xoaBtn" id="${id}" href="javascript:;">x</a>            
+            </div>
+            <a class="tt-item-ten" href="http://${domain}/Tinh-trang/${id}.html">
+                ${label}
+            </a>
+        </div>    
+        <div class="tt-item-dvList"></div>
+    </div>
+</script>
+<script id="tt-item-view" type="text/x-jquery-tmpl">
+    <div id="${ID}" class="tt-item ${ID}">
+        <div class="tt-item-header">
+            <div class="tt-item-pnl-right">            
+                <a class="tt-item-xoaBtn" id="${ID}" href="javascript:;">x</a>            
+            </div>
+            <a class="tt-item-ten" href="http://${domain}/Tinh-trang/${ID}.html">
+                ${_DanhMuc.Ten}
+            </a>
+        </div>    
+        <div class="tt-item-dvList"></div>
+    </div>
+</script>
+
+<div id="DeskTopTimKiemKhachHangMdl-newDlg" style="display:none;">
+    <table width="100%">
+        <tr>
+            <td valign="top" style="width:50%;">
+                <div class="khachHang-TimKiem-form">
+                    <input placeholder="Nhập tên, email, điện thoại của khách hàng đề tìm kiếm" tabindex="9901" class="Ten"/>
+                </div>                
+                <div class="khachhang-view-pnl">
+                    
+                </div>
+            </td>            
+        </tr>
+        <tr>
+            <td valign="top" style="width:50%;">
+                <div class="msg">
+                </div>
+            </td>            
+        </tr>
+    </table>    
+</div>
+<script id="khachHangChiTiet" type="text/x-jquery-tmpl">
+    <div id="${id}" class="khachHang-view-item ${id}">
+        <table width="100%" cellspacing="4">
+            <tr>
+                <td class="adm-col-header" valign="top">Tên:</td>
+                <td valign="top">
+                    ${value}
+                </td>
+                <td class="adm-col-header" valign="top">Mã:</td>
+                <td valign="top">
+                    ${ma}
+                </td>
+            </tr>
+            <tr>
+                <td class="adm-col-header" valign="top">E-mail:</td>
+                <td valign="top">
+                    ${Email}
+                </td>
+                <td class="adm-col-header" valign="top">Phone:</td>
+                <td valign="top">
+                    ${Mobile} ${Phone}
+                </td>
+            </tr>
+            <tr>
+                <td class="adm-col-header" valign="top">Nick:</td>
+                <td valign="top">
+                    ${Ym}
+                </td>
+                <td class="adm-col-header" valign="top">Khu Vực:</td>
+                <td valign="top">
+                    ${KhuVuc_Ten}
+                </td>
+            </tr>
+            <tr>
+                <td class="adm-col-header" valign="top">Địa chỉ:</td>
+                <td valign="top">
+                    ${DiaChi}
+                </td>
+                <td class="adm-col-header" valign="top">Nguồn gốc:</td>
+                <td valign="top">
+                    ${NguonGoc_Ten}
+                </td>
+            </tr>
+            <tr>
+                <td class="adm-col-header" valign="top"></td>
+                <td valign="top">
+                    <a class="mdl-head-btn" href="${ domain }/Khach-hang/${id}.html">Xem </a>
+                    
+                </td>
+                <td class="adm-col-header" valign="top"></td>
+                <td valign="top">
+                    <a class="mdl-head-btn reSearchBtn" href="javascript:">Tìm</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</script>

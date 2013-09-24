@@ -1,0 +1,46 @@
+﻿<div class="mdl-head">
+<span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+    <a href="javascript:;" class="mdl-head-clearSearch"></a>
+    <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-tin" />
+</span>
+<a class="mdl-head-btn mdl-head-edit" id="tinQuanLyDaDuyetMdl-editBtn" href="javascript:tinQuanLyDaDuyetFn.edit();">Đọc</a>
+<a class="mdl-head-btn mdl-headTask-Loc" href="javascript:;">
+    <span class="mdl-headTask-Loc-Title">
+        <span class="ui-icon ui-icon-triangle-1-s"></span>        
+        Tin hot <span class="mdl-headTask-Loc-Title-Display"></span>
+    </span>
+    <span class="mdl-headTask-Loc-Box">
+        <span class="mdl-headTask-Loc-Box-Pnl ui-widget-content ui-corner-bottom">
+            <span class="mdl-headTask-Loc-Box-Content ui-corner-all">
+                <span onclick="javascript:tinQuanLyDaDuyetFn.tinhot('true');">Chuyển tin hot</span>
+                <span onclick="javascript:tinQuanLyDaDuyetFn.tinhot('false');">Chuyển tin thường</span>
+            </span>
+        </span>
+    </span>
+</a>
+<span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+    <a href="javascript:;" class="mdl-head-clearSearch"></a>
+    <input type="text" _value="" class="mdl-head-filter mdl-head-filterTinBydanhmuc"/>
+</span>
+</div>
+<table id="tinQuanLyDaDuyetMdl-List" class="mdl-list"></table>
+<div id="tinQuanLyDaDuyetMdl-Pagerql"></div>
+
+<div class="sub-mdl">
+<ul>
+    <li><a id="tinQuanLyDaDuyetMdl-subtinQuanLyDaDuyetMdl-TinBtn" href="#tinQuanLyDaDuyetMdl-subtinQuanLyDaDuyetMdl-Box">Tin</a></li>
+</ul>
+<div>    
+    <div class="mdl-submdl-panel" id="tinQuanLyDaDuyetMdl-subtinQuanLyDaDuyetMdl-Box">
+        <div class="mdl-head">
+                <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+                    <a href="javascript:;" class="mdl-head-clearSearch"></a>
+                    <input type="text" _value="" class="mdl-head-filter mdl-head-subTinsearchtinQuanLyDaDuyetMdl"/>
+                </span>
+            <a class="mdl-head-btn mdl-head-del" id="tinQuanLyDaDuyetMdl-subtinQuanLyDaDuyetMdl-addBtn" _id="" href="javascript:;">Thêm</a>
+            <a class="mdl-head-btn mdl-head-add" id="tinQuanLyDaDuyetMdl-subtinQuanLyDaDuyetMdl-delBtn" href="javascript:" onclick="tinQuanLyDaDuyetFn.delSubTin();">Xóa</a>
+        </div>
+        <table id="tinQuanLyDaDuyetMdl-subtinQuanLyDaDuyetMdl-List" class="mdl-list"></table>
+    </div>
+</div>
+</div>

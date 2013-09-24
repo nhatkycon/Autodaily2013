@@ -1,0 +1,204 @@
+﻿.Module
+{
+	/*border-color: #D5D5D5 !important;
+	border-width: 1px !important;	
+    */
+    border-width: 1px !important;	
+	margin-bottom: 10px;
+	padding: 0.2em;
+}
+.ModuleOnDrag
+{
+	border: 1px dotted #FFFF66;
+	margin-bottom: 10px;
+	background-color: #FFFFE8;
+	height: 50px;
+	margin-bottom: 10px;
+}
+.Module_Head
+{
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.Module_Title
+{
+	margin-left: 5px;
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+.Module_Icon
+{
+	margin-left: 5px;
+	border: 0px;
+}
+.Module_Task
+{		
+	float:right;
+	text-align:right;
+}
+.Module_Task_Link
+{
+    margin-right:8px;
+    font-size:8pt;
+    font-weight:normal;
+}
+.Module_Task_Edit
+{
+	text-decoration: none;
+	color: #333;
+	margin-right: 5px;
+}
+.Module_Task_Minimize
+{
+	text-decoration: none;
+	color: #333;
+	margin-right: 5px;
+}
+.Module_Task_Maximize
+{
+	text-decoration: none;
+	color: #333;
+	margin-right: 5px;
+}
+.Module_Task_Close
+{
+	text-decoration: none;
+	color: #333;
+	margin-right: 5px;
+}
+.Module_Edit
+{
+	background-color: #999999;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	display: none;
+}
+.Module_Save
+{
+	border-bottom: solid 1px #D5D5D5;
+	background-color: #999999;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	height:24px;
+	display:none;
+}
+.Module_EditBtn
+{	
+	float:left;
+	padding: 3px 6px 3px 6px;
+	border: solid 1px #B5B5B5;
+	text-decoration: none;	
+	color: #666;	
+	margin-left: 5px;	
+}
+.Module_EditBtnSave
+{
+	background-color: #EFEFEF;
+	font-weight:bold;
+}
+a:hover.Module_EditBtn
+{
+	background-color: #999;
+	color:#FFF;
+}
+.Module_EditBtnCancel
+{
+	background-color: #F5F5F5;
+	color: #666;
+}
+.Module_Edit_Tab
+{
+	border-bottom: solid 1px #D5D5D5;
+	background-color: #E1E1E1;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	height: 21px;
+}
+.Module_Edit_TabBtn
+{
+	
+}
+.Module_Edit_Tab_Active
+{
+	position:relative;
+	border-top: solid 1px #D5D5D5;
+	border-left: solid 1px #D5D5D5;
+	border-right: solid 1px #D5D5D5;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;	
+	border-bottom: 0px;
+	background-color: #FFF;	
+	float:left;
+	margin-right: 5px;
+	text-decoration: none;
+	color:#333;
+}
+.Module_Edit_Tab_DeActive
+{
+	position: relative;
+	border-top: solid 1px #D5D5D5;
+	border-left: solid 1px #D5D5D5;
+	border-right: solid 1px #D5D5D5;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 4px;
+	border-bottom: 0px;
+	background-color: #F0F0F0;
+	float: left;
+	margin-right: 5px;
+	text-decoration: none;
+	color:#999;
+}
+.Module_Edit_Content
+{	
+	background-color: #FFF;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.Module_Edit_ContentBox
+{
+	display:none;
+}
+.Module_Edit_ContentBoxShow
+{
+	display:block;
+}
+.Module_Edit_Save
+{	
+	background-color: #E1E1E1;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.Module_Body
+{
+	overflow: hidden;
+	padding-top:8px;
+}
+.Module_Foot
+{
+	/*border-top: solid 1px; */
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.Module_Edit_TextArea
+{
+	float:left;
+	width:100%;
+	height:300px;
+	overflow:auto;
+}
+.Module_Edit_Text
+{
+	float:left;
+	width:96%;
+}

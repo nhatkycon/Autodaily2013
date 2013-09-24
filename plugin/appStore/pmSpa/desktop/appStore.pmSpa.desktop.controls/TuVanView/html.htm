@@ -1,0 +1,199 @@
+﻿<div id="TuVanDichVu-newDlg" >
+    <table width="100%">
+        <tr>
+            <td class="adm-col-header" valign="top">
+                Dịch vụ:
+            </td>
+            <td valign="top">
+                <input  tabindex="9931" class="admtxt admtxt-dot DV_ID"/><button class="admfilter-btn"></button>
+                <input  tabindex="-1" class="admtxt admtxt-dot ID" style="display: none;"/>
+            </td>
+            <td class="adm-col-header" valign="top">
+                Bảo hành:
+            </td>
+            <td valign="top">
+                <input  tabindex="9936" class="admtxt admtxt-dot BaoHanh_ID"/><button class="admfilter-btn"></button>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Giá:</td>
+            <td valign="top">
+                <input  tabindex="9932" class="admtxt admtxt-dot Gia"/>
+            </td>
+            <td class="adm-col-header" valign="top">CK:</td>
+            <td valign="top">
+                <input  tabindex="9905" class="admtxt admtxt-100 admtxt-dot CK"/>
+            </td>
+            
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Thanh toán:</td>
+            <td valign="top">
+                <input  tabindex="9933" class="admtxt admtxt-dot ThanhToan"/>
+            </td>
+            <td class="adm-col-header" valign="top">Còn nợ:</td>
+            <td valign="top">
+                <input  tabindex="9938" class="admtxt admtxt-dot ConNo"/>
+            </td>
+        </tr>        
+        <tr>  
+            <td class="adm-col-header" valign="top">Số lần:</td>
+            <td valign="top">
+                <input  tabindex="9937" class="admtxt admtxt-dot SoLan"/>
+            </td>
+            <td class="adm-col-header" valign="top">Nhân viên:</td>
+            <td valign="top">
+                <input  tabindex="9909" class="admtxt admtxt-200 admtxt-dot NhanVien"/><button class="admfilter-btn"></button>
+            </td>
+        </tr>
+        <tr>  
+            <td class="adm-col-header" valign="top">Ngày:</td>
+            <td valign="top">
+                <input  tabindex="9905" class="admtxt admtxt-100 admtxt-dot NgayLap"/><button class="admfilter-btn admfilter-btnDate"></button>
+            </td>
+            <td class="adm-col-header" valign="top">Cơ sở:</td>
+            <td valign="top">
+                <input  tabindex="9909" class="admtxt admtxt-200 admtxt-dot KHO_ID"/><button class="admfilter-btn"></button>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Loại quỹ:</td>
+            <td colspan="3" valign="top">
+                <select class="admtxt admtxt-small LoaiQuy"  tabindex="710004">
+                    <option value="0">Tiền mặt</option>
+                    <option value="1">Tài khoản</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">Ghi chú:</td>
+            <td colspan="3" valign="top">
+                <textarea  tabindex="9934" class="adm-textarea adm-textarea-GhiChu adm-textarea-dot GhiChu"></textarea>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="TuVanLamDichVu-newDlg" >
+    <table width="100%">
+        <tr>
+            <td class="adm-col-header" valign="top">
+                Nhân viên:
+            </td>
+            <td valign="top">
+                <input  tabindex="9931" class="admtxt admtxt-dot NhanVien"/><button class="admfilter-btn"></button>
+                <input  tabindex="-1" class="admtxt admtxt-dot ID" style="display: none;"/>
+                <input  tabindex="-1" class="admtxt admtxt-dot XN_ID" style="display: none;"/>
+            </td>
+            <td class="adm-col-header" valign="top">Thứ tự:</td>
+            <td valign="top">
+                <input  tabindex="9932" type="number" class="admtxt admtxt-dot ThuTu"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="adm-col-header" valign="top">
+                Hàng hóa:
+            </td>
+            <td valign="top">
+                <input class="admtxt HangHoa" tabindex="60004"/>
+                <button class="admfilter-btn"  tabindex="-1"></button>
+                <button class="mdl-head-btn btnThemNhanhHH" tabindex="60004">+</button>                
+            </td>
+            <td class="adm-col-header" valign="top">
+                Ngày:
+            </td>
+            <td valign="top">
+                <input  tabindex="9905" class="admtxt admtxt-100 admtxt-dot NgayLam"/><button class="admfilter-btn admfilter-btnDate"></button>
+            </td>
+        </tr>    
+        <tr>
+            <td colspan="4">
+                Tiêu hao
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <ul class="DanhSachHangHoaList DanhSachTieuHaoChiTiet">
+                    <li class="ds-item ds-header">
+                        <ul>
+                            <li class="item-Ten Ten">Tên</li>
+                            <li class="item-DV_Ten DV_Ten">Đơn vị</li>
+                            <li class="item-DonGia DonGia">Đơn giá</li>
+                            <li class="item-SoLuong SoLuong">SL</li>
+                            <li class="item-Tong Tong">Thành tiền</li>
+                            <li class="item-VAT VAT">VAT</li>
+                            <li class="item-VATTien VATTien">Tiền VAT</li>
+                            <li class="item-CKTyLe CKTyLe">% CK</li>
+                            <li class="item-CKTien CKTien">Tiền CK</li>
+                            <li class="item-GhiChu GhiChu">Ghi chú</li>
+                            <li class="item-Xoa"></li>
+                        </ul>                        
+                    </li>
+                    <li class="ds-item ds-footer">
+                        <ul>
+                            <li class="item-Ten Ten"></li>
+                            <li class="item-DV_Ten DV_Ten"></li>
+                            <li class="item-DonGia DonGia"></li>
+                            <li class="item-SoLuong SoLuong SoLuongAll">
+                                <input type="text" disabled="disabled" />
+                            </li>
+                            <li class="item-Tong Tong TongAll">
+                                <input type="text" disabled="disabled" />
+                            </li>
+                            <li class="item-VAT VAT">
+                                
+                            </li>
+                            <li class="item-VATTien VATAll">
+                                <input type="text" disabled="disabled" />
+                            </li>
+                            <li class="item-CKTyLe CKTyLe"></li>
+                            <li class="item-CKTien CKTien CKTienAll">
+                                <input type="text"  disabled="disabled"/>
+                            </li>
+                            <li class="item-GhiChu GhiChu"></li>
+                            <li class="item-Xoa"></li>
+                        </ul>                        
+                    </li>
+                </ul>
+            </td>
+        </tr>            
+    </table>
+</div>
+<script id="xnct-hh-item-1" type="text/x-jquery-tmpl">
+    <li class="ds-item ds-item-value ds-item-${HH_ID}" hh_id="${HH_ID}" id="${ID}">
+        <ul>
+            <li class="item-Ten Ten">
+                <span type="text">${HH_Ten}</span>
+            </li>
+            <li class="item-DV_Ten DV_Ten">
+                <input type="text" tabindex="-1" _value="${DV_ID}" value="${DV_Ten}"/><button class="admfilter-btn"  tabindex="-1"></button>
+            </li>
+            <li class="item-DonGia DonGia">
+                <input type="text" tabindex="-1" value="${DonGia}"/>
+            </li>
+            <li class="item-SoLuong SoLuong">
+                <input type="text" tabindex="-1" value="${SoLuong}"/>
+            </li>
+            <li class="item-Tong Tong">
+                <input type="text" tabindex="-1" value="${Tong}"/>
+            </li>
+            <li class="item-VAT VAT">
+                <input type="text" tabindex="-1" value="${VAT}"/>
+            </li>
+            <li class="item-VATTien VATTien">
+                <input type="text" tabindex="-1" value="0"/>
+            </li>
+            <li class="item-CKTyLe CKTyLe">
+                <input type="text" tabindex="-1" value="${CKTyLe}"/>
+            </li>
+            <li class="item-CKTien CKTien">
+                <input type="text" tabindex="-1" value="${CKTien}"/>
+            </li>
+            <li class="item-GhiChu GhiChu">
+                <input type="text" tabindex="-1" value="${GhiChu}"/>
+            </li>
+            <li class="item-Xoa">
+                <a href="javascript:;">xóa</a>
+            </li>
+        </ul>
+    </li>
+</script>

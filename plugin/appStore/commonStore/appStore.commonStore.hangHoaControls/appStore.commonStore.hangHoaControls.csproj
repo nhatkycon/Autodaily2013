@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D73D202B-45CC-4C22-A0D6-822E282F3D99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>appStore.commonStore.hangHoaControls</RootNamespace>
+    <AssemblyName>appStore.commonStore.hangHoaControls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChiTiet.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhMucView.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HangMoiSlide.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GioHang.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HangTheoDanhMuc.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LienQuan.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HangMoiTrangChu.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuTrangChu.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\core\docsoft.entities\docsoft.entities.csproj">
+      <Project>{081057F3-0D4E-4173-8D9F-2EA8CD9CD0C3}</Project>
+      <Name>docsoft.entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\docsoft\docsoft.csproj">
+      <Project>{57E9EC8D-655E-4BCC-9AFF-A505FAA878CA}</Project>
+      <Name>docsoft</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\linh\linh.csproj">
+      <Project>{AA37610E-2E32-44A7-918B-FA11F8DB8028}</Project>
+      <Name>linh</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HangMoiSlide.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HangMoiSlide_item.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HangTheoDanhMuc.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HangTheoDanhMuc_item.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChiTiet.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChiTiet_item.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChiTiet_lienQuan_item.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DanhMucView.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DanhMucView_item.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DanhMucView_item_big.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GioHang.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GioHang_tmpl.htm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

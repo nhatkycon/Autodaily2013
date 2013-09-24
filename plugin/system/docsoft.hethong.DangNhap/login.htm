@@ -1,0 +1,96 @@
+﻿<div id="login_fe_pnl">
+    <table width="100%">
+        <tr>
+            <td style="width: 160px; text-align: right;" valign="top" colspan="2">
+                <div class="header-dang-ky-tai-khoan">
+                <input  class="titleDialog" type="hidden"/>
+                    Chào mừng bạn đến với Agromart.com.vn</div>
+                <div class="title-huong-dan-dang-ky">
+       <!--         
+                    Bạn muốn đăng tin Rao vặt lên Agromart.com.vn, bạn phải có tài khoản. Nếu bạn
+                    đã có tài khoản, hãy đăng nhập để đăng tin Rao vặt. Nếu bạn chưa có tài khoản, bạn
+                    chọn <b>"ĐĂNG KÝ"</b> để đăng ký tài khoản-->
+                    </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="tilte-tieu-de-box">
+                Đăng nhập
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 300px;">
+                    <tr>
+                        <td style="width: 160px; text-align: right; color: #003399; font-family: Arial;font-size:12px;"
+                            valign="top">
+                            Tên đăng nhập:
+                        </td>
+                        <td valign="top">
+                            <input class="home-regPanel-email-fe" id="authentication-txtlogin_fe" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 160px; text-align: right; color: #003399; font-family: Arial;font-size:12px;"
+                            valign="top">
+                            Mật khẩu:
+                        </td>
+                        <td valign="top">
+                            <input class="home-regPanel-pwd-fe" id="authentication-txtLogout" type="password" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                        </td>
+                        <td style="text-align: left; font-size: 12px;" valign="top">
+                            <div>
+                                <input type="checkbox" id="authentication-remember" class="home-regPanel-rem" /><span
+                                    class="home-regPanel-rem" style="width: auto; border: 0px;padding-top:2px;color: #003399;">Ghi nhớ</span></div>
+                                    <div style="padding-left:16px;clear:both;color: #003399;">
+                                    Quên mật khẩu</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right;">
+                            <a class="home-regPanel-loginBtn-fe" href="javascript:;">Đăng nhập</a> <a class="home-regPanel-closeBtn-fe"
+                                href="javascript:;">Đóng</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <div style="margin-left: 100px;">
+                    <table>
+                        <tr>
+                            <td valign="top">
+                                <a onclick="commonFn.showDangKyDlg(); return false;" class="home-regPanel-regBtn-fe"
+                                    href="javascript:;">Đăng ký tài khoản</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="dk-home-box">
+                                   <a class="dk-home-hd">Hướng dẫn đăng ký tài khoản</a> </div>
+                                <div>
+                                     <a class="dk-home-hd">Điều khoản tham gia là thành viên</a></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;" valign="top" colspan="2">
+                
+          
+                 <div class="LienHe-DanhMuc-dk">
+           </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    DangNhap.closedialog();
+    DangNhap.homeLogin();
+    
+</script>

@@ -1,0 +1,25 @@
+﻿<%@ Master ViewStateMode="Disabled" Language="C#" MasterPageFile="~/lib/master/Normal.master" AutoEventWireup="true" CodeFile="Content.master.cs" Inherits="lib_master_Content" %>
+
+<%@ Register src="~/lib/ui/heThong/Banner.ascx" tagname="Banner" tagprefix="uc1" %>
+
+<%@ Register src="~/lib/ui/heThong/Footer.ascx" tagname="Footer" tagprefix="uc2" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <!-- banner -->
+    <uc1:Banner ID="Banner1" runat="server" />
+    <!-- end banner -->
+    <!-- body -->
+    <div>
+        <div class="globalBox">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder3" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>    
+    </div>
+    <!-- end body -->
+    <!-- footer -->
+    <uc2:Footer ID="Footer1" runat="server" />
+    <!-- end footer -->
+</asp:Content>
+

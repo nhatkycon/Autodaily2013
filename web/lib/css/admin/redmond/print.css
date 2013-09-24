@@ -1,0 +1,22 @@
+﻿html, body
+{
+    margin: 0; /* Remove body margin/padding */
+    padding: 0;
+    font-size: 80%;
+    font-family: Tahoma;
+}
+*
+{
+    font-family: Arial !important;
+}
+.print-box {
+    padding: 10px;
+}
+.adm-col-header {
+    width: 120px;
+    text-align: right;
+    font-style: italic;
+}
+.col-header-right {
+    text-align: right;
+}

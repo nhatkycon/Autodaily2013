@@ -1,0 +1,20 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a ref="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-quanLyTheMdl" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="quanLyTheMdl-addBtn" href="javascript:" onclick="quanLyTheFn.add('#quanLyTheMdl-List');">Thêm</a>
+    <a class="mdl-head-btn mdl-head-edit" id="quanLyTheMdl-editBtn" href="javascript:" onclick="quanLyTheFn.edit('#quanLyTheMdl-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="quanLyTheMdl-delBtn" href="javascript:" onclick="quanLyTheFn.del('#quanLyTheMdl-List');" >Xóa</a>
+    <a class="mdl-head-btn mdl-head-sendmail" id="quanLyTheMdl-emailBtn" href="javascript:;"" onclick="quanLyTheFn.sendmail();">Email</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter filterKhachHangByNguonGoc" />
+    </span>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter filterKhachHangByKhuVuc" />
+    </span>
+</div>
+<table id="quanLyTheMdl-List" class="mdl-list"></table>
+<div id="quanLyTheMdl-Pager"></div>

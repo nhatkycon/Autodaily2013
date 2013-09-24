@@ -1,0 +1,173 @@
+﻿<script>
+    var dichVuFsSlide;
+</script>
+<div class="tablet-content-tabs-header">
+    <a href="{0}" class="tablet-content-tabs-header-item-back">
+        <span class="tablet-content-tabs-header-item-txt">HOME</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>   
+    <a class="tablet-content-tabs-header-item" href="#div0">
+        <span class="tablet-content-tabs-header-item-txt">Thông tin</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>
+    <a class="tablet-content-tabs-header-item active" href="#div1">
+        <span class="tablet-content-tabs-header-item-txt">Lịch hẹn</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>
+    <a class="tablet-content-tabs-header-item" href="#div2">
+        <span class="tablet-content-tabs-header-item-txt">Tư vấn</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>
+    <a class="tablet-content-tabs-header-item" href="#div4">
+        <span class="tablet-content-tabs-header-item-txt">Ảnh</span>
+        <span class="tablet-content-tabs-header-item-bottom "></span>
+    </a>
+</div>
+<div class="tablet-content-tabs-box">
+    <div class="tablet-content-tabs-box-container">
+        <div class="tablet-content-container dv-view" >
+            <div class="tablet-content-tabs-box-item w300" data-key="div0">
+                <div class="tablet-content-tabs-box-item-box">
+                    <div class="tablet-content-tabs-box-item-box-header">
+                        <div class="tablet-content-tabs-box-item-box-header-lbl">Thông tin  </div>                        
+                    </div>
+                    <div class="tablet-content-tabs-box-item-box-body">
+                        <div class="dv-item-anhBox">
+                            <img src="{0}/lib/up/i/{4}" class="dv-item-anh" />
+                        </div>   
+                        <div class="dv-item-ten">{1}</div>
+                        <table class="dv-item-infos" width="100%">
+                            <tr>
+                                <th>
+                                    <b>Mã số</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-gia">{3}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>E-mail</b>
+                                </th>
+                                <td>
+                                    <a href="mailto:{2}" class="dv-item-value">{2}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Mobile/ phone</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value">{5} {6}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Địa chỉ</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value"><b>{7}</b> {8}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Nick</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value">{9}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Sinh nhật</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value">{10}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <b>Nguồn gốc</b>
+                                </th>
+                                <td>
+                                    <span class="dv-item-value">{11}</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>   
+                </div>
+            </div>
+            <div class="tablet-content-tabs-box-item w450" data-key="div1">
+                <div class="tablet-content-tabs-box-item-box">
+                    <div class="tablet-content-tabs-box-item-box-header">
+                        <div class="tablet-content-tabs-box-item-box-header-lbl">Lịch hẹn</div>                        
+                    </div>
+                    <div class="tablet-content-tabs-box-item-box-body kh-suKien-list">
+                        {13}                           
+                    </div> 
+                </div>
+            </div>
+            <div class="tablet-content-tabs-box-item w450" data-key="div2">
+                <div class="tablet-content-tabs-box-item-box">
+                    <div class="tablet-content-tabs-box-item-box-header">
+                        <div class="tablet-content-tabs-box-item-box-header-lbl">Tư vấn</div>                        
+                    </div>
+                    <div class="tablet-content-tabs-box-item-box-body kh-tuVan-list">
+                        {14}
+                    </div> 
+                </div>
+            </div>
+            <div class="tablet-content-tabs-box-item w740" data-key="div4">
+                <div class="tablet-content-tabs-box-item-box">
+                    <div class="tablet-content-tabs-box-item-box-header">
+                        <div class="tablet-content-tabs-box-item-box-header-lbl">Ảnh</div>                        
+                    </div>
+                    <div class="tablet-content-tabs-box-item-box-body kh-album-list">
+                        {15}
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tablet-footer">
+    <div class="tablet-footer-header">
+        <div class="tablet-footer-header-right">
+        </div>
+        <div class="tablet-footer-header-left">
+            <a class="tablet-footer-header-item" id="aBookInspectionLink" href="javascript:;" onclick="dangKyFn.AddLich('{12}');">
+                <span class="tablet-footer-header-icon tablet-footer-header-icon-book"></span>
+                <span class="tablet-footer-header-item-text">Lịch hẹn</span>
+            </a>
+            <a class="tablet-footer-header-item" id="aSaleReportLink" href="javascript:;" onclick="dangKyFn.ShowTuVan('{12}')">
+                <span class="tablet-footer-header-icon tablet-footer-header-icon-report"></span>
+                <span class="tablet-footer-header-item-text">Tư vấn</span>
+            </a>
+            <a class="tablet-footer-header-item" id="aContactSaleLink" href="javascript:;" onclick="dangKyFn.AddAlbum('{12}')">
+                <span class="tablet-footer-header-icon tablet-footer-header-icon-contact"></span>
+                <span class="tablet-footer-header-item-text">Album</span>
+            </a>
+            <a class="tablet-footer-header-item" id="aPlaceBidLink" href="javascript:;">
+                <span class="tablet-footer-header-icon tablet-footer-header-icon-bid"></span>
+                <span class="tablet-footer-header-item-text">Gửi mail</span>
+            </a>
+            <a class="tablet-footer-header-item" id="a1" href="javascript:;">
+                <span class="tablet-footer-header-icon tablet-footer-header-icon-print"></span>
+                <span class="tablet-footer-header-item-text">In</span>
+            </a>
+        </div>           
+    </div>
+</div>
+
+<div class="dv-fs-box">
+    <a href="javascript:;" class="dv-fs-closeBtn"></a>
+    <div class="dv-fs-body" id="dv-fs-body">
+        <ul>
+        </ul>
+    </div>   
+    <div class="mobile-fullscreen-pagination">
+        <a class="mobile-fullscreen-pagination-btn mobile-fullscreen-pagination-btn-prev" onclick="dichVuFsSlide.prev();" href="javascript:;">
+        </a><a class="mobile-fullscreen-pagination-btn mobile-fullscreen-pagination-btn-next" onclick="dichVuFsSlide.next();" href="javascript:;">
+        </a>
+    </div> 
+</div>

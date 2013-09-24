@@ -1,0 +1,22 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all">
+        <a href="javascript:;" class="mdl-head-clearSearch"></a>
+        <input type="text" placeholder="Tìm kiếm" class="mdl-head-txt mdl-head-search mdl-head-search-hangHoaMgr" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="quanLyChiMdl-addBtn" href="javascript:" onclick="quanLyChiFn.add('#quanLyChiMdl-List');">Thêm</a> 
+    <a class="mdl-head-btn mdl-head-edit" id="quanLyChiMdl-editBtn" href="javascript:" onclick="quanLyChiFn.edit('#quanLyChiMdl-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="quanLyChiMdl-delBtn" href="javascript:" onclick="quanLyChiFn.del('#quanLyChiMdl-List');">Xóa</a>
+    <a class="mdl-head-btn mdl-head-del" id="quanLyChiMdl-nap" href="javascript:" onclick="quanLyChiFn.refresh('#quanLyChiMdl-List');">F5</a>
+    <a class="mdl-head-btn mdl-head-del" id="quanLyChiMdl-in" href="javascript:" onclick="quanLyChiFn.createReportByGrid('#quanLyChiMdl-List');">In</a>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+        <input type="text" _value="" placeholder="Gõ tên loại danh mục để lọc" class="mdl-head-filter mdl-head-HangHoaFilterDanhMuc" />
+    </span> 
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+        <input type="text" _value="" placeholder="Từ ngày" class="mdl-head-filter mdl-head-quanLyChiMdl-TuNgay" />
+    </span> 
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all">
+        <input type="text" _value="" placeholder="Đến ngày" class="mdl-head-filter mdl-head-quanLyChiMdl-DenNgay" />
+    </span> 
+</div>
+<table id="quanLyChiMdl-List" class="mdl-list"></table>
+<div id="quanLyChiMdl-Pager"></div>

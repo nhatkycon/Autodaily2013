@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B41430F-280A-40AC-A920-BBA956C80BDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mamvui.plugin.datHang</RootNamespace>
+    <AssemblyName>mamvui.plugin.datHang</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\web\Bin\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\web\Bin\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\web\Bin\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\web\Bin\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="datHang.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="moi\datHang.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="htm.htm" />
+    <EmbeddedResource Include="moi\Report1.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="moi\JScript1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="moi\htm.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\cnn.entities.ChungChi.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.ChungChiCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.ChungChiDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.DiaChiBanGiong.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.DiaChiBanGiongCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.DiaChiBanGiongDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.DiaChiBanGiongEx.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.Flash.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.FlashCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.FlashDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.GianHang.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.GianHangCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.GianHangDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.GiaoThuong.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.GiaoThuongCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.GiaoThuongDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.HangHoa.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.HangHoaCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.HangHoaDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.HinhAnh.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.HinhAnhCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.HinhAnhDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.Language.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.LanguageCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.LanguageDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.RaoVat.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.RaoVatCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.RaoVatDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.Relation_danhMuc_GianHang.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.Relation_danhMuc_GianHangCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.Relation_danhMuc_GianHangDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.Resources.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.ResourcesCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.ResourcesDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.SanPham.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.SanPhamCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.SanPhamDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.ThuvienVideo.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.ThuvienVideoCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.ThuvienVideoDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.VideoClip.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.VideoClipCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.VideoClipDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_AccessMask.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_AccessMaskCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_AccessMaskDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Active.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_ActiveCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_ActiveDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Attachment.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_AttachmentCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_AttachmentDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_BannedIP.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_BannedIPCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_BannedIPDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Board.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_BoardCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_BoardDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Category.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_CategoryCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_CategoryDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_CheckEmail.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_CheckEmailCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_CheckEmailDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Choice.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_ChoiceCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_ChoiceDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_EventLog.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_EventLogCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_EventLogDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Forum.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_ForumAccess.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_ForumAccessCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_ForumAccessDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_ForumCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_ForumDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Group.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_GroupCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_GroupDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Mail.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_MailCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_MailDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Message.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_MessageCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_MessageDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_NntpForum.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_NntpForumCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_NntpForumDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_NntpServer.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_NntpServerCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_NntpServerDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_NntpTopic.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_NntpTopicCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_NntpTopicDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_PMessage.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_PMessageCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_PMessageDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Poll.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_PollCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_PollDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_PollVote.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_PollVoteCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_PollVoteDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Rank.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_RankCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_RankDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Registry.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_RegistryCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_RegistryDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Replace_Words.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Replace_WordsCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Replace_WordsDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Smiley.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_SmileyCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_SmileyDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_Topic.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_TopicCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_TopicDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_User.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserForum.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserForumCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserForumDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserGroup.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserGroupCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserGroupDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserPMessage.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserPMessageCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_UserPMessageDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_WatchForum.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_WatchForumCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_WatchForumDal.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_WatchTopic.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_WatchTopicCollection.datasource" />
+    <None Include="Properties\DataSources\cnn.entities.yaf_WatchTopicDal.datasource" />
+    <None Include="Properties\DataSources\docsoft.entities.DatHang.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\core\docsoft.entities\docsoft.entities.csproj">
+      <Project>{081057F3-0D4E-4173-8D9F-2EA8CD9CD0C3}</Project>
+      <Name>docsoft.entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\docsoft\docsoft.csproj">
+      <Project>{57E9EC8D-655E-4BCC-9AFF-A505FAA878CA}</Project>
+      <Name>docsoft</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\linh\linh.csproj">
+      <Project>{AA37610E-2E32-44A7-918B-FA11F8DB8028}</Project>
+      <Name>linh</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

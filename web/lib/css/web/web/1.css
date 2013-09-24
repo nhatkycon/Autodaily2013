@@ -1,0 +1,375 @@
+﻿@import url(pages.css);
+@import url(tin.css);
+@import url(facebox.css);
+@import url(images-with-captions/css/global.css);
+@import url(../admin/redmond/ui/jquery-ui-1.8.4.custom.css);
+html, body
+{
+    font-size:11px;
+    margin:0;
+    padding:0;
+    font-family: Tahoma;
+    padding-bottom:50px;    
+}
+a,a:hover
+{
+    outline-width:0;
+    outline-style:none;
+    text-decoration:none;
+}
+ul,li,ol
+{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+.globalSave
+{
+	font-size:8pt;
+	font-weight:bold;
+	padding:4px 5px 4px 5px;
+	text-decoration:none;
+	color:#999;
+	background-color:#F2F2F2;
+	border:solid 1px #b2b2b2;
+	text-shadow: 0px 1px 2px #FFFFFF;
+}
+a:hover.globalSave
+{
+	background-color:#efefef;
+	color:#666;
+}
+.zone
+{
+    float:left;
+}
+.zone-content
+{
+	margin: 0;
+	min-height:30px;
+	width:100%;
+	overflow:hidden;
+}
+.contentPlaceHolder
+{
+	height: 50px;
+	background-color: #FFFFEA;
+	border: dashed 1px #B2b2b2;
+}
+.zone-content-active
+{
+    height: 100px;
+	background-color: #FFFFEA;
+	border: dashed 1px #B2b2b2;	
+}
+.zone-content-hover
+{
+	background-color: #FFA4A4;
+	border: dashed 1px red;	
+}
+.zone-content-active .mdl
+{
+    display: none;    
+}
+.mdlDrag
+{
+    border: 2px dashed #FF0000;
+    background-color: #FFFFE8;
+    height: 50px;
+    float:left;
+    width:50px;
+}
+.mdl
+{
+    margin: 0px 0px 0px 0px;
+    float:left;
+    width:100%;
+}
+.mdl .mdl-head
+{
+    background-color: #EFEFEF;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	position:absolute;
+	display:none;
+	z-index:999999;
+}
+.mdl .mdl-body
+{
+   
+}
+.mdl .mdl-title
+{
+}
+.mdl .mdl-tool{float:right;}
+.mdl-tool-btn
+{
+    color:#666;
+    margin-right:10px;
+    text-decoration:none;
+}
+.mdlDrag * { visibility: hidden; }
+.toolbox
+{
+}
+.toolbox-header
+{
+    height:30px;
+    padding:0px 10px;
+    background-color:#f2f2f2;    
+}
+.toolbox-item
+{
+    padding: 5px;
+    position:relative;
+    top:10px;    
+    text-decoration:none;
+    color:#333;
+}
+.toolbox-item-active
+{
+    background-color:#CCCCCC;
+    border:solid 1px #b2b2b2;
+    border-bottom:0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    text-shadow: 0px 1px 2px #C0C0C0;
+}
+.toolbox-box
+{
+    background-color: #CCCCCC;
+}
+.toolbox-body
+{
+    display:none;
+    padding-top:10px;
+}
+.toolbox-body-active
+{
+    display:block;
+    border-top:solid 1px #b2b2b2;
+}
+.toolbox-mainContent
+{
+    margin: 0px 10px;
+    background-color:#FFF;
+    height:180px;
+    overflow:auto;
+    overflow-x:hidden;
+}
+.toolbox-footer
+{
+    height:30px;
+    text-align:right;
+    margin:10px;    
+}
+.toolbox-save
+{
+}
+.toolbox-cancel
+{
+}
+.mdl-store-item
+{
+    display:inline-block;
+    width: 130px;
+    padding:2px;
+    border:solid 1px #ccc;
+    vertical-align:top;
+    background-color:#FFF;  
+    margin:4px;      
+}
+.mdl-store-item .mdl-store-item-anh
+{
+    float:left;
+    width:130px;
+    height:130px;
+    border:0px;
+    background-color:#F2F2F2;
+}
+.mdl-store-item .mdl-store-item-ten
+{
+    float:left;
+    width:130px;
+    padding:5px 0px;
+}
+.mdl-helper
+{
+    display:inline-block;
+    width:18px !important;
+    height:18px !important;
+    margin-right:10px;
+    cursor:move;
+    background-image:url(i/moveIcon.gif);    
+    border:solid 1px #ccc;
+}
+.mdl-move-icon
+{
+    display:inline-block;
+    width:18px !important;
+    height:18px !important;
+    margin-right:10px;
+    cursor:move;
+    background-image:url(i/moveIcon.gif);    
+}
+
+
+/*PAGES*/
+.header-facebox-title
+{
+    font-size:14pt;
+    font-weight:bold;
+    color:#fff;
+    background-color:#FF9900;
+    padding:5px;
+}
+.header-facebox-close
+{
+    float: right;
+    padding: 2px 6px;
+    background-color: #FFD08A;
+    border: solid 1px #FFF;
+    color: #666;
+    text-decoration: none;
+    font-size: 10pt;
+    font-weight: bold;
+    cursor: pointer;
+}
+a:hover.header-facebox-close
+{
+    background-color:#FFF;
+}
+.facebox-box
+{
+    padding:5px;
+    max-height:300px;
+    overflow:auto;
+    overflow-x:hidden;    
+}
+.facebox-footer
+{
+    padding:5px;
+    background-color:#F2F2F2;
+    border-top:solid 1px #b2b2b2;
+    text-align:right;    
+    height:25px;
+}
+.facebox-footer a
+{
+    float:right;
+    margin-left:5px;
+}
+.reg-4pwd
+{
+    color:#666;
+    font-size:8pt;
+    vertical-align:middle;
+    display:inline-block;
+    margin-right:5px;
+}
+a:hover.reg-4pwd
+{
+    text-decoration:underline;
+}
+.reg-msg
+{
+    display:none;
+    margin-left:5px;
+    margin-top:5px;
+    padding-left:20px;       
+    background-repeat:no-repeat;
+    height:16px;
+    float:left;
+}
+.reg-msg-ok
+{
+    background-image:url(i/validateTrue.gif);
+    display:inline-block;
+}
+.reg-msg-false
+{
+    background-image:url(i/validateFalse.gif);
+    display:inline-block;
+}
+.reg-msg-wait
+{
+    background-image:url(i/loading.gif);
+    display:inline-block;
+}
+.reg-td
+{
+    width:140px;
+    text-align:right;
+    padding-right:5px;
+}
+.reg-input
+{
+    width:200px;
+    font-size:12pt;    
+    color:#CCC;
+    padding:2px;
+    margin:2px;
+    margin-left:0px;
+    border:solid 1px #CCC;
+    float:left;
+}
+.reg-captcha
+{
+    float:left;
+    width:200px;
+    height:50px;
+    padding:2px;
+    border:solid 1px #F2F2F2;
+}
+.reg-input-focus
+{
+    color:#333;
+    border:solid 1px #999;
+}
+.login-input
+{
+    color:#999;    
+}
+.login-input-focus
+{
+    color:#333;
+    border:solid 1px #B2B2B2;
+}
+.reg-save
+{
+	font-size:12pt;
+	font-weight:bold;
+	padding:4px 5px 4px 5px;
+	text-decoration:none;
+	color:#999;
+	background-color:#F2F2F2;
+	border:solid 1px #b2b2b2;
+	display:inline-block;
+	margin:4px;
+	margin-left:0px;
+}
+a:hover.reg-save
+{
+	background-color:#efefef;
+	color:#666;
+}
+.zone-690-left
+{
+    float:left;
+    width:690px;
+}
+.zone-290-right
+{
+    float:right;
+    width:290px;
+}
+.zone-item-right
+{
+    float:right;
+    margin-top:10px;
+}
+.zone-item-left
+{
+    float:left;
+}

@@ -1,0 +1,18 @@
+﻿<div class="mdl-head">
+    <span class="mdl-head-searchPnl ui-state-default ui-corner-all"><a href="javascript:;"
+                                                                       class="mdl-head-clearSearch"></a>
+        <input type="text" class="mdl-head-txt mdl-head-search mdl-head-search-danhmuc" />
+    </span>
+    <a class="mdl-head-btn mdl-head-add" id="danhMucMdl-addBtn" href="javascript:" onclick="danhmuc.add('#danhmucmdl-List');">Thêm</a> 
+    <a class="mdl-head-btn mdl-head-add" id="danhMucMdl-addBtn" href="javascript:" onclick="danhmuc.addLang();">Thêm ngôn ngứ phụ</a>
+    <a class="mdl-head-btn mdl-head-edit" id="danhMucMdl-editBtn" href="javascript:" onclick="danhmuc.edit('#danhmucmdl-List');">Sửa</a>
+    <a class="mdl-head-btn mdl-head-del" id="danhMucMdl-delBtn" href="javascript:" onclick="danhmuc.del('#danhmucmdl-List');">Xóa</a>
+    <select class="slt" onchange="danhmuc.search();" id="danhMucMdl-changeLangSlt">
+    </select>
+    <span class="mdl-head-filterPnl ui-state-default ui-corner-all"><a href="javascript:;"
+        class="mdl-head-clearSearch"></a>
+        <input type="text" _value="" class="mdl-head-filter mdl-head-filterloaidanhmuc" />
+    </span>
+</div>
+<table id="danhmucmdl-List" class="mdl-list"></table>
+<div id="danhmucmdl-Pager"></div>
