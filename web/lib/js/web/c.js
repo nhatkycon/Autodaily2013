@@ -23,7 +23,13 @@ function formatMoney(_num) {
     }, "");
 }
 var common = {
-    imgSize: function (_Avatar, size) {
+    guid:function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+    , imgSize: function (_Avatar, size) {
         if (_Avatar == null) return 'avatar.gif';
         if (_Avatar.length == 0) return 'avatar.gif';
         var mime = _Avatar.substr(_Avatar.lastIndexOf('.'));
@@ -181,7 +187,10 @@ var common = {
     },
     setup: function () {
         window.defaultOnError = window.onerror;
-        window.onerror = function (errorMeaage, fileName, lineNumber) { common.fbMsg('Lỗi ', '00x014 MSG:' + errorMeaage + '<br/>FILE:' + fileName + ' <br/>LINE:<br/>' + lineNumber, null, 'fb-error-msg', function () { }); return true; }
+        window.onerror = function(errorMeaage, fileName, lineNumber) {
+            //common.fbMsg('Lỗi ', '00x014 MSG:' + errorMeaage + '<br/>FILE:' + fileName + ' <br/>LINE:<br/>' + lineNumber, null, 'fb-error-msg', function () { }); return true;
+            console.log('00x014 MSG:' + errorMeaage + '<br/>FILE:' + fileName + ' <br/>LINE:<br/>' + lineNumber);
+        };
         $.ajaxSetup({
             error: function (x, e) {
                 var l = '';

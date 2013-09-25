@@ -7,15 +7,16 @@ using System.Web.UI.WebControls;
 using docsoft.entities;
 using linh.core.dal;
 
-public partial class lib_pages_Game_GameView : System.Web.UI.Page
+public partial class lib_pages_Game_Question : System.Web.UI.Page
 {
-    public string G_ID { get; set; }
+    public string ID { get; set; }
     protected void Page_Load(object sender, EventArgs e)
     {
-        G_ID = Request["ID"];
+        ID = Request["ID"];
         using (var con = DAL.con())
         {
-            AdminDanhSachQuestion1.List = QuestionDal.SelectByGameId(con, G_ID);
+            QuestionView1.List = AnswerDal.SelectByQuestionId(con, ID);
+            QuestionView1.Item = QuestionDal.SelectById(new Guid(ID));
         }
     }
 }

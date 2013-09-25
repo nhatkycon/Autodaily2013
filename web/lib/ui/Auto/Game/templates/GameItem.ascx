@@ -8,13 +8,16 @@
             <i class="icon icon-remove"></i>
         </a>        
     </div>
-    <div class="view">
+    <div class="viewpnl">
         <a target="_blank" href="/lib/pages/Game/GameView.aspx?ID=<%=Item.ID %>" class="btn">
             <i class="icon icon-link"></i>
         </a>
         <span class="Ten">
             <%=Item.Ten %>             
         </span>
+        <a target="_blank" href="/lib/pages/Game/Game.aspx?ID=<%=Item.ID %>" class="btn">
+            <i class="icon icon-picture"></i>
+        </a>
     </div>
     <div class="editPnl">
         

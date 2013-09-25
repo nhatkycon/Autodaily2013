@@ -164,6 +164,24 @@ namespace docsoft.entities
         #endregion
 
         #region Extend
+        public static AnswerCollection SelectByQuestionId(SqlConnection con,string Q_ID)
+        {
+            var List = new AnswerCollection();
+            var obj = new SqlParameter[1];
+            obj[0] = new SqlParameter("Q_ID", Q_ID);
+            using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_tblAuto_Answer_Select_SelectByQuestionId_linhnx", obj))
+            {
+                while (rd.Read())
+                {
+                    List.Add(getFromReader(rd));
+                }
+            }
+            return List;
+        }
+        public static AnswerCollection SelectByQuestionId(string Q_ID)
+        {
+            return SelectByQuestionId(DAL.con(),Q_ID);
+        }
         #endregion
     }
     #endregion

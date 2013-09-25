@@ -18,67 +18,38 @@ public partial class lib_ajax_Game_Default : BasedPage
         var ID = Request["ID"];
         var ThuTu = Request["ThuTu"];
         var Ten = Request["Ten"];
-        var location = Server.MapPath("~/lib/up/anh/");
+        var MoTa = Request["MoTa"];
+        var Anh = Request["Anh"];
+        var AnhDaiDien = Request["AnhDaiDien"];
+        var G_ID = Request["G_ID"];
+        var Q_ID = Request["Q_ID"];
+        var Active = Request["Active"];
+        var location = Server.MapPath("~/lib/up/i/");
         CapNhat Item;
         switch (subAct)
         {
-            case "upload":
-                #region upload anh
-                Response.ContentType = "text/plain";//"application/json";
-                var r = new List<ViewDataUploadFilesResult>();
-                var js = new JavaScriptSerializer();
-                foreach (string file in Request.Files)
+            case "uploadAnh":
+                #region upload
+                if (Security.IsAuthenticated())
                 {
-
-
-                    var hpf = Request.Files[file] as HttpPostedFile;
                     var key = Guid.NewGuid().ToString();
-
-
-
-
-                    var img = new linh.controls.ImageProcess(hpf.InputStream, key);
-                    var fileName = key + img.Ext;
-
-                    var item = new Anh();
-                    if (!string.IsNullOrEmpty(ID))
-                    {
-                        item.AB_ID = new Guid(ID);
-                    }
-                    item.FileAnh = fileName;
-                    item.ID = Guid.NewGuid();
-                    item.NgayTao = DateTime.Now;
-                    //if (!string.IsNullOrEmpty(P_ID))
-                    //{
-                    //    item.P_ID = new Guid(P_ID);
-                    //}
-                    item = AnhDal.Insert(item);
-
-
-                    if (img.Width > 1000)
-                    {
-                        img.Resize(1000);
-                    }
-                    img.Save(location + key + "full" + img.Ext);
-
-                    img.Resize(520);
-                    img.Save(location + key + img.Ext);
-                    r.Add(new ViewDataUploadFilesResult()
-                    {
-                        Id = item.ID.ToString(),
-                        Thumbnail_url = key + img.Ext,
-                        Name = key,
-                        Length = hpf.ContentLength,
-                        Type = hpf.ContentType
-                    });
-                    var uploadedFiles = new
-                    {
-                        files = r.ToArray()
-                    };
-                    var jsonObj = js.Serialize(uploadedFiles);
-                    Response.Write(jsonObj.ToString());
+                    var img = new linh.controls.ImageProcess(Request.Files[0].InputStream, key);
+                    img.Resize(320);
+                    img.Save(Server.MapPath("~/lib/up/i/") + key + img.Ext);
+                    rendertext(key + img.Ext);
                 }
-                ;
+                break;
+                #endregion
+            case "uploadAnhDaiDien":
+                #region upload
+                if (Security.IsAuthenticated())
+                {
+                    var key = Guid.NewGuid().ToString();
+                    var img = new linh.controls.ImageProcess(Request.Files[0].InputStream, key);
+                    img.Resize(1280);
+                    img.Save(Server.MapPath("~/lib/up/i/") + key + img.Ext);
+                    rendertext(key + img.Ext);
+                }
                 break;
                 #endregion
             case "xoaAnh":
@@ -140,13 +111,136 @@ public partial class lib_ajax_Game_Default : BasedPage
                 }
                 break;
                 #endregion
-            case "updateAlbum":
-                #region Cap nhat album
+            case "saveQuestion":
+                #region saveQuestion
+
                 if (Security.IsAuthenticated())
                 {
-                    var item = AlbumDal.SelectById(new Guid(ID));
+                    var item = string.IsNullOrEmpty(ID) ? new Question() : QuestionDal.SelectById(new Guid(ID));
                     item.Ten = Ten;
-                    item = AlbumDal.Update(item);
+                    item.ThuTu = ThuTu;
+                    item.MoTa = MoTa;
+                    item.Anh = Anh;
+                    item.G_ID = new Guid(G_ID);
+                    item.AnhDaiDien = AnhDaiDien;
+                    item.Active = Convert.ToBoolean(Active);
+                    item.ID = string.IsNullOrEmpty(ID) ? Guid.NewGuid() : new Guid(ID);
+                    item = string.IsNullOrEmpty(ID) ? QuestionDal.Insert(item) : QuestionDal.Update(item);
+                    QuestionItem1.Item = item;
+                    QuestionItem1.Visible = true;
+                }
+                break;
+                #endregion
+            case "editQuestion":
+                #region Sua tieu de
+                if (Security.IsAuthenticated())
+                {
+                    var item = QuestionDal.SelectById(new Guid(ID));
+                    rendertext(string.Format("({0})", JavaScriptConvert.SerializeObject(item)));
+                }
+                break;
+                #endregion
+            case "updateThuTuAnswer":
+                #region Cap nhat updateThuTuAnswer
+                if (Security.IsAuthenticated())
+                {
+                    var item = AnswerDal.SelectById(new Guid(ID));
+                    item.ThuTu = Convert.ToInt32(ThuTu);
+                    item = AnswerDal.Update(item);
+                }
+                break;
+                #endregion
+            case "updateQuestionActive":
+                #region Cap nhat updateQuestionActive
+                if (Security.IsAuthenticated())
+                {
+                    var item = QuestionDal.SelectById(new Guid(ID));
+                    item.Active = Convert.ToBoolean(Active);
+                    item = QuestionDal.Update(item);
+                }
+                break;
+                #endregion
+            case "uploadAnswerAnh":
+                #region upload anh
+                Response.ContentType = "text/plain";//"application/json";
+                var r = new List<ViewDataUploadFilesResult>();
+                var js = new JavaScriptSerializer();
+                var ThuTuAnh = 1;
+                foreach (string file in Request.Files)
+                {
+
+
+                    var hpf = Request.Files[file] as HttpPostedFile;
+                    var key = Guid.NewGuid().ToString();
+
+
+
+
+                    var img = new linh.controls.ImageProcess(hpf.InputStream, key);
+                    var fileName = key + img.Ext;
+
+                    var item = new Answer();
+                    if (!string.IsNullOrEmpty(Q_ID))
+                    {
+                        item.Q_ID = new Guid(Q_ID);
+                    }
+                    item.ThuTu = ThuTuAnh;
+                    item.Anh = fileName;
+                    item.ID = Guid.NewGuid();
+                    item = AnswerDal.Insert(item);
+
+
+                    if (img.Width > 1280)
+                    {
+                        img.Resize(1280);
+                    }
+                    img.Save(location + key + "full" + img.Ext);
+
+                    img.Resize(520);
+                    img.Save(location + key + img.Ext);
+
+                    r.Add(new ViewDataUploadFilesResult()
+                    {
+                        Id = item.ID.ToString(),
+                        Thumbnail_url = key + img.Ext,
+                        Name = key,
+                        Length = hpf.ContentLength,
+                        Type = hpf.ContentType
+                    });
+                    var uploadedFiles = new
+                    {
+                        files = r.ToArray()
+                    };
+                    var jsonObj = js.Serialize(uploadedFiles);
+                    Response.Write(jsonObj.ToString());
+                    ThuTuAnh++;
+                }
+                ;
+                break;
+                #endregion
+            case "removeQuestion":
+                #region Xoa
+                if (Security.IsAuthenticated())
+                {
+                    QuestionDal.DeleteById(new Guid(ID));
+                }
+                break;
+                #endregion
+            case "getAnswerList":
+                #region Xoa
+                if (Security.IsAuthenticated())
+                {
+                    var List = AnswerDal.SelectByQuestionId(ID);
+                    AnswerList1.List = List;
+                    AnswerList1.Visible = true;
+                }
+                break;
+                #endregion
+            case "xoaAnhAnswer":
+                #region Xoa
+                if (Security.IsAuthenticated())
+                {
+                    AnswerDal.DeleteById(new Guid(ID));
                 }
                 break;
                 #endregion
