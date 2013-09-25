@@ -420,8 +420,17 @@ public string update(int i)
 		
 		j++;
 	}	
+	if((l.Length - h.Length) >2)
+	{
+		l = l.Substring((h.Length + 2)) + " where " +g;
+	}
+	else
+	{
+		l = l.Substring((h.Length)) +" where " +g;
+	}
 	
-	l = l.Substring((h.Length+2),l.Length-(h.Length+2)) +" where " +g;
+	//l = l.Length.ToString();
+	//l += ":" +  h.Length.ToString();	
 	
 	return l;
 }

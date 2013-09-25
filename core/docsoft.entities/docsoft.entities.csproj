@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articles.cs" />
+    <Compile Include="Auto\Game.cs" />
+    <Compile Include="Auto\Answer.cs" />
+    <Compile Include="Auto\Question.cs" />
     <Compile Include="capgui.cs" />
     <Compile Include="Album.cs" />
     <Compile Include="Comment.cs" />
