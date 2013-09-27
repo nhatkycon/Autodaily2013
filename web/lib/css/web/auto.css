@@ -593,8 +593,16 @@ a:hover.reg-save
         z-index: 10;
         width: 60px;
         top: 0px;
-        padding-top: 300px;
         bottom: 0px;
+        background-repeat: repeat-y;
+    }
+    .overlay-fs-pnl {
+        position: fixed;
+        right: 0px;
+        z-index: 10;
+        width: 60px;
+        bottom: 0px;
+        height: 230px;
         background-repeat: repeat-y;
     }
     .overlay-fs.bg {
@@ -608,29 +616,29 @@ a:hover.reg-save
         color: #FFF;
     }
      .view-rs-Ten {
-        position: fixed;
-        top: 100px;
-        width: 400px;
-        right: 20px;
-        font-size: 50px;
-        font-family: constantina;
-        color: #FFF;
-        font-weight: bold;
-        padding: 20px;
-        background-image: url(i/bg-transparent.png);
-        background-repeat: repeat;
+        background-image: url("i/bg-transparent.png");
+    background-repeat: repeat;
+    color: #FFFFFF;
+    font-family: constantina;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px;
+    position: fixed;
+    right: 20px;
+    top: 50px;
+    width: 400px;
     }
     .view-rs-MoTa {
-        position: fixed;
-        top: 200px;
-        width: 400px;
-        right: 20px;
-        font-size: 20px;
-        font-family: constantina;
-        color: #FFF;
-        padding: 20px;
-        background-image: url(i/bg-transparent.png);
-        background-repeat: repeat;
+        background-image: url("i/bg-transparent.png");
+    background-repeat: repeat;
+    color: #FFFFFF;
+    font-family: constantina;
+    font-size: 20px;
+    padding: 20px;
+    position: fixed;
+    right: 20px;
+    top: 120px;
+    width: 260px;
     }
     .view-rs {
         display: none;

@@ -15,7 +15,7 @@
         <% } %>
     </div>
 </div>
-<div class="view-rs" data-show="0" style="background-image: url(//auto.vn/lib/up/i/<%= Item.AnhDaiDien %>);">
+<div class="view-rs" data-show="0" style="background-image: url(//auto.vn/lib/up/i/<%= Item.Anh %>);">    
     <div class="view-rs-Ten">
         <%=Item.Ten %>
     </div>
@@ -25,18 +25,20 @@
 </div>
 
 <div class="overlay-fs">
-    <a href="/lib/pages/Game/Game.aspx?ID=<%=Item.G_ID %>">
-        <i class="icon-home icon-large icon-3x"></i>    
-    </a>
-    <a onclick="albumSwipe.next()" href="javascript:;">
-        <i class="icon-chevron-sign-right icon-large icon-3x"></i>    
-    </a>
-    <a onclick="albumSwipe.prev()" href="javascript:;">
-        <i class="icon-chevron-sign-left icon-large icon-3x"></i>    
-    </a>
-    <a  class="showRs" href="javascript:;">
-        <i class="icon-check icon-large icon-3x"></i>    
-    </a>
+    <div class="overlay-fs-pnl">
+        <a href="/lib/pages/Game/Game.aspx?ID=<%=Item.G_ID %>">
+            <i class="icon-home icon-large icon-3x"></i>    
+        </a>
+        <a onclick="albumSwipe.next()" href="javascript:;">
+            <i class="icon-chevron-sign-right icon-large icon-3x"></i>    
+        </a>
+        <a onclick="albumSwipe.prev()" href="javascript:;">
+            <i class="icon-chevron-sign-left icon-large icon-3x"></i>    
+        </a>
+        <a  class="showRs" href="javascript:;">
+            <i class="icon-check icon-large icon-3x"></i>    
+        </a>    
+    </div>
 </div>
 <script src="/lib/js/swipe.js" type="text/javascript"></script>
 <script>
