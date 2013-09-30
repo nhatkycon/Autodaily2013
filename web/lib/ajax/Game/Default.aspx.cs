@@ -34,7 +34,7 @@ public partial class lib_ajax_Game_Default : BasedPage
                 {
                     var key = Guid.NewGuid().ToString();
                     var img = new linh.controls.ImageProcess(Request.Files[0].InputStream, key);
-                    img.Resize(1280);
+                    img.Resize(320);
                     img.Save(Server.MapPath("~/lib/up/i/") + key + img.Ext);
                     rendertext(key + img.Ext);
                 }
@@ -46,7 +46,7 @@ public partial class lib_ajax_Game_Default : BasedPage
                 {
                     var key = Guid.NewGuid().ToString();
                     var img = new linh.controls.ImageProcess(Request.Files[0].InputStream, key);
-                    img.Resize(320);
+                    img.Resize(1280);
                     img.Save(Server.MapPath("~/lib/up/i/") + key + img.Ext);
                     rendertext(key + img.Ext);
                 }

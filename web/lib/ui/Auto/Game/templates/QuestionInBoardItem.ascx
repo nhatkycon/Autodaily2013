@@ -10,7 +10,7 @@
 </a>
 <%}else{ %>
 <a href="/lib/pages/Game/Question.aspx?ID=<%=Item.ID %>" class="view view-inActive">
-    <img src="/lib/up/i/<%=Item.AnhDaiDien %>">
+    <img src="/lib/up/i/<%=Item.Anh %>">
     <span class="mask">
         <h2>
             <%=Item.ThuTu %>

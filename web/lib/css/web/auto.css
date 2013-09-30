@@ -388,8 +388,8 @@ a:hover.reg-save
  
 
 .view {
-   width: 300px;
-   height: 200px;
+   width: 240px;
+   height: 180px;
    margin: 10px;
    float: left;
    border: 10px solid #fff;
@@ -403,8 +403,8 @@ a:hover.reg-save
    background: #fff url(../images/bgimg.jpg) no-repeat center center;
 }
 .view .mask,.view .content {
-   width: 300px;
-   height: 200px;
+   width: 240px;
+   height: 180px;
    position: absolute;
    overflow: hidden;
    top: 0;
@@ -413,6 +413,8 @@ a:hover.reg-save
 .view img {
    display: block;
    position: relative;
+   width: 240px;
+height: 180px;
 }
 .view h2 {
    text-transform: uppercase;

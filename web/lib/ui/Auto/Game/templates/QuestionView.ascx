@@ -10,12 +10,12 @@
     <div class="swipe-wrap">
         <% foreach (var item in List)
             {%>
-            <div class="img-fs" style="background-image: url(//auto.vn/lib/up/i/<%= Lib.imgSize(item.Anh,"full") %>);">
+            <div class="img-fs" style="background-image: url(/lib/up/i/<%= Lib.imgSize(item.Anh,"full") %>);">
             </div>                                  
         <% } %>
     </div>
 </div>
-<div class="view-rs" data-show="0" style="background-image: url(//auto.vn/lib/up/i/<%= Item.Anh %>);">    
+<div class="view-rs" data-show="0" style="background-image: url(/lib/up/i/<%= Item.Anh %>);">    
     <div class="view-rs-Ten">
         <%=Item.Ten %>
     </div>
