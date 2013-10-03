@@ -12,18 +12,11 @@
     <link href="/lib/css/web/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/lib/css/web/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="/lib/css/web/1/1.css" rel="stylesheet" type="text/css" />
-    
+    <script src="//connect.facebook.net/en_US/all.js#xfbml=1&appId=242395835911380"></script>
 
 </head>
 <body>
-<div id="fb-root"></div>
-<script>    (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=561035830607291";
-    fjs.parentNode.insertBefore(js, fjs);
-} (document, 'script', 'facebook-jssdk'));</script>    
+<div id="fb-root"></div>  
     
     <script>
         var domain = '<%=domain %>';

@@ -66,9 +66,7 @@
     </div>
 </script>
     <style>
-    .spacer {
-        margin-top: 20px; /* define margin as you see fit */
-    }
+   
     .AnhDaiDien {
         display: inline-block;
         width: 120px;
