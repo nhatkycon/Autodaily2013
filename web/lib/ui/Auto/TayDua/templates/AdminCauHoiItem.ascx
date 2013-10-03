@@ -27,7 +27,7 @@
                             </div>
                             <div class="pull-right">
                                 <a data-ch-id="<%=Item.ID %>" href="javascript:;" class="btn btn-primary addDapAnBtn">
-                                    <i class="icon icon-plus-sign"></i>
+                                    <i class="icon icon-plus-sign"></i> Thêm
                                 </a>
                             </div>
                         </div>
@@ -36,8 +36,8 @@
             </div>
             <div class="pull-right">
                 <div class="pull-right">
-                    <a data-show="0" data-id="<%=Item.ID %>" href="javascript:;" class="btn btn-primary showDapAnBtn">
-                        <i class="icon icon-question-sign"></i>
+                    <a data-show="0" data-id="<%=Item.ID %>" href="javascript:;" title="Danh sách câu hỏi" class="btn btn-primary showDapAnBtn">
+                        <i class="icon icon-question-sign"></i> Câu hỏi
                     </a>
                     <a data-id="<%=Item.ID %>" href="javascript:;" class="btn edit">
                         <i class="icon icon-edit"></i>
