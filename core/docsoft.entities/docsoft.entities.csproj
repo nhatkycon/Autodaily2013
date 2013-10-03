@@ -47,6 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articles.cs" />
+    <Compile Include="Auto\CauHoi.cs" />
+    <Compile Include="Auto\DapAn.cs" />
+    <Compile Include="Auto\KetQua.cs" />
+    <Compile Include="Auto\LuotChoi.cs" />
     <Compile Include="Auto\Game.cs" />
     <Compile Include="Auto\Answer.cs" />
     <Compile Include="Auto\Question.cs" />

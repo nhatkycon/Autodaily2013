@@ -1,8 +1,6 @@
 ﻿<%@ Master ViewStateMode="Disabled" Language="C#" MasterPageFile="~/lib/master/Normal.master" AutoEventWireup="true" CodeFile="Content.master.cs" Inherits="lib_master_Content" %>
 
-<%@ Register src="~/lib/ui/heThong/Banner.ascx" tagname="Banner" tagprefix="uc1" %>
 
-<%@ Register src="~/lib/ui/heThong/Footer.ascx" tagname="Footer" tagprefix="uc2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

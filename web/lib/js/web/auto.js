@@ -4,6 +4,7 @@
         autofn.GameAdminDanhSachFn();
         autofn.QuestionAdminThem();
         autofn.QuestionAdminDanhSachFn();
+        autofn.TayDuaCauHoiAdminFn();
     }
     , GameAdminDanhSachThem: function () {
         var pnl = $('.GameThemPnl');
@@ -147,11 +148,7 @@
         var MoTa = pnl.find('.MoTa');
         var AnhDaiDien = pnl.find('.AnhDaiDien');
         var Anh = pnl.find('.Anh');
-        
-
-
         adm.ckeditor_blogPost(MoTa);
-        
         if ($(Anh).length > 0) {
             var param = { 'subAct': 'uploadAnh' };
             //return false;
@@ -459,10 +456,294 @@
             });
         });
     }
+    , TayDuaCauHoiAdminFn:function () {
+        var TayDuaCauHoiAdmin = $('.TayDuaCauHoiAdmin');
+        if ($(TayDuaCauHoiAdmin).length == 0) return;
+        var CauHoiThem = TayDuaCauHoiAdmin.find('.CauHoiThem');
+        var CauHoiList = TayDuaCauHoiAdmin.find('.CauHoiList');
+        var addBtn = CauHoiThem.find('.addBtn');
+        var addPnl = CauHoiThem.find('.addPnl');
+        var url = domain + '/lib/ajax/TayDua/Default.aspx?ref=' + Math.random();
+        addBtn.click(function() {
+            var item = { ID: '' };
+            addPnl.html('');
+            var itemEl = $('#CauHoiItem').tmpl(item).prependTo(addPnl);
+            autofn.TayDuaCauHoiAdminThemFn(itemEl);
+            autofn.TayDuaCauHoiAdminSaveFn(itemEl, function (pnl, dt) {
+                var _itemEl = $(dt).prependTo(CauHoiList);
+                _itemEl.addClass('animated bounceInDown');
+                setTimeout(function () {
+                    _itemEl.removeClass('animated bounceInDown');
+                }, 1000);
+                pnl.parent().html('');
+            }, function (pnl) {
+                pnl.parent().html('');
+            });
+        });
+
+
+        CauHoiList.on('click', '.showDapAnBtn', function () {
+            var item = $(this);
+            
+            var id = item.attr('data-id');
+            var show = item.attr('data-show');
+            var qitem = item.parent().parent().parent().parent().parent();
+            
+            var DapAnPnl = qitem.find('.DapAnPnl');
+            var loaded = DapAnPnl.attr('data-loaded');
+            var DapAnList = DapAnPnl.find('.DapAnList');
+            
+            var addDapAnBtn = DapAnPnl.find('.addDapAnBtn');
+            
+            var closeAnhBtn = DapAnPnl.find('.closeDapAnBtn');
+            var f5Btn = DapAnPnl.find('.f5Btn');
+            
+            if (loaded == '0') {
+                DapAnList.html('Loading like a charm...');
+                DapAnPnl.attr('data-loaded', '1');
+                $.ajax({
+                    url: url,
+                    data: {
+                        subAct: 'getDapAnList',
+                        ID: id
+                    },
+                    success: function (dt) {
+                        DapAnList.html('');
+                        $(dt).prependTo(DapAnList);
+                    }
+                });
+
+            }
+
+
+            if (show == '0') {
+                DapAnPnl.show();
+                item.attr('data-show', '1');
+            } else if (show == '1') {
+                DapAnPnl.hide();
+                item.attr('data-show', '0');
+            }
+            else {
+                DapAnPnl.show();
+                item.attr('data-show', '1');
+            }
+
+            f5Btn.unbind('click').click(function () {
+                var itemf5 = $(this);
+                $.ajax({
+                    url: url,
+                    data: {
+                        subAct: 'getDapAnList',
+                        ID: itemf5.attr('data-id')
+                    },
+                    success: function (dt) {
+                        DapAnList.html(dt);
+                    }
+                });
+            });
+
+            closeAnhBtn.unbind('click').click(function () {
+                DapAnPnl.hide();
+                item.attr('data-show', '0');
+            });
+        });
+
+        CauHoiList.on('click', '.addDapAnBtn', function () {
+            var item = $(this);
+            var id = item.attr('data-ch-id');
+            var pitem = item.parent().parent().parent();
+            var daList = pitem.prev();
+            var DungEl = pitem.find('.Dung');
+            var TenEl = pitem.find('.Ten');
+            var ThuTuEl = pitem.find('.ThuTu');
+
+            var Dung = DungEl.is(':checked');
+            var Ten = TenEl.val();
+            var ThuTu = ThuTuEl.val();
+            if (ThuTu == '')
+                ThuTu = '0';
+            
+            var data = { subAct: 'saveDapAn', Dung: Dung, Ten: Ten, ThuTu: ThuTu, CH_ID: id };
+            $.ajax({
+                url: url
+                , data: data
+                , success: function (dt) {
+                    TenEl.val('');
+                    ThuTuEl.val('');
+                    var _itemEl = $(dt).prependTo(daList);
+                    _itemEl.addClass('animated bounceInDown');
+                    setTimeout(function () {
+                        _itemEl.removeClass('animated bounceInDown');
+                    }, 1000);
+                }
+            });
+        });
+        
+        CauHoiList.on('click', '.remove', function () {
+            var item = $(this);
+            var con = confirm('Bạn có muốn xóa bỏ không? Nghiêm túc đó!!!');
+            if (con) {
+                var pitem = item.parent().parent().parent().parent().parent();
+                pitem.addClass('animated bounceOutRight');
+                setTimeout(function () {
+                    pitem.remove();
+                }, 500);
+                $.ajax({
+                    url: url
+                    , data: {
+                        subAct: 'removeCauHoi',
+                        ID: item.attr('data-id')
+                    },
+                    success: function (dt) {
+                        
+                    }
+                });
+            }
+        });
+        
+        CauHoiList.on('click', '.removeDapAn', function () {
+            var item = $(this);
+            var con = confirm('Bạn có muốn xóa bỏ không? Nghiêm túc đó!!!');
+            var pitem = item.parent().parent();
+            if (con) {
+                pitem.addClass('animated bounceOutRight');
+                setTimeout(function () {
+                    pitem.remove();
+                }, 500);
+                $.ajax({
+                    url: url
+                    , data: {
+                        subAct: 'removeDapAn',
+                        ID: item.attr('data-id')
+                    },
+                    success: function (dt) {
+                    }
+                });
+            }
+        });
+        
+        CauHoiList.on('blur', '.DapAnThuTu', function () {
+            var txt = $(this);
+            $.ajax({
+                url: url,
+                data: {
+                    'subAct': 'updateDapAnThuTu',
+                    ID: txt.attr('data-id'),
+                    ThuTu: txt.val()
+                },
+                success: function () {
+                }
+            });
+        });
+        
+        CauHoiList.on('blur', '.DapAnTen', function () {
+            var txt = $(this);
+            $.ajax({
+                url: url,
+                data: {
+                    'subAct': 'updateDapAnTen',
+                    ID: txt.attr('data-id'),
+                    ThuTu: txt.val()
+                },
+                success: function () {
+                }
+            });
+        });
+
+        CauHoiList.on('click', '.DapAnDung', function () {
+            var txt = $(this);
+            $.ajax({
+                url: url,
+                data: {
+                    'subAct': 'updateDapAnDung',
+                    ID: txt.attr('data-id')
+                },
+                success: function () {
+                }
+            });
+        });
+
+
+
+        CauHoiList.on('click', '.edit', function () {
+            var item = $(this);
+            var id = item.attr('data-id');
+            var pitem = item.parent().parent().parent().parent().parent();
+            var editPnl = pitem.find('.editPnl');
+            editPnl.html('Loading...');
+            $.ajax({
+                url: url,
+                data: {
+                    subAct: 'editCauHoi',
+                    ID: id
+                },
+                success: function (_dt) {
+                    var dt = eval(_dt);
+                    editPnl.html('');
+                    var CauHoiItem = $('#CauHoiItem').tmpl(dt).prependTo(editPnl);
+                    
+                    CauHoiItem.find('.LOAI_ID').val(dt.LOAI_ID);
+                    CauHoiItem.find('.Diem').val(dt.Diem);
+                    
+                    autofn.TayDuaCauHoiAdminThemFn(CauHoiItem);
+                    autofn.TayDuaCauHoiAdminSaveFn(CauHoiItem, function (pnl, dt) {
+                        pnl.parent().html('');
+                    }, function (pnl) {
+                        pnl.parent().html('');
+                    });
+                }
+            });
+        });
+
+    }
+    , TayDuaCauHoiAdminThemFn:function (pnl,fn,fn1) {
+        var MoTa = pnl.find('.MoTa');
+        adm.ckeditor_blogPost(MoTa);
+    }
+    , TayDuaCauHoiAdminSaveFn: function (pnl, fn, fn1) {
+        var TenEl = pnl.find('.Ten');
+        var ThuTuEl = pnl.find('.ThuTu');
+        var MoTaEl = pnl.find('.MoTa');
+        var LOAI_IDEl = pnl.find('.LOAI_ID');
+        var DiemEl = pnl.find('.Diem');
+        
+
+        var saveBtn = pnl.find('.saveBtn');
+        var cancelBtn = pnl.find('.cancelBtn');
+        var ID = pnl.attr('data-id');
+        
+        saveBtn.click(function () {
+            var LOAI_ID = LOAI_IDEl.val();
+            var Diem = DiemEl.val();
+            var Ten = TenEl.val();
+            var ThuTu = ThuTuEl.val();
+            var MoTa = MoTaEl.val();
+            if (ThuTu == '')
+                ThuTu = '0';
+            var data = {
+                subAct: 'saveCauHoi'
+                , Ten: Ten
+                , MoTa: MoTa
+                , ThuTu: ThuTu
+                , LOAI_ID: LOAI_ID
+                , Diem: Diem
+                , ID: ID
+            };
+
+            $.ajax({
+                url: domain + '/lib/ajax/TayDua/Default.aspx?ref=' + Math.random(),
+                data: data,
+                success: function (dt) {
+                    fn(pnl, dt);
+                }
+            });
+        });
+        cancelBtn.click(function () {
+            fn1(pnl);
+        });
+    }
 };
 
 $(function() {
     autofn.Setup();
-    
-
 });
