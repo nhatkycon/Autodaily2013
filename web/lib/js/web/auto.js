@@ -635,7 +635,7 @@
                 }
             });
         });
-        
+
         CauHoiList.on('blur', '.DapAnTen', function () {
             var txt = $(this);
             $.ajax({
@@ -643,7 +643,7 @@
                 data: {
                     'subAct': 'updateDapAnTen',
                     ID: txt.attr('data-id'),
-                    ThuTu: txt.val()
+                    Ten: txt.val()
                 },
                 success: function () {
                 }
