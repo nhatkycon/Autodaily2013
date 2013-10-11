@@ -6,7 +6,7 @@
         <%}else{ %>
         <input type="radio" class="Dung DapAnDung" data-id="<%=Item.ID %>" name="<%=Item.CH_ID %>"/>
         <%} %>
-        <input type="text" class="input-xxlarge Ten DapAnTen" value="<%=Item.Ten %>" data-id="<%=Item.ID %>"/>    &nbsp;
+        <input type="text" class="input-xlarge Ten DapAnTen" value="<%=Item.Ten %>" data-id="<%=Item.ID %>"/>    &nbsp;
         STT: <input type="text" value="<%=Item.ThuTu %>" data-id="<%=Item.ID %>" class="input-mini ThuTu DapAnThuTu"/>     
     </div>
     <div class="pull-right">

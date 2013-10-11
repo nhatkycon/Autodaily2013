@@ -164,6 +164,35 @@ namespace docsoft.entities
         #endregion
 
         #region Extend
+        public static KetQua SelectByLuotIdChId(string LUOT_ID, string CH_ID)
+        {
+            var Item = new KetQua();
+            var obj = new SqlParameter[2];
+            obj[0] = new SqlParameter("LUOT_ID", LUOT_ID);
+            obj[1] = new SqlParameter("CH_ID", CH_ID);
+            using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_tblAuto_KetQua_Select_SelectByLuotIdChId_linhnx", obj))
+            {
+                while (rd.Read())
+                {
+                    Item = getFromReader(rd);
+                }
+            }
+            return Item;
+        }
+        public static KetQuaCollection SelectByLuotId(string LUOT_ID)
+        {
+            var List = new KetQuaCollection();
+            var obj = new SqlParameter[1];
+            obj[0] = new SqlParameter("LUOT_ID", LUOT_ID);
+            using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_tblAuto_KetQua_Select_SelectByLuotId_linhnx", obj))
+            {
+                while (rd.Read())
+                {
+                    List.Add(getFromReader(rd));
+                }
+            }
+            return List;
+        }
         #endregion
     }
     #endregion

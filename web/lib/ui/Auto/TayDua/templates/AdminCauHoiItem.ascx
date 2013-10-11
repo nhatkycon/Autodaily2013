@@ -2,10 +2,10 @@
 <div data-id="<%=Item.ID %>" class="CauHoiItem">
     <div class="well viewPnl">
         <div class="row-fluid">
-            <div class="pull-left">
+            <div style="display: none;" class="pull-left">
                 <img class="img-rounded adm-upload-preview-img-60" src="/lib/up/i/<%=Item._DanhMuc.Anh %>"/>
             </div>
-            <div class="span8">
+            <div class="span9">
                 <b><%=Item.Ten %></b> - <strong><%=Item.Diem %></strong><br/>
                 <i><%=Item.MoTa %></i>
                 <div class="DapAnPnl" data-loaded="0">
@@ -16,13 +16,15 @@
                         <i class="icon icon-refresh"></i>
                     </button>
                     <hr/>
-                    <div class="DapAnList" data-ch-id="<%=Item.ID %>">
+                    <div class="DapAnList well well-large" data-ch-id="<%=Item.ID %>">
                     </div>
-                    <div class="DapAnAdd" data-ch-id="<%=Item.ID %>">
+                    <div class="DapAnAdd well well-large success" data-ch-id="<%=Item.ID %>">
+                        <div>Thêm mới</div>
+                        <hr/>
                         <div class="DapAn-Item row-fluid" data-ch-id="<%=Item.ID %>" data-id="">
                             <div class="span10">
                                 <input type="checkbox" class="Dung" name="<%=Item.ID %>"/>
-                                <input type="text" class="input-xxlarge Ten"/> &nbsp;
+                                <input type="text" class="input-xlarge Ten"/> &nbsp;
                                 STT: <input type="text" class="input-mini ThuTu"/>
                             </div>
                             <div class="pull-right">
@@ -36,8 +38,8 @@
             </div>
             <div class="pull-right">
                 <div class="pull-right">
-                    <a data-show="0" data-id="<%=Item.ID %>" href="javascript:;" title="Danh sách câu hỏi" class="btn btn-primary showDapAnBtn">
-                        <i class="icon icon-question-sign"></i> Câu hỏi
+                    <a data-show="0" data-id="<%=Item.ID %>" href="javascript:;" title="Danh sách đáp án" class="btn btn-primary showDapAnBtn">
+                        <i class="icon icon-reply"></i> Đáp án
                     </a>
                     <a data-id="<%=Item.ID %>" href="javascript:;" class="btn edit">
                         <i class="icon icon-edit"></i>

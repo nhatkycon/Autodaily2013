@@ -29,6 +29,7 @@ namespace docsoft.entities
         #endregion
         #region Customs properties
 
+        public List<DapAn> DapAns { get; set; }
         public DanhMuc _DanhMuc { get; set; }
         #endregion
         public override BaseEntity getFromReader(IDataReader rd)
@@ -183,6 +184,20 @@ namespace docsoft.entities
         #endregion
 
         #region Extend
+        public static CauHoiCollection SelectTopRandom(int Top, SqlConnection con)
+        {
+            var obj = new SqlParameter[1];
+            obj[0] = new SqlParameter("Top", Top);
+            var list = new CauHoiCollection();
+            using (IDataReader rd = SqlHelper.ExecuteReader(DAL.con(), CommandType.StoredProcedure, "sp_tblAuto_CauHoi_Select_SelectTopRandom_linhnx", obj))
+            {
+                while (rd.Read())
+                {
+                    list.Add(getFromReader(rd));
+                }
+            }
+            return list;
+        }
         #endregion
     }
     #endregion

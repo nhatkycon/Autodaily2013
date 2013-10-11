@@ -5,6 +5,7 @@
         autofn.QuestionAdminThem();
         autofn.QuestionAdminDanhSachFn();
         autofn.TayDuaCauHoiAdminFn();
+        autofn.TayDuaViewFn();
     }
     , GameAdminDanhSachThem: function () {
         var pnl = $('.GameThemPnl');
@@ -741,6 +742,18 @@
         cancelBtn.click(function () {
             fn1(pnl);
         });
+    }
+    , TayDuaViewFn: function () {
+//        var data = {
+//            subAct: 'newCauHoi'
+//                
+//        };
+//        $.ajax({
+//            url: domain + '/lib/ajax/TayDua/Default.aspx?ref=' + Math.random(),
+//            data: data,
+//            success: function (dt) {
+//            }
+//        });
     }
 };
 

@@ -6,12 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using docsoft.entities;
 
-public partial class lib_ui_Auto_TayDua_CauHoiView : System.Web.UI.UserControl
+public partial class lib_ui_Auto_TayDua_templates_CauHoiViewItem : System.Web.UI.UserControl
 {
-    public List<CauHoi> List { get; set; }
+    public CauHoi Item { get; set; }
     protected void Page_Load(object sender, EventArgs e)
     {
-        rpt.DataSource = List;
-        rpt.DataBind();
+
     }
 }

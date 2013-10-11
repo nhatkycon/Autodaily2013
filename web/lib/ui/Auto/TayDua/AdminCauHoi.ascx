@@ -34,8 +34,8 @@
             </div>
         </div>
         <div class="row row-fluid">
-            <div class="span1">Loại: </div>
-            <div class="span8">
+            <div style="display: none;" class="span1">Loại: </div>
+            <div style="display: none;" class="span8">
                 <select class="LOAI_ID">
                     <uc1:LoaiCauHoi ID="LoaiCauHoi1" runat="server" />                
                 </select>

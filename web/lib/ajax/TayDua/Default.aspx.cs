@@ -28,6 +28,8 @@ public partial class lib_ajax_TayDua_Default : BasedPage
         var Q_ID = Request["Q_ID"];
         var CH_ID = Request["CH_ID"];
         var Active = Request["Active"];
+        var Email = Request["Email"];
+        var LUOT_ID = Request["LUOT_ID"];
         var location = Server.MapPath("~/lib/up/i/");
         CapNhat Item;
         switch (subAct)
@@ -139,12 +141,87 @@ public partial class lib_ajax_TayDua_Default : BasedPage
                 }
                 break;
                 #endregion
-
             case "removeCauHoi":
                 #region Xoa
                 if (Security.IsAuthenticated())
                 {
                     CauHoiDal.DeleteById(new Guid(ID));
+                }
+                break;
+                #endregion
+            case "newCauHoi":
+                #region Xoa
+                if (!string.IsNullOrEmpty(Email))
+                {
+                    var u = MemberDal.SelectByUsername(Email);
+                    if(string.IsNullOrEmpty(u.Password))
+                    {
+                        u = new Member
+                                {
+                                    Username = Email,
+                                    Email = Email,
+                                    Ten = Ten,
+                                    NgayTao = DateTime.Now,
+                                    NgayCapNhat = DateTime.Now,
+                                    XacNhan = true,
+                                    Password = maHoa.EncryptString("123", Email)
+                                };
+                        u = MemberDal.Insert(u);
+                    }
+                    var luot = new LuotChoi()
+                                   {
+                                       Diem = 0
+                                       ,
+                                       ID = Guid.NewGuid()
+                                       ,
+                                       NgayTao = DateTime.Now
+                                       ,
+                                       Ten = Ten
+                                       ,
+                                       Username = Email
+                                   };
+                    luot = LuotChoiDal.Insert(luot);
+                    rendertext(luot.ID.ToString());
+                }
+                break;
+                #endregion
+            case "ketQuaCauHoi":
+                #region ketQuaCauHoi
+                if (!string.IsNullOrEmpty(ID))
+                {
+                    var ketQua = KetQuaDal.SelectByLuotId(ID);
+                    var diem = from p in ketQua
+                               where p.Diem == 1
+                               select p;
+                    rendertext(string.Format("{0}/{1}", diem.Count() , ketQua.Count));
+                }
+                break;
+                #endregion
+            case "saveDapAnCauHoi":
+                #region saveDapAnCauHoi
+                if (!string.IsNullOrEmpty(ID) && !string.IsNullOrEmpty(LUOT_ID))
+                {
+                    var luot = LuotChoiDal.SelectById(new Guid(LUOT_ID));
+                    var dapAn = DapAnDal.SelectById(new Guid(ID));
+                    var ketQua = KetQuaDal.SelectByLuotIdChId(LUOT_ID, dapAn.CH_ID.ToString());
+
+                    if(ketQua.ID==Guid.Empty)
+                    {
+                        ketQua = KetQuaDal.Insert(new KetQua()
+                                                      {
+                                                          CH_ID = dapAn.CH_ID
+                                                          ,
+                                                          Diem = dapAn.Dung ? 1 : 0
+                                                          ,
+                                                          ID = Guid.NewGuid()
+                                                          ,
+                                                          LUOT_ID = luot.ID
+                                                          ,
+                                                          Username = luot.Username
+                                                      });
+                    }
+                    ketQua.Diem = dapAn.Dung ? 1 : 0;
+                    ketQua = KetQuaDal.Update(ketQua);
                 }
                 break;
                 #endregion
