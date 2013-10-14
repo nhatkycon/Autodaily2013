@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/lib/master/Normal.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="lib_pages_TayDua_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/lib/master/TayDua.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="lib_pages_TayDua_Default" %>
 
 <%@ Register src="~/lib/ui/Auto/TayDua/CauHoiView.ascx" tagname="CauHoiView" tagprefix="uc1" %>
 

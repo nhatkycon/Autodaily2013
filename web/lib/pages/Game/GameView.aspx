@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/lib/master/Content.master" AutoEventWireup="true" CodeFile="GameView.aspx.cs" Inherits="lib_pages_Game_GameView" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/lib/master/TayDua.master" AutoEventWireup="true" CodeFile="GameView.aspx.cs" Inherits="lib_pages_Game_GameView" %>
 
 <%@ Register src="~/lib/ui/Auto/Game/AdminDanhSachQuestion.ascx" tagname="AdminDanhSachQuestion" tagprefix="uc1" %>
 
