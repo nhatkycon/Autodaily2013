@@ -681,9 +681,7 @@ height: 180px;
     }
 .form-signin {
     max-width: 500px;
-    padding: 19px 29px 29px;
     margin: 50px auto 20px;
-    background-color: #fff;
     border: 1px solid #e5e5e5;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -827,8 +825,9 @@ height: 180px;
 }
 .TayDua-KetQuaPnl
 {
-    margin-top: 400px;
+    margin-top: 200px;
     font-size: 16pt;
+    text-align: center;
 }
 .DapAnAdd {
     background-color: #FFF !important;
@@ -839,3 +838,21 @@ height: 180px;
     margin-right: auto;
     font-size: 18pt;
 }
+.TayDua-KetQuaPnl-Body-Label {
+    font-size: 24pt;
+}
+.TayDua-KetQuaPnl-Rs {
+    font-size: 24pt;
+}
+
+.unLoggedInPnl {
+    margin-top: 100px;
+}
+ .facebookLogin {
+     display: inline-block;
+     background-image: url(i/contest-body-background.png);
+     width: 500px;
+     height: 500px;
+     cursor: pointer;
+ }
+

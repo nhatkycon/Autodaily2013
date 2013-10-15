@@ -193,7 +193,8 @@ public partial class lib_ajax_TayDua_Default : BasedPage
                     var diem = from p in ketQua
                                where p.Diem == 1
                                select p;
-                    rendertext(string.Format("{0}/{1}", diem.Count() , ketQua.Count));
+                    rendertext(string.Format(@"<h1>Bạn đã về đích</h1>
+Bạn đạt {0}/{1}<br>", diem.Count() , 10));
                 }
                 break;
                 #endregion

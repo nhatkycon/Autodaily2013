@@ -4,9 +4,9 @@
     var cauHoiSwipe;
 </script>
 <div class="unLoggedInPnl">
-    <div class="Login-Body form-signin">
-        <div class="unLoggedInPnl">
-            <button class="facebookLogin">Login bằng Facebook</button>            
+    <div class="form-signin">
+        <div class="facebookLogin">
+            
         </div>
     </div>
 </div>
@@ -37,8 +37,9 @@
 </div>
 <div class="TayDua-KetQuaPnl">
     <div class="TayDua-KetQuaPnl-Body">
-        Kết quả : 
-        <span class="TayDua-KetQuaPnl-Rs"></span>
+        <div class="TayDua-KetQuaPnl-Body-Label">
+        </div>
+        <span class="TayDua-KetQuaPnl-Rs"></span><br/>
         <a href="/lib/pages/TayDua/Default.aspx" class="pull-right btn btn-large">
             <i class="icon icon-check"></i>Chơi tiếp
         </a>
@@ -73,6 +74,12 @@
         xfbml: true                                  // Look for social plugins on the page
     });
 
+    Ten.click(function() {
+        FB.logout(function(response) {
+            document.location.reload();
+        });
+    });
+
     lblFbBtnLogin.unbind('click').click(function (event) {
         event.preventDefault();
         FB.login(function (response) {
@@ -87,6 +94,7 @@
         if (response.status === 'connected') {
             unLoggedInPnl.hide();
             loggedInPnl.show();
+            TayDuaStart.show();
             FB.api('/me', function (responses) {
                 Ten.html(responses.name);
                 Anh.attr('src', 'https://graph.facebook.com/' + responses.id + '/picture?type=square');
@@ -105,9 +113,13 @@
         }
         else if (response.status.toString().toLowerCase() == 'unknown') {
             console.log('Facebook connect is cancel');
+            unLoggedInPnl.show();
+            loggedInPnl.hide();
+            TayDuaStart.hide();
         } else {
             unLoggedInPnl.show();
             loggedInPnl.hide();
+            TayDuaStart.hide();
         }
     }
 

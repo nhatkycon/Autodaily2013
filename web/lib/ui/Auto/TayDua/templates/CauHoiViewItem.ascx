@@ -2,7 +2,7 @@
 <div class="TayDua-CauHoiItem">
     <div class="TayDua-CauHoiItem-Body">
         <div class="TayDua-CauHoiItem-Ten">
-            <%=Item.Ten %>
+          <%=Item.Luot %>.  <%=Item.Ten %>
         </div>
         <div class="TayDua-CauHoiItem-MoTa">
             <%=Item.MoTa %>
