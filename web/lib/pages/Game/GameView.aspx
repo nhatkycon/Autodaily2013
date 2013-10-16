@@ -2,7 +2,7 @@
 
 <%@ Register src="~/lib/ui/Auto/Game/AdminDanhSachQuestion.ascx" tagname="AdminDanhSachQuestion" tagprefix="uc1" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="post-box effect2  QuestionThemPnl">
         <div class="navigation">        
             <button class="btn btn-primary addBtn">Thêm</button> &nbsp; <a class="btn" href="/lib/pages/Game/Game.aspx?ID=<%=G_ID %>">

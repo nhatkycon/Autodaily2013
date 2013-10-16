@@ -5,7 +5,10 @@
         <div class="logo-small"></div>        
     </center>
 </div>
-<div class="" style="margin-top: 80px;">
+<div class="" style="margin-top: 80px;
+width: 1120px;
+margin-left: auto;
+margin-right: auto;">
     <asp:Repeater runat="server" ID="rpt">
         <ItemTemplate>
             <uc1:QuestionInBoardItem ID="QuestionInBoardItem1" runat="server" Item='<%# Container.DataItem %>' />

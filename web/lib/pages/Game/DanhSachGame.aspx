@@ -2,7 +2,7 @@
 
 <%@ Register src="~/lib/ui/Auto/Game/AdminDanhSachGame.ascx" tagname="AdminDanhSachGame" tagprefix="uc1" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="post-box effect2  GameThemPnl">
         <div class="navigation">        
             Tên: <input class="input-large Ten"/>  Thứ tự: <input class="input-mini ThuTu"/> <button class="btn btn-primary">Thêm</button>
