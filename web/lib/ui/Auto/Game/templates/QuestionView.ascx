@@ -38,29 +38,32 @@
         <a  class="showRs" href="javascript:;">
             <i class="icon-check icon-large icon-3x"></i>    
         </a>    
+        <a  class="unRead" href="javascript:;">
+            <i class="icon-repeat icon-large icon-3x"></i>    
+        </a>
     </div>
 </div>
 <script src="/lib/js/swipe.js" type="text/javascript"></script>
 <script>
     $(function () {
         albumSwipe = Swipe(document.getElementById('album-view-slider'));
-        $('.showRs').click(function() {
+        $('.showRs').click(function () {
             var viewrs = $('.view-rs');
             var slider = $('.fs-slider');
             var shown = viewrs.attr('data-show');
             if (shown == '0') {
                 viewrs.show();
                 slider.hide();
-                viewrs.attr('data-show','1');
+                viewrs.attr('data-show', '1');
             }
-            else if(shown == '1') {
+            else if (shown == '1') {
                 viewrs.hide();
                 slider.show();
                 viewrs.attr('data-show', '0');
             }
         });
         var overlayfs = $('.overlay-fs');
-        overlayfs.mouseenter(function() {
+        overlayfs.mouseenter(function () {
             overlayfs.find('a').show();
             overlayfs.addClass('bg');
         });
@@ -68,7 +71,21 @@
             overlayfs.find('a').hide();
             overlayfs.removeClass('bg');
         });
-        
+
+
+        $('.unRead').click(function() {
+            $.ajax({
+                url: domain + '/lib/ajax/Game/Default.aspx?ref=' + Math.random(),
+                data: {
+                    subAct: 'updateQuestionActive',
+                    ID: '<% =Item.ID %>',
+                    Active: true
+                },
+                success: function (dt) {
+
+                }
+            });
+        });
         $.ajax({
             url: domain + '/lib/ajax/Game/Default.aspx?ref=' + Math.random(),
             data: {
@@ -77,7 +94,7 @@
                 Active: false
             },
             success: function (dt) {
-                
+
             }
         });
 
